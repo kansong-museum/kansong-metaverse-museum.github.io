@@ -5,7 +5,7 @@ const img_list = [
     kName: "춘색만원",
     eName: "Spring fills the garden",
     cName: "春色滿園",
-    youtubeLink: "https://youtu.be/S2lp0wO-Ps0",
+    youtubeLink: "https://www.youtube.com/embed/S2lp0wO-Ps0",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const img_list = [
     kName: "소년전홍",
     eName: "Young boy plucking an azalea",
     cName: "少年剪紅",
-    youtubeLink: "https://youtu.be/W2LOW2ko5eo",
+    youtubeLink: "https://www.youtube.com/embed/W2LOW2ko5eo",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const img_list = [
     kName: "이부탐춘",
     eName: "A widow's spring indulgence",
     cName: "嫠婦耽春",
-    youtubeLink: "https://youtu.be/F8l34MY0Mf4",
+    youtubeLink: "https://www.youtube.com/embed/F8l34MY0Mf4",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const img_list = [
     kName: "정변야화",
     eName: "Gossping at the well at night",
     cName: "井邊夜話",
-    youtubeLink: "https://youtu.be/e0suriAr5oI",
+    youtubeLink: "https://www.youtube.com/embed/e0suriAr5oI",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const img_list = [
     kName: "홍루대주",
     eName: "Waiting on drinks in the vermilion tower",
     cName: "紅樓待酒",
-    youtubeLink: "https://youtu.be/nHIpTz3p6Oo",
+    youtubeLink: "https://www.youtube.com/embed/nHIpTz3p6Oo",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const img_list = [
     kName: "주사거배",
     eName: "Raising a glass at the tavern",
     cName: "酒肆擧盃",
-    youtubeLink: "https://youtu.be/V74X5BPbCII",
+    youtubeLink: "https://www.youtube.com/embed/V74X5BPbCII",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const img_list = [
     kName: "상춘야흥",
     eName: "Enjoying the spring in the field of excitement",
     cName: "賞春野興",
-    youtubeLink: "https://youtu.be/JP9tSpIsmaQ",
+    youtubeLink: "https://www.youtube.com/embed/JP9tSpIsmaQ",
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const img_list = [
     kName: "연소답청",
     eName: "Young people go out to the spring festival",
     cName: "年少踏靑",
-    youtubeLink: "https://youtu.be/H1hNED8Gy7c",
+    youtubeLink: "https://www.youtube.com/embed/H1hNED8Gy7c",
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ const img_list = [
     kName: "무녀신무",
     eName: "Sprit dance of the Shamaness",
     cName: "巫女神舞",
-    youtubeLink: "https://youtu.be/4Hbqh1s-9Fk",
+    youtubeLink: "https://www.youtube.com/embed/4Hbqh1s-9Fk",
   },
   {
     id: 10,
@@ -77,7 +77,7 @@ const img_list = [
     kName: "쌍검대무",
     eName: "Double-sword dance by two performers",
     cName: "雙劍對舞",
-    youtubeLink: "https://youtu.be/IZsWtG4ric4",
+    youtubeLink: "https://www.youtube.com/embed/IZsWtG4ric4",
   },
   {
     id: 11,
@@ -85,7 +85,7 @@ const img_list = [
     kName: "노상탁발",
     eName: "Monk with alms bowl on the street",
     cName: "路上托鉢",
-    youtubeLink: "https://youtu.be/MTyZNNlEaD8",
+    youtubeLink: "https://www.youtube.com/embed/MTyZNNlEaD8",
   },
   {
     id: 12,
@@ -93,7 +93,7 @@ const img_list = [
     kName: "납량만흥",
     eName: "Enjoying the cool breeze in a passing mood",
     cName: "納凉漫興",
-    youtubeLink: "https://youtu.be/gW-mUIO5nsg",
+    youtubeLink: "https://www.youtube.com/embed/gW-mUIO5nsg",
   },
   {
     id: 13,
@@ -101,7 +101,7 @@ const img_list = [
     kName: "니승영기",
     eName: "A nun greets a Gisaeng",
     cName: "尼僧迎妓",
-    youtubeLink: "https://youtu.be/fH-D1EXhcm4",
+    youtubeLink: "https://www.youtube.com/embed/fH-D1EXhcm4",
   },
   {
     id: 14,
@@ -109,7 +109,7 @@ const img_list = [
     kName: "청금상련",
     eName: "Listening to the Zither and admiring the lotus",
     cName: "聽琴賞蓮",
-    youtubeLink: "https://youtu.be/Q1AsU3AHASY",
+    youtubeLink: "https://www.youtube.com/embed/Q1AsU3AHASY",
   },
   {
     id: 15,
@@ -117,7 +117,7 @@ const img_list = [
     kName: "주유청강",
     eName: "Boating on the clear river",
     cName: "舟遊淸江",
-    youtubeLink: "https://youtu.be/MnY8oGmC3PQ",
+    youtubeLink: "https://www.youtube.com/embed/MnY8oGmC3PQ",
   },
   {
     id: 16,
@@ -125,7 +125,7 @@ const img_list = [
     kName: "문종심사",
     eName: "Hearing the bell and looking for the temple",
     cName: "聞鍾尋寺",
-    youtubeLink: "https://youtu.be/TBUqKhS8aAc",
+    youtubeLink: "https://www.youtube.com/embed/TBUqKhS8aAc",
   },
   {
     id: 17,
@@ -133,7 +133,7 @@ const img_list = [
     kName: "단오풍정",
     eName: "a dano day scene",
     cName: "端午風情",
-    youtubeLink: "https://youtu.be/wvy2xIg8pss",
+    youtubeLink: "https://www.youtube.com/embed/wvy2xIg8pss",
   },
   {
     id: 18,
@@ -141,7 +141,7 @@ const img_list = [
     kName: "계변가화",
     eName: "Beauties chatting beside a stream",
     cName: "溪邊佳話",
-    youtubeLink: "https://youtu.be/Bc62ojzSYc8",
+    youtubeLink: "https://www.youtube.com/embed/Bc62ojzSYc8",
   },
   {
     id: 19,
@@ -149,7 +149,7 @@ const img_list = [
     kName: "월야밀회",
     eName: "Clandestine meeting on a moonlit night",
     cName: "月夜密會",
-    youtubeLink: "https://youtu.be/pfFGDWm3xi8",
+    youtubeLink: "https://www.youtube.com/embed/pfFGDWm3xi8",
   },
   {
     id: 20,
@@ -157,7 +157,7 @@ const img_list = [
     kName: "휴기답풍",
     eName: " A fall outing with a Gisaeng",
     cName: "携妓踏楓",
-    youtubeLink: "https://youtu.be/Mqly6ePCdE4",
+    youtubeLink: "https://www.youtube.com/embed/Mqly6ePCdE4",
   },
   {
     id: 21,
