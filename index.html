@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/grid.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/ScrollTrigger.css" />
+    <script type="text/javascript" src="./js/ScrollTrigger.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#header").load("./page/header.html");
+        $("#sidebar").load("./page/sidebar.html");
+      });
+    </script>
+  </head>
+
+  <body id="index">
+
+    <!-- 어두운 곳에서는 on 삭제, 밝은 곳에서는 on 생성-->
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <header id="header" class=""></header>
+
+    <nav class="snb hide" id="navbarCollapse">
+      <ol>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Introduction">Introduction</a></li>
+        <li><a href="#MainCharacters">Main Characters</a></li>
+        <li><a href="#DigitalRebirthEvents">Digital Rebirth Events</a></li>
+        <li><a href="#NFTs">NFTs</a></li>
+        <li><a href="#DigitalExpansionPlan">Digital Expansion Plan</a></li>
+        <li><a href="#Roadmap">Roadmap</a></li>
+        <li><a href="#Team">Team</a></li>
+        <li><a href="#Partner">Partner</a></li>
+      </ol>
+    </nav>
+
+    <section id="Home" class="section1">
+      <div class="Container">
+        <div id="bg_video">
+          <video autoplay loop muted>
+            <source src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/Main.mp4" type="video/mp4" />
+            <!-- <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/intro.jpg" alt="" /> -->
+          </video>
+        </div>
+        <div class="textarea grid">
+          <h1 data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+            Kansong</br><span id="typing"></span></br>Museum
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <section id="Introduction" class="section2">
+      <div class="Container">
+        <div class="textarea grid">
+          <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">
+            Album of Gener Paintings<br/>
+            by Hyewon
+            <p data-scroll="toggle(.fromRightIn, .fromRightOut)" class="delay-3 inline">
+              (혜원 전신첩)
+            </p>
+          </h2>
+
+
+          <div class="margin-b-4">
+            <p data-scroll="toggle(.fromTopIn, .fromTopOut)" class="subtitle">
+              Korean National Treasure No. 135
+            </p>
+            <!-- <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="subtitle delay-3 inline margin-r-6">
+              Album of Genre Paintings by Hyewon
+            </p> -->
+          </div>
+
+          <div>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-5">
+              Sin Yunbok, better known as his pen name Hyewon was an elder son of famous court painter Sin Hanpyeong.
+            </p>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-8">
+              Sin was particularly good at illustrating human figures, he even painted daring pictures of alluring woman,
+            </p>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-11">
+              a taboo for court painters who cared about their reputations. This album is certainly the finest of Sin’s known works.
+            </p>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-14">
+              The album includes 30 genre paintings of people in Hanyang-present day Seoul in the 18th century.
+            </p>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-17">
+              People are depicted in various situations in great detail and each painting emphasizes on their complicated emotion as well as their physical beauty.
+            </p>
+          </div>
+
+          <!-- <div class="line"></div> -->
+        </div>
+
+        <div class="imgarea">
+          <div class="swiper mySwiper swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/001.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/002.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/003.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/004.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/005.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/006.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/007.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/008.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/009.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/010.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/011.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/012.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/013.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/014.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/015.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/016.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/017.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/018.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/019.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/020.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/021.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/022.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/023.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/024.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/025.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/026.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/027.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/028.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/029.jpg" alt="" class="swiper-lazy"></li>
+              <li class="swiper-slide"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/introduction/030.jpg" alt="" class="swiper-lazy"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="MainCharacters" class="section3">
+      <div class="Container">
+        <div class="textarea">
+          <h2 data-scroll="toggle(.scaleDownIn, .scaleDownOut)">Main Characters</h2>
+        </div>
+
+        <div class="imgarea grid">
+          <ul id="masonry" class="masonry">
+            <div class="grid-sizer"></div>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/01.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/02.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/03.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/04.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/05.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/06.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/10.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/09.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/07.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/08.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/11.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/15.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/19.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/12.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/16.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/17.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/13.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/18.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/20.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/21.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/22.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/23.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/24.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/25.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/14.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+            <li class="masonry-item"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/mycharacters/26.jpg" alt="" data-scroll="toggle(.scaleDownIn, .scaleDownOut)" /></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="DigitalRebirthEvents" class="section4">
+      <div class="Container">
+        <div class="textarea grid">
+          <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">Digital Rebirth Events</h2>
+          <p data-scroll="toggle(.fromTopIn, .fromTopOut)" class="subtitle delay-3">
+            6~26 April 2022
+          </p>
+        </div>
+
+        <div class="imgarea grid">
+          <div class="subtitle delay-3">
+            <video controls >
+              <source src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/Rebirth-Making.MP4" type="video/mp4" />
+              <!-- <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/intro.jpg" alt="" /> -->
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="NFTs" class="section5">
+      <div class="Container">
+        <div class="textarea">
+          <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">Six Types of NFTs</h2>
+        </div>
+
+        <div class="imgarea grid">
+          <ul class="col-12 grid">
+            <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3">
+              <div>
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/guideline-full-f1.jpg" alt="">
+              </div>
+              <div>
+                <p class="NFTs-typeNum">Type 1</p>
+                <p class="NFTs-typeName subtitle">Full Painting</p>
+                <p class="NFTs-quantity">30 NFTs</p>
+                <p class="NFTs-quantityPer">Quantity: only one per NFT</p>
+              </div>
+            </li>
+
+            <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
+              <div>
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+              </div>
+              <div>
+                <p class="NFTs-typeNum">Type 2</p>
+                <p class="NFTs-typeName subtitle">Body Shot</p>
+                <p class="NFTs-quantity">80~100 NFTs</p>
+                <p class="NFTs-quantityPer">Quantity: 10 per NFT</p>
+              </div>
+            </li>
+
+            <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5">
+              <div>
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+              </div>
+              <div>
+                <p class="NFTs-typeNum">Type 3</p>
+                <p class="NFTs-typeName subtitle">Bust Shot</p>
+                <p class="NFTs-quantity">80~100 NFTs</p>
+                <p class="NFTs-quantityPer">Quantity: 10 per NFT</p>
+              </div>
+            </li>
+
+            <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5">
+              <div>
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+              </div>
+              <div>
+                <p class="NFTs-typeNum">Type 4</p>
+                <p class="NFTs-typeName subtitle">Head Shot</p>
+                <p class="NFTs-quantity">80~100 NFTs</p>
+                <p class="NFTs-quantityPer">Quantity: 10 per NFT</p>
+              </div>
+            </li>
+
+            <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
+              <div>
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+              </div>
+              <div>
+                <p class="NFTs-typeNum">Type 5</p>
+                <p class="NFTs-typeName subtitle">Face Shot</p>
+                <p class="NFTs-quantity">80~100 NFTs</p>
+                <p class="NFTs-quantityPer">Quantity: 10 per NFT</p>
+              </div>
+            </li>
+
+            <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3">
+              <div>
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+              </div>
+              <div>
+                <p class="NFTs-typeNum">Type 6</p>
+                <p class="NFTs-typeName subtitle">Object Shot</p>
+                <p class="NFTs-quantity">80~100 NFTs</p>
+                <p class="NFTs-quantityPer">Quantity: 10 per NFT</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="DigitalExpansionPlan" class="section6">
+      <div class="Container">
+        <div class="textarea grid">
+          <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">Digital Expansion Plan</h2>
+        </div>
+
+        <div class="imgarea grid">
+          <div>
+            <p class="subtitle">The Sandbox Expansion</p>
+
+            <div class="Expansion-img">
+              <div class="Expansion-img-1">
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/yb017002006.jpg" alt="">
+                <div>
+                  <video autoplay loop muted>
+                    <source src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/Danopungjeong.mp4" type="video/mp4" />
+                  </video>
+                </div>
+
+              </div>
+
+              <div class="Expansion-img-2">
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/yb017002004.jpg" alt="">
+                <div>
+                  <div>
+                    <video autoplay loop muted>
+                      <source src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/Dongja-seung.mkv" type="video/mp4" />
+                    </video>                    
+                    <!-- <model-viewer auto-rotate="true" autoplay="true" camera-controls="true" alt="Chair" src="./img/Dongja-seung.mkv"
+                      ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls enable-pan
+                      ar-status="not-presenting">
+                    </model-viewer> -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Roadmap" class="section7">
+      <div class="Container">
+        <div class="textarea">
+          <h2 data-scroll="toggle(.scaleDownIn, .scaleDownOut)">Sales Roadmap</h2>
+        </div>
+
+        <div class="imgarea" data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
+          <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="subtitle delay-3">
+            Coming Soon
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="Team" class="section10">
+      <div class="Container">
+        <div class="grid">
+          <div class="textarea">
+            <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">Team</h2>
+
+            <p data-scroll="toggle(.fromTopIn, .fromTopOut)" class="subtitle delay-3">
+              About Kansong Art Museum
+            </p>
+
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-3">
+              Kansong Art Museum which established in 1938 is the first modern private museum in Korea.
+            </p>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-5">
+              KAM still remains as one of the most prominent museums in Korea, and often referred as one of top 3 private museums in Korea.
+            </p>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-5">
+              KAM collection of art, normally called Kansong Collection contains mostly Korean antique arts ranging from stone works, metal works, ceramics and paintings to antique books dated between 6th century and early 20th century.
+            </p>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-8">
+              Founded during Korea’s Japanese colonial era, KAM is also famous for its founding principle, Munwhaboguk-Preserving nation’s sprits through culture.
+            </p>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-8">
+              Kansong Art Museum’s founder Kansong Chun, Hyung-pil was one of the most famous art collectors in Korean history who has often been called the guardian of Korean cultural heritages during Japanese colonial era.
+            </p>
+            <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-11">
+              The most representative collections of KAM include Hunmin-jeongeum, the original textbook of Korean alphabets (The UNESCO’s memory of the world, Korean National Treasure no.70), Celadon Prunus Vase with inlaid cloud and crane design (Korean National Treasure no. 68), and Album of Genre Paintings by Hyewon(Korean National Treasure no.135)
+            </p>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="imgarea">
+            <ul class="grid">
+              <li id="Team-kansong" data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-3">
+                <div class="Team-logo">
+                  <img src="./img/logo-kansong-bk.png" alt="" />
+                </div>
+                <div class="Team-dec">
+                  <p>Holder of Original Paintings</p>
+                  <p>Digitalization</p>
+                  <p>Strategic Partnering</p>
+                </div>
+              </li>
+
+              <li id="Team-atomrigsLab" data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-5">
+                <div class="Team-logo">
+                  <img src="./img/logo-AtomrigsLab.png" alt="" />
+                </div>
+                <div class="Team-dec">
+                  <p>Project Management</p>
+                  <p>Blockchain Development</p>
+                  <p>Marketing and Community Building</p>
+                </div>
+              </li>
+
+              <li id="Team-atomrigsLab" data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-8">
+                <div class="Team-logo">
+                  <img src="./img/logo-BYM.png" alt="" />
+                </div>
+                <div class="Team-dec">
+                  <p>Creator Management</p>
+                  <p>Digital Contents Management</p>
+                  <p>Marketing</p>
+                </div>
+              </li>
+
+              <li id="Team-atomrigsLab" data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-11">
+                <div class="Team-logo">
+                  <img src="./img/logo-ejelaw.png" alt="" />
+                </div>
+                <div class="Team-dec">
+                  <p>Regulatory Compliance</p>
+                  <p>Legal Affairs</p>
+                  <p>Strategic Partnering</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="Partner" class="section11">
+      <div class="Container">
+        <div class="grid">
+          <div class="textarea col-12 m-col-6">
+            <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">Partner</h2>
+          </div>
+
+          <div class="imgarea m-col-6">
+            <ul class="">
+              <li id="Partner-facbros" data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-3">
+                <div class="Partner-logo">
+                  <img src="./img/partner/logo-facbros.png" alt="" />
+                </div>
+              </li>
+
+              <li id="Partner-dcent" data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-3">
+                <div class="Partner-logo">
+                  <img src="./img/partner/logo-dcent.png" alt="" />
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script src="./js/jquery.malihu.PageScroll2id.js"></script>
+    <script src="./js/jquery-syaku.rolling.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://www.cssscript.com/demo/simple-typewriter-effect-pure-javascript-typewriterjs/typewriter.js"></script>
+  </body>
+</html>
