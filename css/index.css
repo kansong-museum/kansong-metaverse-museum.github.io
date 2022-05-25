@@ -55,40 +55,51 @@ nav ol li a {
     font-size: 1.6rem;
     text-align: left;
     font-weight: 500;
-    text-indent: -20rem;
+    /* text-indent: -20rem; */
+    opacity: 0.7;
   }
-  nav ol li a.mPS2id-highlight::before,
+  nav ol li a.mPS2id-highlight::before{
+    background: var(--primary-color);
+    opacity: 0.9;
+  }
   nav ol li a.mPS2id-highlight {
-    text-indent: 0;
-    color: rgba(245, 245, 245, 1);
+    /* color: rgba(245, 245, 245, 1); */
+    color: var(--primary-color);
+    opacity: 0.9;
   }
   nav ol li a:hover {
     text-indent: 0;
     color: var(--primary-color);
+    opacity: 0.9;
   }
   nav ol li a:hover::before {
     background: var(--primary-color);
+    opacity: 0.9;
   }
 
   /* on */
   nav.on ol li a::before {
     background: var(--black);
-    opacity: 0.9;
   }
   nav.on ol li a {
     color: var(--black);
+  }
+  nav.on ol li a.mPS2id-highlight::before{
+    background: var(--secondary-color);
     opacity: 0.9;
   }
-  nav.on ol li a.mPS2id-highlight::before,
   nav.on ol li a.mPS2id-highlight {
-    color: var(--black);
+    /* color: var(--black); */
+    color: var(--secondary-color);
     opacity: 0.9;
   }
   nav.on ol li a:hover {
     color: var(--secondary-color);
+    opacity: 0.9;
   }
   nav.on ol li a:hover::before {
     background: var(--secondary-color);
+    opacity: 0.9;
   }
 }
 
