@@ -18,9 +18,19 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9SP5XEHHV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-K9SP5XEHHV');
+    </script>
+
     <script type="text/javascript">
       $(document).ready(function () {
-        $("#header").load("./page/header.html");
+        $("#header-inner").load("./page/header.html");
         $("#sidebar").load("./page/sidebar.html");
       });
     </script>
@@ -31,7 +41,45 @@
     <!-- 어두운 곳에서는 on 삭제, 밝은 곳에서는 on 생성-->
     <aside id="sidebar" class="sidebar"></aside>
 
-    <header id="header" class=""></header>
+    <header id="header">
+      <div id="header-inner"></div>
+
+      <div class="header-right-btn">
+        <div id="btn-album">
+          <a href="">
+            <svg width="45" height="45" viewBox="0 0 45 45">
+              <path d="M11.25 7.03125C11.25 6.2546 11.8796 5.625 12.6562 5.625H32.3438C33.1204 5.625 33.75 6.2546 33.75 7.03125V7.03125C33.75 7.8079 33.1204 8.4375 32.3438 8.4375H12.6562C11.8796 8.4375 11.25 7.8079 11.25 7.03125V7.03125ZM8.4375 11.25C8.4375 10.4733 9.0671 9.84375 9.84375 9.84375H35.1562C35.9329 9.84375 36.5625 10.4733 36.5625 11.25V11.25C36.5625 12.0267 35.9329 12.6562 35.1562 12.6562H9.84375C9.0671 12.6562 8.4375 12.0267 8.4375 11.25V11.25ZM40.7812 37.375C40.7812 38.4796 39.8858 39.375 38.7812 39.375H6.21875C5.11418 39.375 4.21875 38.4796 4.21875 37.375V16.0625C4.21875 14.9579 5.11418 14.0625 6.21875 14.0625H38.7813C39.8858 14.0625 40.7812 14.9579 40.7812 16.0625V37.375Z"/>
+            </svg>
+          </a>
+        </div>
+
+        <button type="toggle" name="navbarToggler" id="navbarToggler">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+
+    </header>
+
+    <script type="text/javascript">
+      $(function () {
+        let navbarToggler = document.querySelector("#navbarToggler");
+        const navbarCollapse = document.querySelector("#navbarCollapse");
+        navbarToggler.addEventListener("click", () => {
+          navbarToggler.classList.toggle("navbarTogglerActive");
+          navbarCollapse.classList.toggle("hide");
+        });
+        //===== close navbar-collapse when a  clicked
+        document.querySelectorAll("#navbarCollapse ol li:not(.submenu-item) a").forEach((e) =>
+          e.addEventListener("click", () => {
+            navbarToggler.classList.remove("navbarTogglerActive");
+            navbarCollapse.classList.add("hide");
+          })
+        );
+      });
+    </script>
 
     <nav class="snb hide" id="navbarCollapse">
       <ol>
@@ -41,7 +89,7 @@
         <li><a href="#DigitalRebirthEvents">Digital Rebirth Events</a></li>
         <li><a href="#NFTs">NFTs</a></li>
         <li><a href="#DigitalExpansionPlan">Digital Expansion Plan</a></li>
-        <li><a href="#Roadmap">Roadmap</a></li>
+        <!-- <li><a href="#Roadmap">Roadmap</a></li> -->
         <li><a href="#Team">Team</a></li>
         <li><a href="#Partner">Partner</a></li>
       </ol>
@@ -51,7 +99,7 @@
       <div class="Container">
         <div id="bg_video">
           <video autoplay loop muted>
-            <source src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/Main.mp4" type="video/mp4" />
+            <source src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/Main1080(L).mp4" type="video/mp4" />
             <!-- <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/intro.jpg" alt="" /> -->
           </video>
         </div>
@@ -214,7 +262,7 @@
           <ul class="col-12 grid">
             <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3">
               <div>
-                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/guideline-full-f1.jpg" alt="">
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/nft-full.jpg" alt="">
               </div>
               <div>
                 <p class="NFTs-typeNum">Type 1</p>
@@ -226,7 +274,7 @@
 
             <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
               <div>
-                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/nft-fullbody.jpg" alt="">
               </div>
               <div>
                 <p class="NFTs-typeNum">Type 2</p>
@@ -238,7 +286,7 @@
 
             <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5">
               <div>
-                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/nft-bust.jpg" alt="">
               </div>
               <div>
                 <p class="NFTs-typeNum">Type 3</p>
@@ -250,7 +298,7 @@
 
             <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-5">
               <div>
-                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/nft-head.jpg" alt="">
               </div>
               <div>
                 <p class="NFTs-typeNum">Type 4</p>
@@ -262,7 +310,7 @@
 
             <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
               <div>
-                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/nft-face.jpg" alt="">
               </div>
               <div>
                 <p class="NFTs-typeNum">Type 5</p>
@@ -274,7 +322,7 @@
 
             <li data-scroll="toggle(.scaleDownIn, .scaleDownOut)" class="delay-3">
               <div>
-                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/NFT-full.jpg" alt="">
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/nft-obj.jpg" alt="">
               </div>
               <div>
                 <p class="NFTs-typeNum">Type 6</p>
@@ -290,39 +338,33 @@
 
     <section id="DigitalExpansionPlan" class="section6">
       <div class="Container">
-        <div class="textarea grid">
+        <div class="textarea">
           <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">Digital Expansion Plan</h2>
         </div>
 
         <div class="imgarea grid">
-          <div>
-            <p class="subtitle">The Sandbox Expansion</p>
+          <div id="thesandbox">
+            <p class="expansion-banner" data-scroll="toggle(.fromBottomIn, .fromBottomOut)"><img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/expansion-banner-thesandbox.jpg" alt=""></p>
 
             <div class="Expansion-img">
-              <div class="Expansion-img-1">
-                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/yb017002006.jpg" alt="">
+              <div class="Expansion-img-1 thesandbox-img-1 delay-3" data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
                 <div>
                   <video autoplay loop muted>
                     <source src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/Danopungjeong.mp4" type="video/mp4" />
                   </video>
                 </div>
-
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/yb017002006.jpg" alt="">
               </div>
 
-              <div class="Expansion-img-2">
-                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/yb017002004.jpg" alt="">
+              <div class="Expansion-img-2 thesandbox-img-2" data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
                 <div>
                   <div>
                     <video autoplay loop muted>
                       <source src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/Dongja-seung.mkv" type="video/mp4" />
-                    </video>                    
-                    <!-- <model-viewer auto-rotate="true" autoplay="true" camera-controls="true" alt="Chair" src="./img/Dongja-seung.mkv"
-                      ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls enable-pan
-                      ar-status="not-presenting">
-                    </model-viewer> -->
+                    </video>
                   </div>
                 </div>
-
+                <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/yb017002004.jpg" alt="">
               </div>
             </div>
 
@@ -331,7 +373,7 @@
       </div>
     </section>
 
-    <section id="Roadmap" class="section7">
+    <!-- <section id="Roadmap" class="section7">
       <div class="Container">
         <div class="textarea">
           <h2 data-scroll="toggle(.scaleDownIn, .scaleDownOut)">Sales Roadmap</h2>
@@ -343,7 +385,7 @@
           </p>
         </div>
       </div>
-    </section>
+    </section>-->
 
     <section id="Team" class="section10">
       <div class="Container">
@@ -450,6 +492,12 @@
                 </div>
               </li>
 
+              <li id="Partner-tokenpost" data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="delay-3">
+                <div class="Partner-logo">
+                  <img src="./img/partner/logo-tokenpost.png" alt="" />
+                </div>
+              </li>
+
             </ul>
           </div>
         </div>
@@ -460,7 +508,6 @@
     <script type="text/javascript" src="./js/index.js"></script>
     <script src="./js/jquery.malihu.PageScroll2id.js"></script>
     <script src="./js/jquery-syaku.rolling.js"></script>
-    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
     <script src="https://www.cssscript.com/demo/simple-typewriter-effect-pure-javascript-typewriterjs/typewriter.js"></script>
   </body>
 </html>

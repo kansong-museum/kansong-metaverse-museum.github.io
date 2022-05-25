@@ -1,25 +1,3 @@
-#lang ul {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* top banner */
-#top-banner > div {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  width: 100%;
-  max-width: 1920px;
-  overflow: hidden;
-  font-size: 0;
-}
-#top-banner img {
-  width: auto;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 /* snb 왼쪽메뉴 */
 nav {
   position: fixed;
@@ -116,6 +94,7 @@ nav ol li a {
 
 .section3 .Container,
 .section6 .Container,
+.section10 .Container,
 .section11 .Container {
   padding-top: 8rem;
 }
@@ -237,7 +216,7 @@ nav ol li a {
   text-align: center;
 }
 .section3 .imgarea #masonry {
-  grid-column: 3 / 11;
+  grid-column: 4 / 10;
   box-sizing: border-box;
 }
 .section3 .imgarea #masonry .grid-sizer,
@@ -276,7 +255,7 @@ nav ol li a {
   text-align: center;
 }
 .section5 .imgarea ul {
-  grid-column: 3 / 11;
+  grid-column: 4 / 10;
   row-gap: 24px;
 }
 .section5 .imgarea ul li {
@@ -305,49 +284,52 @@ nav ol li a {
 
 /* Digital Expansion Plan */
 .section6 .textarea h2 {
-  grid-column: 3 / 11;
+  text-align: center;
 }
 .section6 .imgarea > div {
-  grid-column: 3 / 11;
+  grid-column: 4 / 10;
+}
+.section6 .imgarea .expansion-banner {
+  font-size: 0;
+  margin-bottom: 10px;
 }
 
 .Expansion-img {
   display: flex;
-  flex-direction: column;
-  row-gap: 4rem;
+  flex-direction: row;
+  column-gap: 1rem;
 }
 .Expansion-img > div {
-  display: flex;
-  padding: 0;
-  align-items: flex-start;
-  column-gap: 10px;
+  flex: 1;
+  position: relative;
+  font-size: 0;
 }
 .Expansion-img > div img {
-  flex-shrink: 0;
-  width: 24%;
+  width: 15%;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  border: 2px solid #e6e6e8;
 }
-.Expansion-img-1 {
-  flex-direction: row;
-  justify-content: flex-start;
-}
-.Expansion-img-1 > div {
-  flex-grow: 1;
-}
-.Expansion-img-1 video {
+.Expansion-img video {
   width: 100%;
 }
 
-.Expansion-img-2 {
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-}
 .Expansion-img-2 > div {
-  flex-grow: 1;
 }
-.Expansion-img-2 > div > div {
+.thesandbox-img-2 > div {
   width: 100%;
   padding-bottom: 100%;
   position: relative;
+  overflow: hidden;
+}
+.thesandbox-img-2 video {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* This keeps child nodes hidden while the element loads */
@@ -370,6 +352,7 @@ nav ol li a {
 .section7 {
   background-image: url(https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/bg-bk.jpg);
   color: #f5f5f5;
+  height: 90vh;
 }
 .section7 .textarea {
   text-align: center;
@@ -435,8 +418,12 @@ nav ol li a {
   width: 25%;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 20px;
   box-sizing: border-box;
+}
+.section11 .imgarea > ul > li img {
+  max-width: 300px;
 }
 
 @media screen and (max-width: 900px) {
@@ -477,6 +464,13 @@ nav ol li a {
   }
   nav ol li a.mPS2id-highlight {
     background: none;
+  }
+
+  .section3 .Container,
+  .section6 .Container,
+  .section10 .Container,
+  .section11 .Container {
+    padding-top: 2rem;
   }
 
   .imgarea {
@@ -535,14 +529,12 @@ nav ol li a {
   }
 
   /* DigitalExpansionPlan */
-  .section6 .textarea h2 {
-    grid-column: 1 / 7;
-  }
   .section6 .imgarea > div {
     grid-column: 1 / 7;
   }
   .Expansion-img {
-    row-gap: 2rem;
+    flex-direction: column;
+    row-gap: 1rem;
   }
 
   /* Roadmap */
@@ -574,14 +566,19 @@ nav ol li a {
   .section11 .imgarea {
     grid-column: 1 / 7;
   }
+  .section11 .imgarea > ul {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 20px;
+  }
   .section11 .imgarea > ul > li {
     width: 50%;
+    /* flex: 1 1 50%; */
   }
 }
 
-@media screen and (max-width: 410px) {
+/* @media screen and (max-width: 410px) {
+
   .section3 .imgarea #masonry .grid-sizer,
-  .section3 .imgarea #masonry li {
-    width: 50%;
-  }
-}
+  .section3 .imgarea #masonry li{width: 50%;}
+} */

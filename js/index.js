@@ -35,8 +35,8 @@ $(function () {
       var intro = document.querySelector("#Introduction").offsetTop;
       var mainch = document.querySelector("#DigitalRebirthEvents").offsetTop;
       var nfts = document.querySelector("#NFTs").offsetTop;
-      var roadmap = document.querySelector("#Roadmap").offsetTop;
-      var team = document.querySelector("#Team").offsetTop;
+      // var roadmap = document.querySelector("#Roadmap").offsetTop;
+      // var team = document.querySelector("#Team").offsetTop;
       console.log("s = " + s);
 
       if(s < intro){
@@ -48,12 +48,12 @@ $(function () {
       else if( s < nfts ){
         $('#header, #sidebar, #navbarCollapse, #navbarToggler').removeClass('on');
       }
-      else if( s < roadmap ){
-        $('#header, #sidebar, #navbarCollapse, #navbarToggler').addClass('on');
-      }
-      else if (s < team ){
-        $('#header, #sidebar, #navbarCollapse, #navbarToggler').removeClass('on');
-      }
+      // else if( s < roadmap ){
+      //   $('#header, #sidebar, #navbarCollapse, #navbarToggler').addClass('on');
+      // }
+      // else if (s < team ){
+      //   $('#header, #sidebar, #navbarCollapse, #navbarToggler').removeClass('on');
+      // }
       else{
         $('#header, #sidebar, #navbarCollapse, #navbarToggler').addClass('on');
       };

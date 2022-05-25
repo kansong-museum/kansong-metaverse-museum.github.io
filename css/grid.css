@@ -1,14 +1,12 @@
 .grid {
   display: grid;
-  /* width: 120rem; */
+  max-width:3840px;
   margin-left: auto;
   margin-right: auto;
   column-gap: 10px;
   /* grid-gap: 10px; */
   justify-items: stretch;
   align-content: stretch;
-  /* padding-right: 10px;
-  padding-left: 10px; */
   grid-template-columns: repeat(12, 1fr);
   /* grid-auto-rows: minmax(5rem, auto); */
   padding:0 40px;
