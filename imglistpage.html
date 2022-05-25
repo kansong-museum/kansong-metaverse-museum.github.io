@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC>
+<html>
+  <head>
+    <title>혜원전신첩 설명</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/imgbase.css" />
+    <link rel="stylesheet" href="./css/grid.css" />
+    <link rel="stylesheet" href="./css/listpage.css" />
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#header-inner").load("./page/header.html");
+        // $("#sidebar").load("./page/sidebar.html");
+      });
+    </script>
+  </head>
+
+  <body>
+    <section id="album-list">
+      <div class="Container">
+        <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">Album of Genre Paintings<br />by Hyewon</h2>
+
+        <div class="list grid">
+          <ul class="grid" id="img_list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <header id="header">
+      <div id="header-inner"></div>
+    </header>
+
+    <aside id="sidebar" class="sidebar on"></aside>
+
+    <script type="text/javascript" src="../js/img_info.js"></script>
+    <script type="text/javascript" src="../js/imgbase.js"></script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/grid.css" />
+    <link rel="stylesheet" href="../css/detail.css" />
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#header-inner").load("./page/header.html");
+        // $("#sidebar").load("./page/sidebar.html");
+      });
+    </script>
+  </head>
+
+  <body>
+    <section id="detail">
+      <div class="Container">
+        <div id="info_container"></div>
+
+        <div class="textarea grid">
+          <h3 class="subtitle">Hyewon Sin, Yunbok, Album of Genre Paintings by Hyewon</h3>
+          <p>
+            Sin Yunbok, better known as his pen name Hyewon was an elder son of famous court painter Sin Hanpyeong.<br />
+            Sin was particularly good at illustrating human figures, he even painted daring pictures of alluring woman,<br />
+            a taboo for court painters who cared about their reputations. This album is certainly the finest of Sin’s known works.<br />
+            The album includes 30 genre paintings of people in Hanyang-present day Seoul in the 18th century.<br />
+            People are depicted in various situations in great detail and each painting emphasizes on their complicated emotion as well as their physical beauty.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <header id="header">
+      <div id="header-inner"></div>
+    </header>
+
+    <aside id="sidebar" class="sidebar on"></aside>
+    <script type="text/javascript" src="../js/img_info.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        start();
+      });
+
+      function getURLParams(url) {
+        var result = {};
+        url.replace(/[?&]{1}([^=&]+)=([^&]*)/g, function (s, k, v) {
+          result[k] = decodeURIComponent(v);
+        });
+        // console.log("getURLParams  result =>", result);
+        return result;
+      }
+
+      function start() {
+        let targetUrl = window.location.href;
+        let parsedurl = getURLParams(targetUrl);
+        // console.log("targetUrl    ", targetUrl);
+        // console.log("parsedurl =>", parsedurl);
+        // console.log(typeof parsedurl);
+        // console.log(parsedurl.id);
+        // console.log(typeof parsedurl.id);
+        // console.log(parseInt(parsedurl.id));
+        let imgList = img_list;
+
+        var item = imgList.find((item) => item.id === parseInt(parsedurl.id));
+        // console.log(item);
+
+        let htmlcontent = "";
+        let card = document.createElement("div");
+        htmlcontent = htmlcontent + '<h2 class="eName">' + item.eName + "</h2>";
+        htmlcontent = htmlcontent + '<p class="kName subtitle">' + item.kName + "</p>";
+        htmlcontent = htmlcontent + '<p class="cName">' + item.cName + "</p>";
+        htmlcontent = htmlcontent + '<div class="imgarea grid">';
+        if (item.id < 10) {
+          htmlcontent = htmlcontent + '<div class="detail-img"><img src="../img/introduction/00' + item.id + '.jpg" alt="" /></div>';
+        } else {
+          htmlcontent = htmlcontent + '<div class="detail-img"><img src="../img/introduction/0' + item.id + '.jpg" alt="" /></div>';
+        }
+
+        htmlcontent = htmlcontent + '<div class="detail-video">';
+        htmlcontent = htmlcontent + "<div>";
+        htmlcontent =
+          htmlcontent +
+          '<iframe src="' +
+          item.youtubeLink +
+          '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        htmlcontent = htmlcontent + "</div>";
+        htmlcontent = htmlcontent + "</div>";
+
+        card.innerHTML = htmlcontent;
+        document.getElementById("info_container").appendChild(card);
+      }
+    </script>
+  </body>
+</html>
