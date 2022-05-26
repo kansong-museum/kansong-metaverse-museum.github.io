@@ -1,78 +1,77 @@
-#album-list + header a#logo img{
-  top:-58px;
+#album-list + header a#logo img {
+  top: -58px;
 }
-#album-list + header.fixed a#logo img{
-  top:-37px;
+#album-list + header.fixed a#logo img {
+  top: -37px;
 }
 
-#detail .Container{
+#detail .Container {
   text-align: center;
 }
 
-#detail  .imgarea{
+#detail .imgarea {
   /* display: flex;
   flex-direction: row; */
-  padding-top:4rem;
+  padding-top: 1rem;
 }
 
-.detail-img{
+.detail-img {
   grid-column-end: span 5;
 }
-.detail-video{
+.detail-video {
   grid-column-end: span 7;
 }
-.detail-video > div{
-  width:100%;
-  padding-bottom :56.25%;
+.detail-video > div {
+  width: 100%;
+  padding-bottom: 56.25%;
   overflow: hidden;
   position: relative;
 }
-.detail-video iframe{
+.detail-video iframe {
   position: absolute;
-  left:0;
-  right:0;
-  width:100%;
-  height:100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
-.kName{
-  font-family: 'Noto Serif KR', serif;
+.kName {
+  font-family: "Noto Serif KR", serif;
   display: inline-block;
 }
-.cName{
+.cName {
   display: inline-block;
 }
 
-#detail  .textarea{
-  padding-top:4rem;
+#detail .textarea {
+  padding-top: 4rem;
 }
-#detail .textarea h3{
+#detail .textarea h3 {
   grid-column: 1 / 13;
   font-weight: 500;
 }
-#detail .textarea p{
+#detail .textarea p {
   grid-column: 1 / 13;
 }
 
-
 /* 모바일 */
 @media screen and (max-width: 900px) {
-  #detail + header a#logo img{
-    top:-35px;
+  #detail + header a#logo img {
+    top: -35px;
   }
-  #detail + header.fixed a#logo img{
-    top:-30px;
+  #detail + header.fixed a#logo img {
+    top: -30px;
   }
 
-  .detail-img{
+  .detail-img {
     grid-column: 1 / 7;
-    margin-bottom: 1.6rem
+    margin-bottom: 1.6rem;
   }
-  .detail-video{
+  .detail-video {
     grid-column: 1 / 7;
   }
 
   #detail .textarea h3,
-  #detail .textarea p{
+  #detail .textarea p {
     grid-column: 1 / 7;
   }
 }
