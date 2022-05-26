@@ -131,7 +131,7 @@ const img_list = [
     id: 17,
     imgUrl: "../img/intriduction/017.jpg",
     kName: "단오풍정",
-    eName: "a dano day scene",
+    eName: "A dano day scene",
     cName: "端午風情",
     youtubeLink: "https://www.youtube.com/embed/wvy2xIg8pss",
   },
