@@ -3,11 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta Tag -->
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Kangsong Metaverse Museum - connecting the past and future" />
+    <meta
+      name="description"
+      content="Kansong Metaverse Museum aims to globalize Korean cultural assets with the hands of Korean citizens and global communities through blockchain DAO and Metaverse."
+    />
+    <meta
+      name="keywords"
+      content="Kansong NFT, Kangsong Token, Kansong Metaverse, Kansong backers, Kansong DAO, Kansong Museum, Kansong project, atomrigs Kansong, Korean cultural NFT, Sin Yun-bok NFT"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://kansong.io/" />
+    <meta property="og:title" content="Kangsong Metaverse Museum - connecting the past and future" />
+    <meta
+      property="og:description"
+      content="Kansong Metaverse Museum aims to globalize Korean cultural assets with the hands of Korean citizens and global communities through blockchain DAO and Metaverse."
+    />
+    <meta property="og:image" content="http://kansong.io/img/nft-full.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="http://kansong.io/" />
+    <meta property="twitter:title" content="Kangsong Metaverse Museum - connecting the past and future" />
+    <meta
+      property="twitter:description"
+      content="Kansong Metaverse Museum aims to globalize Korean cultural assets with the hands of Korean citizens and global communities through blockchain DAO and Metaverse."
+    />
+    <meta property="twitter:image" content="http://kansong.io/img/nft-full.jpg" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Kangsong Metaverse Museum - connecting the past and future" />
+    <meta
+      name="twitter:description"
+      content="Kansong Metaverse Museum aims to globalize Korean cultural assets with the hands of Korean citizens and global communities through blockchain DAO and Metaverse."
+    />
+    <meta name="twitter:image" content="http://kansong.io/img/nft-full.jpg" />
+    <meta name="twitter:site" content="http://kansong.io/" />
+    <!-- Meta Tag End -->
+
     <link rel="icon" type="image/png" href="./favicon.ico" />
     <script src="./js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/grid.css" />
     <link rel="stylesheet" href="../css/detail.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9SP5XEHHV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-K9SP5XEHHV");
+    </script>
 
     <script type="text/javascript">
       $(document).ready(function () {
@@ -70,6 +125,7 @@
         var item = imgList.find((item) => item.id === parseInt(parsedurl.id));
         // console.log(item);
 
+        document.title = item.eName + " by Hyewon Sin, Yunbok";
         let htmlcontent = "";
         let card = document.createElement("div");
         htmlcontent = htmlcontent + '<h2 class="eName">' + item.eName + "</h2>";
