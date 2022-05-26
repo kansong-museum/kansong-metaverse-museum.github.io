@@ -162,10 +162,10 @@ const img_list = [
   {
     id: 21,
     imgUrl: "../img/intriduction/021.jpg",
-    kName: "쌍육삼매",
+    kName: "쌍륙삼매",
     eName: "Entranced on double six",
     cName: "雙六三昧",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/DyfXz-lKqcA",
   },
   {
     id: 22,
@@ -173,7 +173,7 @@ const img_list = [
     kName: "삼추가연",
     eName: "Auspicious in late autumn",
     cName: "三秋佳緣",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/9NbSNud2T6U",
   },
   {
     id: 23,
@@ -181,7 +181,7 @@ const img_list = [
     kName: "노중상봉",
     eName: "Chance meeting on the road",
     cName: "路中相逢",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/0KbJSTUceyU",
   },
   {
     id: 24,
@@ -189,7 +189,7 @@ const img_list = [
     kName: "기방무사",
     eName: "Nothing doing in the Gisaeng's chamber",
     cName: "妓房無事",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/Yn3Fp9LhTbA",
   },
   {
     id: 25,
@@ -197,7 +197,7 @@ const img_list = [
     kName: "표모봉욕",
     eName: "Washer woman suffers insult",
     cName: "漂母逢辱",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/64iLFPxsNJ8",
   },
   {
     id: 26,
@@ -205,7 +205,7 @@ const img_list = [
     kName: "청루소일",
     eName: "Whiling away the day at the brothel",
     cName: "靑樓消日",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/HW6u53uXCyY",
   },
   {
     id: 27,
@@ -213,7 +213,7 @@ const img_list = [
     kName: "월하정인",
     eName: "Lovers under the moon",
     cName: "月下情人",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/6CbVAjQtaQg",
   },
   {
     id: 28,
@@ -221,7 +221,7 @@ const img_list = [
     kName: "야금모행",
     eName: "Venturing our after curfew",
     cName: "夜禁冒行",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/UJMjdUafeIo",
   },
   {
     id: 29,
@@ -229,7 +229,7 @@ const img_list = [
     kName: "임하투호",
     eName: "Playing pitch-pot under the grove",
     cName: "林下投壺",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/q2LB8r7ZwaA",
   },
   {
     id: 30,
@@ -237,6 +237,6 @@ const img_list = [
     kName: "유곽쟁웅",
     eName: "Contesting heros at the brothel",
     cName: "遊廓爭雄",
-    youtubeLink: "",
+    youtubeLink: "https://www.youtube.com/embed/tb_76vK4lJ8",
   },
 ];
