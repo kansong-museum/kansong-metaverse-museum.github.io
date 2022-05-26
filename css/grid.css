@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  max-width:3840px;
+  max-width:2540px;
   margin-left: auto;
   margin-right: auto;
   column-gap: 10px;

@@ -1,5 +1,9 @@
-@import url("https://use.typekit.net/wuo5zfn.css");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&display=swap");
+/* @import url("https://use.typekit.net/wuo5zfn.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 
 :root {
   --black: #3c3c3c;
@@ -14,12 +18,12 @@
   --tertiary-color: ;
   --tertiary-active-color: ;
   --tertiary-disabled-color: ;
-  --font-size-main: 10rem;
-  --font-size-main-m: 5.2rem;
-  --font-size-title: 8rem;
-  --font-size-title-m: 4.2rem;
-  --font-size-subtitle: 3.4rem;
-  --font-size-subtitle-m: 2.6rem;
+  --font-size-main: 8rem;
+  --font-size-main-m: 3.2rem;
+  --font-size-title: 6rem;
+  --font-size-title-m: 3rem;
+  --font-size-subtitle: 3.2rem;
+  --font-size-subtitle-m: 2rem;
   --font-size-content: 1.8rem;
   --font-size-content-m: 1.4rem;
   --font-size-small: 1.4rem;
@@ -40,7 +44,8 @@ body {
 html {
   text-align: left;
   color: var(--black);
-  font-family: "Noto Serif KR", serif;
+  font-family: 'Poppins', 'Pretendard', 'Noto Sans KR', sans-serif;
+  /* font-family: "Noto Serif KR", serif; */
   font-weight: 300;
   font-style: normal;
   font-size: 10px;
@@ -63,8 +68,10 @@ button {
   border: 0;
   cursor: pointer;
   background: var(--primary-color);
-  font-family: "Noto Serif KR", serif;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: "Noto Serif KR", serif; */
   font-size: var(--font-size-content);
+  font-weight: 300;
   color: var(--white);
   transition: all 0.3s;
   display: flex;
@@ -152,23 +159,25 @@ section {
   margin-bottom: 4px;
 }
 h1 {
-  font-family: kepler-std-display, serif;
+  /* font-family: kepler-std-display, serif; */
   font-size: var(--font-size-main);
   line-height: 1;
   text-align: left;
+  text-transform:uppercase ;
 }
+
 h2 {
-  font-family: kepler-std-display, serif;
+  /* font-family: kepler-std-display, serif; */
   font-size: var(--font-size-title);
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   line-height: 1;
 }
 .subtitle {
-  font-family: kepler-std-display, serif;
+  /* font-family: kepler-std-display, serif; */
   font-size: var(--font-size-subtitle);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.2;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 .caption {
   font-size: var(--font-size-small);
@@ -194,17 +203,27 @@ header #header_logo {
 }
 header a#logo {
   float: left;
-  width: 210px;
-  height: 59px;
+  width: 440px;
+  height: 60px;
   overflow: hidden;
   font-size: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 header a#logo > img {
   position: relative;
   left: 0;
   top: 0;
-  height: auto;
+  width:auto;
+  height: 120px;
   transition: all 0.3s;
+}
+header a#logo .line-ver{
+  width:1px;
+  height:100%;
+  background: var(--white);
 }
 
 header.fixed {
@@ -223,17 +242,37 @@ header.fixed {
   }
 }
 header.fixed a#logo {
-  width: 130px;
-  height: 37px;
+  width: 300px;
+  height: 40px;
 }
+header.fixed a#logo img {
+  height: 80px;
+}
+
 header.on a#logo img {
-  top: -37px;
+  top: -40px;
 }
+header.on a#logo .line-ver{
+  background: var(--black);
+}
+
+.subpage + header a#logo img {
+  top: -60px;
+}
+.subpage + header.fixed a#logo img {
+  top: -40px;
+}
+.subpage + header a#logo .line-ver{
+  background: var(--black);
+}
+
 
 header .header-right-btn {
   display: flex;
-  justify-content: row;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+
   column-gap: 10px;
 }
 header #btn-album svg {
@@ -322,11 +361,12 @@ aside.on a:hover svg {
   }
   h2 {
     font-size: var(--font-size-title-m);
+    margin-bottom: 20px;
   }
   .subtitle {
-    font-family: kepler-std-display, serif;
     font-size: var(--font-size-subtitle-m);
     font-weight: 400;
+    margin-bottom: 4px;
   }
   .caption {
     font-size: var(--font-size-small-m);
@@ -339,22 +379,33 @@ aside.on a:hover svg {
 
   header {
     height: auto;
-    padding: 15px;
-  }
-  header.fixed {
-    padding: 10px 15px;
-  }
-  header a#logo {
-    width: 130px;
-    height: 36px;
+    padding:15px;
   }
 
-  header.fixed a#logo {
-    width: 110px;
-    height: 32px;
+  header a#logo {
+    width: 210px;
+    height: 28px;
   }
-  header.on a#logo img {
-    top: -30px;
+  header a#logo > img {
+    height: 56px;
+  }
+
+  header.fixed {
+    padding: 8px 15px;
+  }
+  header.fixed a#logo {
+    width: 180px;
+    height: 24px;
+  }
+  header.fixed a#logo img {
+    height: 46px;
+  }
+  header.on a#logo img,
+  .subpage + header.fixed a#logo img {
+    top: -22px;
+  }
+  .subpage + header a#logo img {
+    top: -28px;
   }
 
   header #btn-album svg {
@@ -363,6 +414,7 @@ aside.on a:hover svg {
   header.fixed #btn-album svg {
     width: 28px;
   }
+
 
   .navbarTogglerWrap {
     float: right;

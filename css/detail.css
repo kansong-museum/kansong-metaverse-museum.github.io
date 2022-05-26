@@ -1,8 +1,5 @@
-#album-list + header a#logo img {
-  top: -58px;
-}
-#album-list + header.fixed a#logo img {
-  top: -37px;
+#detail h2 {
+  margin-bottom: 1.2rem;
 }
 
 #detail .Container {
@@ -12,7 +9,7 @@
 #detail .imgarea {
   /* display: flex;
   flex-direction: row; */
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 .detail-img {
@@ -35,7 +32,7 @@
   height: 100%;
 }
 .kName {
-  font-family: "Noto Serif KR", serif;
+  /* font-family: "Noto Serif KR", serif; */
   display: inline-block;
 }
 .cName {
@@ -48,7 +45,7 @@
 }
 #detail .textarea h3 {
   grid-column: 1 / 13;
-  font-weight: 500;
+  font-weight: 600;
 }
 #detail .textarea p {
   grid-column: 1 / 13;
@@ -56,19 +53,16 @@
 
 /* 모바일 */
 @media screen and (max-width: 900px) {
-  #detail + header a#logo img {
-    top: -35px;
-  }
-  #detail + header.fixed a#logo img {
-    top: -30px;
-  }
-
   .detail-img {
     grid-column: 1 / 7;
     margin-bottom: 1.6rem;
   }
   .detail-video {
     grid-column: 1 / 7;
+  }
+
+  .kName {
+    font-weight: 500;
   }
 
   #detail .textarea h3,

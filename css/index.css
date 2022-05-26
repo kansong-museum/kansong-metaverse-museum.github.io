@@ -57,6 +57,7 @@ nav ol li a {
     font-weight: 500;
     /* text-indent: -20rem; */
     opacity: 0.7;
+    line-height: 1.5;
   }
   nav ol li a.mPS2id-highlight::before{
     background: var(--primary-color);
@@ -118,7 +119,6 @@ nav ol li a {
 #Home {
   height: 100vh;
 }
-
 #Home > .Container {
   position: relative;
   height: 100%;
@@ -165,9 +165,20 @@ nav ol li a {
 #Home .textarea h1 {
   grid-column: 3 / 13;
 }
-#Home .textarea h1 > span {
-  color: var(--primary-color);
+#Home h1 p:nth-child(1){
+  font-weight: 800;
 }
+#Home h1 span{
+  font-weight: 600;
+  font-size: 7.2rem;
+  /* color: var(--primary-color); */
+}
+#Home h1 p:nth-child(3){
+  font-weight: 300;
+  letter-spacing: 1.7rem;
+}
+
+
 
 /* Introduction */
 .section2 .textarea > h2,
@@ -175,7 +186,7 @@ nav ol li a {
   grid-column: 3 / 11;
 }
 .section2 .textarea > h2 > p {
-  font-family: "Noto Serif KR", serif;
+  /* font-family: "Noto Serif KR", serif; */
   font-weight: 400;
   font-size: 1.8rem;
 }
@@ -276,9 +287,9 @@ nav ol li a {
 }
 .section5 .imgarea .NFTs-typeNum {
   margin-top: 12px;
-  font-family: kepler-std-display, serif;
+  /* font-family: kepler-std-display, serif; */
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 .section5 .imgarea .NFTs-typeName {
   font-weight: 600;
@@ -391,15 +402,15 @@ nav ol li a {
   justify-content: center;
 }
 .section10 .imgarea div.Team-logo img {
-  width: 90%;
+  width: 70%;
   max-width: 320px;
 }
 .section10 .imgarea > ul > li > div.Team-dec {
   padding-top: 12px;
 }
 .section10 .imgarea > ul > li p {
-  font-size: var(--font-size-small);
-  line-height: 1.6;
+  /* font-size: var(--font-size-small); */
+  line-height: 1.4;
   position: relative;
   display: list-item;
   list-style-type: "- ";
@@ -423,10 +434,10 @@ nav ol li a {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .section11 .imgarea > ul > li {
-  /* grid-column-end: span 3; */
-  width: 25%;
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -494,11 +505,22 @@ nav ol li a {
   #Home .textarea h1 {
     grid-column: 2 / 6;
   }
+  #Home h1 span{
+    font-size: 2.9rem;
+  }
+  #Home h1 p:nth-child(3){
+    letter-spacing: 0.65rem;
+  }
+
+
 
   /* Introduction */
   .section2 .textarea > h2,
   .section2 .textarea > div {
     grid-column: 1 / 7;
+  }
+  .section2 .textarea > h2 p{
+    font-size: var(--font-size-small-m);
   }
   .section2 .imgarea {
     padding: 0 10px;
@@ -538,6 +560,10 @@ nav ol li a {
   .section5 .imgarea ul li {
     grid-column-end: span 3;
   }
+  .section5 .imgarea .NFTs-typeNum {
+    font-size: 1.2rem;
+  }
+
 
   /* DigitalExpansionPlan */
   .section6 .imgarea > div {
@@ -560,7 +586,7 @@ nav ol li a {
   }
   .section10 .imgarea > ul {
     grid-column: 1 / 7;
-    row-gap: 10px;
+    row-gap: 28px;
   }
   .section10 .imgarea > ul > li {
     grid-column-end: span 6;

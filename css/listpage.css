@@ -1,20 +1,13 @@
-#album-list + header a#logo img {
-  top: -58px;
-}
-#album-list + header.fixed a#logo img {
-  top: -37px;
-}
-
 #album-list h2 {
   text-align: center;
 }
 #album-list .list {
-  padding-top: 4rem;
+  padding-top: 2rem;
   font-size: var(--font-size-content);
 }
 #album-list .list ul {
   grid-column: 3 / 11;
-  row-gap: 20px;
+  row-gap: 24px;
 }
 #album-list .list li {
   grid-column-end: span 4;
@@ -34,53 +27,58 @@
 #album-list .imgArea {
   display: block;
   font-size: 0;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 #album-list img {
   height: auto;
 }
 .imgCount {
   display: block;
-  font-family: kepler-std-display, serif;
+  /* font-family: kepler-std-display, serif; */
   font-size: var(--font-size-small);
-}
-.eName {
-  display: block;
-  margin-bottom: 8px;
-  font-family: kepler-std-display, serif;
   font-weight: 500;
-  font-size: 3rem;
-  line-height: 1;
 }
 .kName {
   display: inline-block;
+  font-weight: 600;
+}
+.eName {
+  display: block;
+  margin-bottom: 4px;
+  /* font-family: kepler-std-display, serif; */
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 1.2;
 }
 .cName {
   display: inline-block;
   font-size: var(--font-size-small);
   margin-left: 5px;
-}
-.linkBtn {
-  display: none;
-  margin-top: 2.8rem;
-  width: 30px;
-  height: 30px;
+  font-weight: 400;
 }
 
 /* 모바일 */
 @media screen and (max-width: 900px) {
-  #album-list + header a#logo img {
-    top: -35px;
-  }
-  #album-list + header.fixed a#logo img {
-    top: -30px;
-  }
-
   #album-list .list ul {
     grid-column: 1 / 7;
     padding-top: 1.6rem;
   }
   #album-list .list li {
     grid-column-end: span 3;
+    padding: 0;
+  }
+
+  .kName {
+    display: inline-block;
+  }
+  .eName {
+    margin-bottom: 4px;
+    font-size: 2rem;
+  }
+  .cName {
+    display: inline-block;
+    font-size: var(--font-size-small);
+    margin-left: 5px;
+    font-weight: 400;
   }
 }
