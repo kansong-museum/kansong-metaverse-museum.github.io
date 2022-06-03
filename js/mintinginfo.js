@@ -406,11 +406,13 @@ function modal(id){
   // 닫기 버튼 처리, 시꺼먼 레이어와 모달 div 지우기
   modal.querySelector('.modal_close_btn').addEventListener('click', function() {
     valueReset();
+    $("#minting-loading").hide();
     bg.remove();
     modal.style.display = 'none';
   });
   modal.querySelector('.modal_close_btn_after').addEventListener('click', function() {
     valueReset();
+    $("#minting-loading").hide();
     bg.remove();
     modal.style.display = 'none';
   });
