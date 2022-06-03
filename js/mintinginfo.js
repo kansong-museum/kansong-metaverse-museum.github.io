@@ -261,7 +261,7 @@ async function getCurrentRoundInfo(){
    countDownTimer("btn-minting", parseInt(startTime) *1000);
    EndtimecountDownTimer("btn-minting", parseInt(endTime) *1000);
 
-  console.log("currentRoundInfo =>", currentRoundInfo);
+  // console.log("currentRoundInfo =>", currentRoundInfo);
   // console.log("currentRoundInfo 0 =>", currentRoundInfo[0]);
   await getTotalSupply();
 }
