@@ -156,10 +156,11 @@ section .imgarea > div{
   justify-content: center;
   text-align: center;
   font-size: 1 rem;
+  margin-top: 10px;
 }
 
 #before_minting .random_nft{
-  width:50%;
+  width:43%;
 }
 #before_minting p{
   margin-right: auto;
@@ -780,7 +781,7 @@ section .imgarea > div{
     padding:0 1.6rem;
   }
   #before_minting .random_nft{
-    width:60%;
+    width:50%;
   }
   #before_minting .mint_ETH{
     font-size: var(--font-size-small-m);
