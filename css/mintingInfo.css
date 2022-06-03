@@ -249,11 +249,13 @@ section .imgarea > div{
 
 
 /* wallet_area */
-.section5 .Container{
-  padding-top: 12rem;
-  padding-bottom: 0;
+.section5{
+  position: fixed;
+  right:10px;
+  top:40px;
+  z-index: 9998;
 }
-.section5 .Container > div{
+.section5 > div{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -334,6 +336,9 @@ section .imgarea > div{
 
 
 /* NFTinfo */
+.section6 .Container{
+  padding-top: 16rem;
+}
 .section6 .textarea table{
   margin: 0 auto;
   /* width:50%; */
@@ -392,6 +397,18 @@ section .imgarea > div{
   padding: 10px 10px;
   font-size: 1.4rem;
   text-align: center;
+}
+
+.presale{
+  border-radius: 20px;
+  background-color: var(--secondary-disabled-color);
+  padding: 10px 10px;
+  margin-top:20px 
+}
+.presale p{
+
+  width:620px;
+  margin:0 auto;
 }
 /* NFT variation */
 .section2 .imgarea{
@@ -586,11 +603,13 @@ section .imgarea > div{
 
 
   /* wallet_area */
-  .section5 .Container{
+  .section5 {
+    position: relative;
+    left:inherit;
+    top:inherit;
     padding-top: 6.4rem;
-    /* padding-bottom: 4rem; */
   }
-  .section5 .Container > div{
+  .section5 > div{
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -640,6 +659,9 @@ section .imgarea > div{
 
 
   /* NFTinfo */
+  .section6 .Container{
+    padding-top: 2rem;
+  }
   .section6 .textarea table td{
     padding:0.2rem 0.4rem;
     font-size: 1.7rem;
@@ -675,6 +697,19 @@ section .imgarea > div{
     font-size: 0.8rem;
     text-align: center;
   }
+
+  .presale{
+    border-radius: 20px;
+    background-color: var(--secondary-disabled-color);
+    padding: 10px 10px;
+    font-size: 0.8rem;
+  }
+  .presale p{
+    width:100%
+  }
+
+
+
   /* NFT variation */
   .section2 .imgarea{
     row-gap: 4.8rem;
