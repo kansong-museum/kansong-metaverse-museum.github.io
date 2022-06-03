@@ -1,3 +1,22 @@
+//header add class fixed
+$(function () {
+  let header = document.querySelector("#header");
+  let headerHeight = header.offsetHeight;
+
+  window.onscroll = function () {
+    let windowTop = window.scrollY;
+    if (windowTop >= headerHeight) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+  };
+});
+
+
+
+
+
 //nav 스크롤 인식
 (function($){
   $(window).on("load",function(){
@@ -87,6 +106,14 @@ window.counter = function () {
 
   span.textContent = current + 1;
 };
+
+
+//ScrollTrigger
+document.addEventListener("DOMContentLoaded", function () {
+  var trigger = new ScrollTrigger({
+    addHeight: true,
+  });
+});
 
 
 

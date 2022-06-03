@@ -1,28 +1,3 @@
-#popup{
-  position: absolute;
-  right:100px;
-  top:120px;
-  width:360px;
-  height:auto;
-  z-index: 9999;
-}
-#popup a{
-  font-size: 0;
-}
-#popup .popup_close{
-  position: absolute;
-  right:0;
-  top:0;
-}
-#popup .popup_close a{
-  background:none;
-  padding:0 1.2rem;
-  cursor:pointer;
-  font-size:3.2rem;
-}
-
-
-
 /* snb 왼쪽메뉴 */
 nav {
   position: fixed;
@@ -85,21 +60,21 @@ nav ol li a {
     line-height: 1.5;
   }
   nav ol li a.mPS2id-highlight::before{
-    background: var(--primary-active-color);
+    background: var(--primary-color);
     opacity: 0.9;
   }
   nav ol li a.mPS2id-highlight {
     /* color: rgba(245, 245, 245, 1); */
-    color: var(--primary-active-color);
+    color: var(--primary-color);
     opacity: 0.9;
   }
   nav ol li a:hover {
     text-indent: 0;
-    color: var(--primary-active-color);
+    color: var(--primary-color);
     opacity: 0.9;
   }
   nav ol li a:hover::before {
-    background: var(--primary-active-color);
+    background: var(--primary-color);
     opacity: 0.9;
   }
 
@@ -111,20 +86,20 @@ nav ol li a {
     color: var(--black);
   }
   nav.on ol li a.mPS2id-highlight::before{
-    background: var(--secondary-active-color);
+    background: var(--secondary-color);
     opacity: 0.9;
   }
   nav.on ol li a.mPS2id-highlight {
     /* color: var(--black); */
-    color: var(--secondary-active-color);
+    color: var(--secondary-color);
     opacity: 0.9;
   }
   nav.on ol li a:hover {
-    color: var(--secondary-active-color);
+    color: var(--secondary-color);
     opacity: 0.9;
   }
   nav.on ol li a:hover::before {
-    background: var(--secondary-active-color);
+    background: var(--secondary-color);
     opacity: 0.9;
   }
 }
@@ -136,7 +111,9 @@ nav ol li a {
   padding-top: 8rem;
 }
 
-
+.imgarea {
+  margin-top: 48px;
+}
 
 /* home */
 #Home {
@@ -328,7 +305,6 @@ nav ol li a {
 }
 
 /* Digital Expansion Plan */
-
 .section6 .textarea h2 {
   text-align: center;
 }
@@ -476,15 +452,6 @@ nav ol li a {
   body {
     min-width: 320px;
   }
-
-  #popup{
-    left:50%;
-    top:50%;
-    transform:translate(-50%, -50%);
-    width:80%;
-    max-width:300px;
-  }
-
   nav {
     top: 0;
     left: 0;
