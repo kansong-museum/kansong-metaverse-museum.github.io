@@ -196,7 +196,7 @@ async function getMintingState() {
   
   if(mintingState == 1){
     // 민팅 준비중입니다. 
-    document.getElementById("btn-minting").textContent = "민팅 준비중입니다.";
+    document.getElementById("btn-minting").textContent = "민팅 시작 대기중입니다.";
     document.getElementById("btn-minting").disabled = true;
   }else if(mintingState == 2){
     // NFT Mint
