@@ -10,11 +10,11 @@
   --white: #f5f5f5;
   --gray: ;
   --primary-color: #e3bb42;
-  --primary-active-color: ;
-  --primary-disabled-color: ;
+  --primary-active-color: #F6CD4F;
+  --primary-disabled-color: #E7E1D0;
   --secondary-color: #b44332;
-  --secondary-active-color: ;
-  --secondary-disabled-color: ;
+  --secondary-active-color: #D05845 ;
+  --secondary-disabled-color: #E3CECB ;
   --tertiary-color: ;
   --tertiary-active-color: ;
   --tertiary-disabled-color: ;
@@ -60,14 +60,15 @@ body {
 a {
   text-decoration: none;
   display: block;
-  color: var(--white);
+  color: var(--black);
+  transition: all 0.3s;
 }
 button {
-  padding: 0.4em 0.84em;
-  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
   border: 0;
   cursor: pointer;
-  background: var(--primary-color);
+  background: var(--secondary-color);
   font-family: 'Poppins', sans-serif;
   /* font-family: "Noto Serif KR", serif; */
   font-size: var(--font-size-content);
@@ -79,8 +80,8 @@ button {
 }
 button:active,
 button:hover {
-  background: var(--primary-active-color);
-  box-shadow: 0px 0px 15px #5e329b;
+  background: var(--secondary-active-color);
+  box-shadow: 0px 0px 8px rgba(180, 67, 50, 0.7);
 }
 button:active,
 a,
@@ -89,14 +90,37 @@ label {
 }
 button:disabled,
 button[disabled] {
-  background-color: var(--primary-disabled-color);
-  color: var(--white);
+  background-color: var(--secondary-disabled-color);
+  color: var(--secondary-active-color);
   box-shadow: none;
 }
-
+.fixed button,
 button.small {
   font-size: var(--font-size-small);
 }
+button.secondary {
+  padding: 0.4rem 1.6rem;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  border: 2px solid var(--secondary-color);
+  box-sizing: border-box;
+  background: none;
+  font-size: var(--font-size-content);
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+button.secondary:active,
+button.secondary:hover {
+  color:var(--white);
+  background: var(--secondary-active-color);
+  box-shadow: 0px 0px 8px rgba(180, 67, 50, 0.7);
+}
+svg{
+  transition: all 0.3s;
+}
+
+
 input:focus {
   outline: none;
 }
@@ -124,6 +148,9 @@ section {
   padding: 16rem 0;
   z-index: 10;
   position: relative;
+}
+.imgarea {
+  margin-top: 48px;
 }
 .inline {
   display: inline-block;
@@ -170,7 +197,14 @@ h2 {
   /* font-family: kepler-std-display, serif; */
   font-size: var(--font-size-title);
   margin-bottom: 40px;
-  line-height: 1;
+  line-height: 1.2;
+  font-weight: 700;
+}
+h3 {
+  font-size: var(--font-size-subtitle);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 8px;
 }
 .subtitle {
   /* font-family: kepler-std-display, serif; */
@@ -225,6 +259,12 @@ header a#logo .line-ver{
   height:100%;
   background: var(--white);
 }
+header.on a#logo img {
+  top: -60px;
+}
+header.on a#logo .line-ver{
+  background: var(--black);
+}
 
 header.fixed {
   position: fixed;
@@ -248,23 +288,10 @@ header.fixed a#logo {
 header.fixed a#logo img {
   height: 80px;
 }
-
-header.on a#logo img {
+header.fixed.on a#logo img {
   top: -40px;
 }
-header.on a#logo .line-ver{
-  background: var(--black);
-}
 
-.subpage + header a#logo img {
-  top: -60px;
-}
-.subpage + header.fixed a#logo img {
-  top: -40px;
-}
-.subpage + header a#logo .line-ver{
-  background: var(--black);
-}
 
 
 header .header-right-btn {
@@ -272,26 +299,58 @@ header .header-right-btn {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  column-gap: 10px;
+  column-gap: 1rem;
 }
-header #btn-album svg {
+header .header-right-btn a{
+  font-size: 0;
+}
+header .header-right-btn svg {
   fill: var(--white);
   width: 36px;
+  height: auto;
 }
-header #btn-album a:hover svg {
-  fill: var(--primary-color);
+header .header-right-btn a:hover svg {
+  fill: var(--primary-active-color);
+  filter: drop-shadow(0px 0px 2px rgba(227, 187, 66, 0.7));
 }
-header.fixed #btn-album svg {
+header.fixed .header-right-btn svg {
   width: 28px;
 }
-header.on #btn-album svg {
+header.on .header-right-btn svg {
   fill: var(--black);
   opacity: 0.9;
 }
-header.on #btn-album a:hover svg {
-  fill: var(--secondary-color);
+header.on .header-right-btn a:hover svg {
+  fill: var(--secondary-active-color);
+  filter: drop-shadow(0px 0px 2px rgba(180, 67, 50, 0.7));
 }
+
+header #btn-mintingInfo a{
+  text-align: center;
+  padding:0.8rem 1.6rem;
+  background: var(--white);
+  border-radius: 4px;
+  font-size:var(--font-size-small);
+  font-weight: 500;
+}
+header.fixed #btn-mintingInfo a{
+  padding:0.6rem 1.4rem;
+}
+header.fixed.on #btn-mintingInfo a{
+  background: var(--black);
+  color:var(--white);
+}
+header #btn-mintingInfo a:hover{
+  background: var(--primary-active-color);
+  filter: drop-shadow(0px 0px 4px rgba(227, 187, 66, 0.7));
+}
+header.fixed.on #btn-mintingInfo a:hover{
+  background: var(--secondary-active-color);
+  filter: drop-shadow(0px 0px 2px rgba(180, 67, 50, 0.7));
+}
+
+
+
 
 /* sidebar 외부링크 */
 aside {
@@ -343,6 +402,9 @@ aside.on a:hover svg {
   fill: var(--secondary-color);
 }
 
+
+
+
 /* 모바일 */
 @media screen and (max-width: 900px) {
   body {
@@ -363,6 +425,10 @@ aside.on a:hover svg {
     font-size: var(--font-size-title-m);
     margin-bottom: 20px;
   }
+  h3 {
+    font-size: var(--font-size-subtitle-m);
+    margin-bottom: 8px;
+  }
   .subtitle {
     font-size: var(--font-size-subtitle-m);
     font-weight: 400;
@@ -376,6 +442,9 @@ aside.on a:hover svg {
     min-width: 320px;
     padding: 8rem 0;
   }
+  .imgarea {
+    margin-top: 2rem;
+  }
 
   header {
     height: auto;
@@ -383,36 +452,57 @@ aside.on a:hover svg {
   }
 
   header a#logo {
-    width: 210px;
-    height: 28px;
+    width: 170px;
+    height: 23px;
   }
   header a#logo > img {
-    height: 56px;
+    height: 46px;
+  }
+  header.on a#logo img{
+    top: -23px;
   }
 
   header.fixed {
     padding: 8px 15px;
   }
   header.fixed a#logo {
-    width: 180px;
-    height: 24px;
+    width: 150px;
+    height: 20px;
   }
   header.fixed a#logo img {
-    height: 46px;
+    height: 40px;
   }
-  header.on a#logo img,
-  .subpage + header.fixed a#logo img {
-    top: -22px;
-  }
-  .subpage + header a#logo img {
-    top: -28px;
+  header.fixed.on a#logo img{
+    top: -20px;
   }
 
-  header #btn-album svg {
-    width: 30px;
+  header .header-right-btn{
+    column-gap: 0.6rem;
   }
-  header.fixed #btn-album svg {
-    width: 28px;
+  header .header-right-btn a{
+    /* color:var(--white); */
+  }
+  header .header-right-btn svg {
+    width: 24px;
+  }
+  header.fixed .header-right-btn svg {
+    width: 24px;
+
+  }
+  header #btn-mintingInfo a{
+    padding:0.2rem 0.4rem;
+    font-size:var(--font-size-small-m);
+  }
+  header.fixed #btn-mintingInfo a{
+    padding:0.2rem 0.4rem;
+  }
+
+
+
+
+  button {
+    padding: 0.4rem 0.8rem;
+    font-size: var(--font-size-small-m);
   }
 
 
