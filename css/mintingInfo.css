@@ -197,6 +197,12 @@ section .imgarea > div{
   margin-top: 1rem;
 }
 
+#before_minting .terms_of_sale a{
+  text-decoration: underline;
+  margin-top: 4rem;
+  color: white;
+}
+
 
 #after_minting .mint_contents{
   height: 60vh;
@@ -378,6 +384,14 @@ section .imgarea > div{
 
 }
 
+.erc721a_info{
+  border-radius: 20px;
+  background-color: var(--secondary-disabled-color);
+  margin: 20px 20px;
+  padding: 10px 10px;
+  font-size: 1.4rem;
+  text-align: center;
+}
 /* NFT variation */
 .section2 .imgarea{
   row-gap: 10rem;
@@ -653,7 +667,13 @@ section .imgarea > div{
 
   }
 
-
+  .erc721a_info{
+    border-radius: 20px;
+    background-color: var(--secondary-disabled-color);
+    padding: 10px 10px;
+    font-size: 0.8rem;
+    text-align: center;
+  }
   /* NFT variation */
   .section2 .imgarea{
     row-gap: 4.8rem;
