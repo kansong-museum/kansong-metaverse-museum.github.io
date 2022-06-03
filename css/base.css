@@ -376,7 +376,7 @@ aside ul {
 }
 aside a {
   padding: 6px 8px;
-  width: 24px;
+  width: 45px;
   transition: all 0.5s;
   font-size: 10px;
 }
@@ -384,8 +384,8 @@ aside input[id="icon-btn"] {
   display: none;
 }
 aside svg {
-  width: 24px;
-  height: 24px;
+  width: 45px;
+  height: 45px;
   fill: var(--white);
   transition: all 0.6s;
 }
