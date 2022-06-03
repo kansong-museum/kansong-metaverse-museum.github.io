@@ -194,7 +194,7 @@ async function getMintingState() {
 
   $("#footer-btn").show();
   
-  mintingState=3
+  mintingState=5;
   if(mintingState == 1){
     // 민팅 준비중입니다. 
     document.getElementById("btn-minting").textContent = "민팅 시작 대기중입니다.";
@@ -209,6 +209,11 @@ async function getMintingState() {
     document.getElementById("btn-minting").textContent = "민팅이 종료되었습니다.";
     document.getElementById("btn-minting").disabled = true;
     clearInterval(starttimer);
+    }else if(mintingState == 5){
+      document.getElementById("btn-minting").textContent = "민팅이 잠시 중단중입니다. 잠시만 기다려주세요~";
+      document.getElementById("btn-minting").disabled = true;
+      clearInterval(starttimer);
+  
     }else{
     $("#footer-btn").hide();
   }
