@@ -1,4 +1,4 @@
-
+let eth_provider_run = false;
 let nftContract;
 
 let chainId = 4;
@@ -62,13 +62,19 @@ function loadWeb3() {
 }
 
 function watchChainAccount() {
-  web3.currentProvider.on("accountsChanged", (accounts) => {
-    startApp();
-  });
-  web3.currentProvider.on("chainChanged", (chainId) => {
-    window.location.reload();
-    // startApp();
-  });
+  try{
+    web3.currentProvider.on("accountsChanged", (accounts) => {
+      startApp();
+    });
+    web3.currentProvider.on("chainChanged", (chainId) => {
+      window.location.reload();
+      // startApp();
+    });
+    eth_provider_run=true;
+  }catch(err){
+    console.log(err);
+    eth_provider_run=false;
+  }
 }
 
 async function startApp() {
@@ -117,9 +123,17 @@ async function getAccount() {
       console.log("No ethereum account is available!");
       $("#div-network").hide();
       $("#div-myaddress").hide();
-      $("#connect-btn").show();
       $("#btn-minting").hide();
 
+      console.log("eth_provider_run =>", eth_provider_run);
+      if(eth_provider_run){
+        $("#connect-btn").show();
+
+      }else{
+        $("#network-info").show();
+        document.getElementById("net_info_msg").innerText="Metamask등의 지갑이 설치되어있는지 확인하세요.";
+    
+      }
     }
   } catch (err) {
     console.log("getAccount => ", err);
@@ -234,7 +248,7 @@ async function getCurrentRoundInfo(){
    countDownTimer("btn-minting", parseInt(startTime) *1000);
    EndtimecountDownTimer("btn-minting", parseInt(endTime) *1000);
 
-  console.log("currentRoundInfo =>", currentRoundInfo);
+  // console.log("currentRoundInfo =>", currentRoundInfo);
   // console.log("currentRoundInfo 0 =>", currentRoundInfo[0]);
   await getTotalSupply();
 }
@@ -330,7 +344,7 @@ async function nftMint() {
           })
           .once("receipt", (receipt) => {
             $("#minting-loading").hide();
-            console.log("receipt => ", receipt);
+            // console.log("receipt => ", receipt);
             document.getElementById("modal_minting_btn").disabled = false;
             setMintResult(receipt);
           })
