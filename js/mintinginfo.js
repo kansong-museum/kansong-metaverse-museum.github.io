@@ -27,12 +27,12 @@ let starttimer;
 let endtimer;
 
 const openseaurl = {
-  1: "https://opensea.io/assets/0x8D112840d867856BAC632d7fb8D03Bc17feFA1c9/",
+  1: "https://opensea.io/assets/0x82f58182bE996DF3F8B9922dFa0e8F8aCf71f76C/",
   4: "https://testnets.opensea.io/assets/0xc89E09e68DEa544aBff8A4d744085De8fFc55e08/",
 };
 
 const nftAddress = {
-  1: "0x8D112840d867856BAC632d7fb8D03Bc17feFA1c9",
+  1: "0x82f58182bE996DF3F8B9922dFa0e8F8aCf71f76C",
   4: "0xc89E09e68DEa544aBff8A4d744085De8fFc55e08",
 };
 
@@ -116,6 +116,9 @@ async function getAccount() {
 
       $("#div-myaddress").show();
       $(".my-address").html(getLink(myAddr, chainId));
+      
+      $("#tr-nft-address").show();
+      $(".nft-address").html(getLink(nftAddress[chainId], chainId));
       $("#connect-btn").hide();
       $("#btn-minting").show();
 
@@ -123,6 +126,7 @@ async function getAccount() {
       console.log("No ethereum account is available!");
       $("#div-network").hide();
       $("#div-myaddress").hide();
+      $("#tr-nft-address").hide();
       $("#btn-minting").hide();
 
       console.log("eth_provider_run =>", eth_provider_run);
@@ -138,6 +142,8 @@ async function getAccount() {
   } catch (err) {
     console.log("getAccount => ", err);
     $("#div-myaddress").hide();
+    $("#tr-nft-address").hide();
+
     $("#connect-btn").show();
     $(".my-address").html("");
   }
@@ -153,6 +159,7 @@ function connectWallet() {
     .then((accounts) => {
       myAddr = accounts[0];
       $(".my-address").html(getLink(myAddr, chainId));
+      $(".nft-address").html(getLink(nftAddress[chainId], chainId));
       startApp();
       //   $("#div-mintable").show();
       //   isMintingAvailable(true);
@@ -194,7 +201,7 @@ async function getMintingState() {
 
   $("#footer-btn").show();
   
-  mintingState=5;
+  // mintingState=5;
   if(mintingState == 1){
     // 민팅 준비중입니다. 
     document.getElementById("btn-minting").textContent = "민팅 시작 대기중입니다.";
@@ -254,7 +261,7 @@ async function getCurrentRoundInfo(){
    countDownTimer("btn-minting", parseInt(startTime) *1000);
    EndtimecountDownTimer("btn-minting", parseInt(endTime) *1000);
 
-  // console.log("currentRoundInfo =>", currentRoundInfo);
+  console.log("currentRoundInfo =>", currentRoundInfo);
   // console.log("currentRoundInfo 0 =>", currentRoundInfo[0]);
   await getTotalSupply();
 }
@@ -314,8 +321,8 @@ async function getTotalSupply() {
   let totalsupply = 0;
 
   totalsupply = await nftContract.methods.totalSupply().call();
-  mintedCnt = totalsupply - mintedCnt;
-  maxCnt = parseInt(maxMintingId)-startId+1;
+  mintedCnt = totalsupply - mintedCnt+91;
+  maxCnt = parseInt(maxMintingId)-startId+1+91;
   // console.log("totalsupply : ", totalsupply);
   // console.log("maxCnt : ", maxCnt);
   // console.log("mintedCnt =>", mintedCnt);

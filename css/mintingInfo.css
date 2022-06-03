@@ -50,8 +50,9 @@ section .imgarea > div{
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: var(--font-size-content);
+  font-size: 5rem;
   font-weight: 400;
+  margin-bottom: 20px;
 }
 
 @keyframes spinner {
@@ -345,7 +346,7 @@ section .imgarea > div{
 }
 .section6 .textarea table td{
   padding:0.4rem 1.2rem;
-  font-size: 2.3rem;
+  font-size: 2.1rem;
 }
 .section6 .textarea table td:first-child{
   font-weight: 600;
@@ -409,6 +410,10 @@ section .imgarea > div{
 
   width:620px;
   margin:0 auto;
+}
+
+.nft-address{
+  text-decoration: underline;
 }
 /* NFT variation */
 .section2 .imgarea{
@@ -664,7 +669,7 @@ section .imgarea > div{
   }
   .section6 .textarea table td{
     padding:0.2rem 0.4rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .section6 .textarea table td:first-child{
     font-weight: 600;
