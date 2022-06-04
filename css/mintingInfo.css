@@ -255,6 +255,8 @@ section .imgarea > div{
   right:10px;
   top:40px;
   z-index: 9998;
+  width: 50%;
+  float: right;
 }
 .section5 > div{
   display: flex;
