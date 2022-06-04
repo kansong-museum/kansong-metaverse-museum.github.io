@@ -9,12 +9,15 @@
 #popup a{
   font-size: 0;
 }
+#popup.close {
+  display: none;
+}
 #popup .popup_close{
   position: absolute;
   right:0;
   top:0;
 }
-#popup .popup_close a{
+#popup .popup_close div{
   background:none;
   padding:0 1.2rem;
   cursor:pointer;
