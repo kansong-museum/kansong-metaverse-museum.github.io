@@ -117,8 +117,6 @@ async function getAccount() {
       $("#div-myaddress").show();
       $(".my-address").html(getLink(myAddr, chainId));
       
-      $("#tr-nft-address").show();
-      $(".nft-address").html(getLink(nftAddress[chainId], chainId));
       $("#connect-btn").hide();
       $("#btn-minting").show();
 
@@ -126,7 +124,6 @@ async function getAccount() {
       console.log("No ethereum account is available!");
       $("#div-network").hide();
       $("#div-myaddress").hide();
-      $("#tr-nft-address").hide();
       $("#btn-minting").hide();
 
       console.log("eth_provider_run =>", eth_provider_run);
@@ -142,7 +139,6 @@ async function getAccount() {
   } catch (err) {
     console.log("getAccount => ", err);
     $("#div-myaddress").hide();
-    $("#tr-nft-address").hide();
 
     $("#connect-btn").show();
     $(".my-address").html("");
@@ -159,7 +155,6 @@ function connectWallet() {
     .then((accounts) => {
       myAddr = accounts[0];
       $(".my-address").html(getLink(myAddr, chainId));
-      $(".nft-address").html(getLink(nftAddress[chainId], chainId));
       startApp();
       //   $("#div-mintable").show();
       //   isMintingAvailable(true);
@@ -178,7 +173,6 @@ function connectWallet() {
 
 async function getContracts() {
   nftContract = new web3.eth.Contract(nftAbi[chainId], nftAddress[chainId]);
-  $(".nft-address").html(getLink(nftAddress[chainId], chainId));
   $(".opensea-address").html(getOpenSeaLink(chainId));
 
   await getCurrentRoundInfo();
