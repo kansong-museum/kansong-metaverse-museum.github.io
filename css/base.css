@@ -9,12 +9,12 @@
   --black: #3c3c3c;
   --white: #f5f5f5;
   --gray: ;
-  --primary-color: #e3bb42;
-  --primary-active-color: #F6CD4F;
-  --primary-disabled-color: #E7E1D0;
-  --secondary-color: #b44332;
-  --secondary-active-color: #D05845 ;
-  --secondary-disabled-color: #E3CECB ;
+  --primary-color: rgba(227, 187, 66, 1); /* #e3bb42 */
+  --primary-active-color: rgba(246, 205, 79, 1); /* #F6CD4F */
+  --primary-disabled-color: rgba(231, 225, 208, 1); /* #E7E1D0 */
+  --secondary-color: rgba(180, 67, 50, 1); /* #b44332 */
+  --secondary-active-color: rgba(208, 88, 69, 1) ; /* #D05845 */
+  --secondary-disabled-color: rgba(227, 206, 203, 1) ; /* #E3CECB */
   --tertiary-color: ;
   --tertiary-active-color: ;
   --tertiary-disabled-color: ;
@@ -577,6 +577,7 @@ aside.on a:hover svg {
     border-radius: 50px 50px 0 0;
     /* background: rgba(245, 245, 245, 0.35); */
     background: rgba(0, 0, 0, 0.35);
+    background: rgba(227, 187, 66, 0.9);
     padding: 0;
     padding-top: 10px;
     overflow: auto;
@@ -598,6 +599,7 @@ aside.on a:hover svg {
     border-radius: 50px;
     /* background: rgba(245, 245, 245, 0.35); */
     background: rgba(0, 0, 0, 0.35);
+    background: rgba(227, 187, 66, 0.9);
   }
   aside input[id="icon-btn"] + ul + label span {
     display: block;

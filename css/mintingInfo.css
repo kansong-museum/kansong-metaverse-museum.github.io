@@ -91,6 +91,7 @@ section .imgarea > div{
 #popup-minting{
   display: none;
   position: fixed;
+  overflow: hidden !important
 /*  left:0;
   top:0;
   width:100%;
@@ -100,31 +101,57 @@ section .imgarea > div{
   background: rgba(0,0,0,0.6); */
 }
 
-#popup-minting > div{
+#popup-minting .popup_minting_inner{
   position: absolute;
   left:50%;
   top:50%;
   transform: translate(-50%, -50%);
   width:70vw;
-  height:80vh;
+  height:86vh;
   min-width:880px;
-  min-height:500px;
+  padding:2.4rem 0;
+  overflow: auto;
+  background: #2E2E2E;
+  color: var(--white);
+}
+#popup-minting .popup_minting_inner::-webkit-scrollbar {
+  width: 6px;
+}
+#popup-minting .popup_minting_inner::-webkit-scrollbar-thumb {
+  background-color: rgba(180, 67, 50, 0.5);
+}
+#popup-minting .popup_minting_inner::-webkit-scrollbar-track {
+  background-color: var(--black);
+}
+#popup-minting .popup_minting_inner > div{
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: #2E2E2E;
-  color: var(--white);
-  padding:3.2rem 0;
   box-sizing: border-box;
   text-align: center;
+  width:100%;
 }
-#popup-minting > div > div,
-#popup-minting > div > h4{
+#popup-minting .popup_minting_inner > div,
+#popup-minting .popup_minting_inner h4{
   flex: 0;
 }
-#popup-minting > div > h4{
+#popup-minting .popup_minting_inner h4{
   margin-bottom: 2rem;
+}
+#popup-minting .btnArea{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.6rem;
+  margin-top: 2rem;
+}
+#popup-minting .btnArea button{
+  font-size: 2.8rem;
+  font-weight: 500;
+  padding:0.8rem 6rem;
 }
 
 /* before_minting */
@@ -136,6 +163,7 @@ section .imgarea > div{
   justify-content: flex-start;
   align-items: stretch;
   flex-direction: column;
+  row-gap: 0.4rem;
   column-gap: 0.8rem;
   /* flex: 1; */
   align-content: center;
@@ -204,6 +232,17 @@ section .imgarea > div{
   margin-top: 4rem;
   color: white;
 }
+#popup-minting #before_minting button.modal_close_btn{
+  position: absolute;
+  right:0;
+  top:0;
+  background: none;
+  color: var(--white);
+  font-size: 4rem;
+}
+#popup-minting #before_minting button.modal_close_btn:hover{
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
 
 
 #after_minting .mint_contents{
@@ -230,22 +269,6 @@ section .imgarea > div{
 
 
 
-#popup-minting > div .btnArea{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  column-gap: 1.6rem;
-  margin-top: 2rem;
-}
-#popup-minting > div#before_minting button.modal_close_btn{
-  background: none;
-  color:var(--secondary-color);
-}
-#popup-minting > div#before_minting button.modal_close_btn:hover{
-  background: var(--secondary-active-color);
-  color: var(--white);
-}
 
 
 
@@ -406,7 +429,7 @@ section .imgarea > div{
   border-radius: 20px;
   background-color: var(--secondary-disabled-color);
   padding: 10px 10px;
-  margin-top:20px 
+  margin-top:20px
 }
 .presale p{
 
@@ -594,16 +617,31 @@ section .imgarea > div{
   .Container {
     padding: 4.2rem 0;
   }
-  #footer-btn{
+  /* #footer-btn{
    padding-bottom:0.4rem;
+   display: inherit;
+   width: calc(100% - 56px);
+   right:inherit;
+  } */
+  #footer-btn button{
+    /* width:100%; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    grid-column: 1 / 7
+  }
+  aside {
+    bottom: 110px;
   }
 
   section .textarea > h2,
   section .textarea > p,
   section .textarea > div,
   section .imgarea > ul,
-  section .imgarea > div,
-  #footer-btn button{
+  section .imgarea > div{
     grid-column: 1 / 7;
   }
 
@@ -705,16 +743,12 @@ section .imgarea > div{
     text-align: center;
   }
 
-  .presale{
-    border-radius: 20px;
-    background-color: var(--secondary-disabled-color);
-    padding: 10px 10px;
-    font-size: 0.8rem;
-  }
-  .presale p{
-    width:100%
-  }
 
+  .presale p{
+    width:100%;
+    font-weight: 400;
+
+  }
 
 
   /* NFT variation */
@@ -763,7 +797,6 @@ section .imgarea > div{
   }
 
 
-
   /* NFT minting */
   .section3 .imgarea > ul{
     grid-column: 1 / 7;
@@ -791,8 +824,6 @@ section .imgarea > div{
   }
 
 
-
-
   /* My Kansong NFTs */
   .section4 .imgarea > ul{
     grid-column: 1 / 7;
@@ -801,16 +832,15 @@ section .imgarea > div{
     width:50%;
   }
 
-
   /* pop-up */
-  #popup-minting > div{
-    width:70vw;
+  #popup-minting .popup_minting_inner{
+    width:80vw;
     height:80vh;
     min-width:300px;
     min-height:400px;
     padding:3.2rem 0;
   }
-  #popup-minting > div > h4{
+  #popup-minting h4{
     margin-bottom: 2rem;
   }
 
@@ -853,19 +883,11 @@ section .imgarea > div{
 
   }
 
-
   #popup-minting > div .btnArea button{
-    padding:0.6rem 1.6rem;
-    font-size:1.4rem;
+    padding:0.6rem 2.6rem;
+    font-size:1.8rem;
   }
-  #popup-minting > div#before_minting button.modal_close_btn{
-    background: none;
-    color:var(--secondary-color);
-  }
-  #popup-minting > div#before_minting button.modal_close_btn:hover{
-    background: var(--secondary-active-color);
-    color: var(--white);
-  }
+
 
 
 }
