@@ -419,7 +419,7 @@ section .imgarea > div{
 .erc721a_info{
   border-radius: 20px;
   background-color: var(--secondary-disabled-color);
-  margin: 20px 20px;
+  margin: 30px 20px;
   padding: 10px 10px;
   font-size: 1.4rem;
   text-align: center;
@@ -440,6 +440,64 @@ section .imgarea > div{
 .nft-address{
   text-decoration: underline;
 }
+
+/* Progress bar*/
+.progress_container{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.div_progress{
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div_progress span{
+  font-size: 1.4rem;
+  margin-left: 10px;
+}
+
+.progress {
+  width: 60%;
+  display: flex;
+  overflow: hidden;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--secondary-disabled-color);
+}
+
+
+.progress-bar {
+  overflow: hidden;
+  text-align: center;
+  border-radius:inherit;
+  background: var(--secondary-color);
+  /* background: linear-gradient(to right, var(--secondary-color), var(--secondary-color)); */
+}
+.progress-bar-animated {
+position:relative;
+}
+.progress-bar-animated::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border-radius:inherit;
+  background:linear-gradient(to right,transparent,rgba(255, 255, 255, 0.7));
+  transform:translateX(-100%);
+  animation: progress-bar-shine 2s infinite;
+}
+@keyframes progress-bar-shine {
+  to {
+    transform:translateX(0);
+    opacity:0.1;
+  }
+}
+
 /* NFT variation */
 .section2 .imgarea{
   row-gap: 10rem;
@@ -744,13 +802,23 @@ section .imgarea > div{
   }
 
 
+  /**/
   .presale p{
     width:100%;
     font-weight: 400;
 
   }
 
+  /* Progress bar*/
+  .div_progress span{
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  .progress {
+    height: 15px;
+  }
 
+  
   /* NFT variation */
   .section2 .imgarea{
     row-gap: 4.8rem;

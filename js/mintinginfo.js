@@ -105,13 +105,13 @@ async function startApp() {
 async function getAccount() {
   try {
 
-
+    await getContracts();
+    await getTotalSupply();
     var accounts = await web3.eth.getAccounts();
 
     if (accounts.length > 0) {
       // myAddr = web3.utils.toChecksumAddress(accounts[0]);
       myAddr = accounts[0];
-      await getContracts();
       $("#div-network").show();
 
       $("#div-myaddress").show();
@@ -323,6 +323,24 @@ async function getTotalSupply() {
   
   $(".total_supply").html(mintedCnt + "/" + maxCnt);
 
+  let mint_progress = document.getElementById("progress_container");
+  let progress_item="";
+
+  let percent = mintedCnt / maxCnt * 100;
+  if(percent == 100 ){
+    progress_item += "<p>NFT 판매 완료</p>"
+  }else{
+    progress_item += "<p>NFT 판매 현황</p>"
+  }
+  progress_item += "<div class='div_progress'>"
+  progress_item += "<div class='progress'>"
+  progress_item += "  <div class='progress-bar progress-bar-animated' style='width:" +percent+"%' role='progressbar'>"
+  progress_item += "</div>"
+  progress_item += "</div>"
+  progress_item += "<span>"+mintedCnt+"/"+maxCnt+"</span>";
+  progress_item += "</div>"
+  
+  mint_progress.innerHTML=progress_item;
 }
 
 async function nftMint() {
