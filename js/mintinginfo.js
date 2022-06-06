@@ -195,7 +195,7 @@ async function getMintingState() {
 
   $("#footer-btn").show();
   
-  // mintingState=5;
+  // mintingState=5;  // Emergency
   if(mintingState == 1){
     // 민팅 준비중입니다. 
     document.getElementById("btn-minting").textContent = "민팅 시작 대기중입니다.";
@@ -320,8 +320,6 @@ async function getTotalSupply() {
   // console.log("totalsupply : ", totalsupply);
   // console.log("maxCnt : ", maxCnt);
   // console.log("mintedCnt =>", mintedCnt);
-  
-  $(".total_supply").html(mintedCnt + "/" + maxCnt);
 
   let mint_progress = document.getElementById("progress_container");
   let progress_item="";
@@ -341,6 +339,16 @@ async function getTotalSupply() {
   progress_item += "</div>"
   
   mint_progress.innerHTML=progress_item;
+
+  // Minting popup
+
+  $(".total_supply").html(mintedCnt + "/" + maxCnt);
+
+  if(mintedCnt == maxCnt){
+    let mint_btn = document.getElementById("modal_minting_btn");
+    mint_btn.disabled = true;
+    mint_btn.innerText="판매완료";
+  }
 }
 
 async function nftMint() {
