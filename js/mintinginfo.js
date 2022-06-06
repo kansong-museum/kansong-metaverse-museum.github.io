@@ -353,7 +353,7 @@ async function getTotalSupply() {
   progress_item += "<span>"+mintedCnt+"/"+maxCnt+"</span>";
   progress_item += "</div>"
   
-  mint_progress.innerHTML=progress_item;
+  // mint_progress.innerHTML=progress_item;
 
   // Minting popup
 
