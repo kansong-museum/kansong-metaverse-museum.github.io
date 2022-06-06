@@ -292,7 +292,7 @@ async function getMultiClaimCount() {
 }
 
 
-function changeQuantity(){
+async function changeQuantity(){
   let itemidSelected = document.getElementById("mint_quantity");
 
   mintingCount = itemidSelected.options[itemidSelected.selectedIndex].value;
@@ -304,6 +304,21 @@ function changeQuantity(){
   total_mintingfee = ethers.utils.formatEther(wei_value);
   
   document.getElementById("total_price").innerText=total_mintingfee;
+
+  // 남은 수량이 선택한 갯수보다 작을때
+  let remainCnt = await getTotalSupply();
+  console.log("remainCnt -> ", remainCnt);
+  if(remainCnt==0){
+    return;
+  }
+  let mint_btn = document.getElementById("modal_minting_btn");
+  if(mintingCount > remainCnt){
+    mint_btn.disabled = true;
+    mint_btn.innerText=remainCnt + "개 이하로 선택하세요.";
+  }else{
+    mint_btn.disabled = false;
+    mint_btn.innerText="NFT Mint";
+  }
 
 }
 
@@ -321,7 +336,6 @@ async function getTotalSupply() {
   // console.log("totalsupply : ", totalsupply);
   // console.log("maxCnt : ", maxCnt);
   // console.log("mintedCnt =>", mintedCnt);
-
   let mint_progress = document.getElementById("progress_container");
   let progress_item="";
 
@@ -350,6 +364,8 @@ async function getTotalSupply() {
     mint_btn.disabled = true;
     mint_btn.innerText="판매완료";
   }
+
+  return maxCnt - mintedCnt;
 }
 
 async function nftMint() {
