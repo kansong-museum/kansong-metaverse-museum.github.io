@@ -23,8 +23,8 @@ let endTime = 0;
 let total_mintingfee="";
 let mintingCount = 0;
 
-let starttimer;
-let endtimer;
+let starttimer=-1;
+let endtimer=-1;
 
 const openseaurl = {
   1: "https://opensea.io/assets/0x82f58182bE996DF3F8B9922dFa0e8F8aCf71f76C/",
@@ -252,8 +252,10 @@ async function getCurrentRoundInfo(){
    startTime = currentRoundInfo[11];  // unix timestamp seconds
    endTime = currentRoundInfo[12];    // unix timestamp seconds
 
-   countDownTimer("btn-minting", parseInt(startTime) *1000);
-   EndtimecountDownTimer("btn-minting", parseInt(endTime) *1000);
+   // 이미 timer가 설정되어 있으면 다시 설정하지 않는다. 
+   if(starttimer == -1){
+    countDownTimer("btn-minting", parseInt(startTime) *1000);
+   }
 
   // console.log("currentRoundInfo =>", currentRoundInfo);
   // console.log("currentRoundInfo 0 =>", currentRoundInfo[0]);
