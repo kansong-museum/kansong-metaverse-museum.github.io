@@ -189,7 +189,7 @@ const img_list = [
     kName: "기방무사",
     eName: "Nothing doing in the Gisaeng's chamber",
     cName: "妓房無事",
-    youtubeLink: "https://www.youtube.com/embed/Yn3Fp9LhTbA",
+    youtubeLink: "https://www.youtube.com/embed/wT-x61LhZXI",
   },
   {
     id: 25,
