@@ -334,7 +334,7 @@ async function getTotalSupply() {
   // 다음 라운드 시작시 totalsupply 확인 필요함.
   totalsupply = await nftContract.methods.totalSupply().call();
   mintedCnt = totalsupply - mintedCnt+91;
-  maxCnt = parseInt(maxMintingId)-startId+1+91;
+  maxCnt = parseInt(maxMintingId)-startId+91;
   // console.log("totalsupply : ", totalsupply);
   // console.log("maxCnt : ", maxCnt);
   // console.log("mintedCnt =>", mintedCnt);
@@ -355,7 +355,7 @@ async function getTotalSupply() {
   progress_item += "<span>"+mintedCnt+"/"+maxCnt+"</span>";
   progress_item += "</div>"
   
-  // mint_progress.innerHTML=progress_item;
+  mint_progress.innerHTML=progress_item;
 
   // Minting popup
 
