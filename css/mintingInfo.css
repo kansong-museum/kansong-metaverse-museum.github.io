@@ -295,7 +295,7 @@ section .imgarea > div{
 }
 .section5 div p{
   font-weight: 400;
-  font-size: var(--font-size-small);
+  font-size: 2rem;
 }
 .section5 div a{
   text-decoration:underline;
@@ -314,8 +314,9 @@ section .imgarea > div{
   width:22px;
   height:auto;
 }
-.section5 .Container .wallet_switch p{
+.section5 .wallet_switch p{
   margin-top: 2px;
+  color: var(--secondary-color);
 }
 
 
@@ -741,8 +742,9 @@ position:relative;
     width:22px;
     height:auto;
   }
-  .section5 .Container .wallet_switch p{
+  .section5 .wallet_switch p{
     margin-top: 2px;
+    color: var(--secondary-color);
   }
 
 
