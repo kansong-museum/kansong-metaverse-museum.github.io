@@ -314,6 +314,7 @@ async function getTotalSupply() {
   let mintedCnt = parseInt(startId);
   let totalsupply = 0;
 
+  // 다음 라운드 시작시 totalsupply 확인 필요함.
   totalsupply = await nftContract.methods.totalSupply().call();
   mintedCnt = totalsupply - mintedCnt+91;
   maxCnt = parseInt(maxMintingId)-startId+1+91;
