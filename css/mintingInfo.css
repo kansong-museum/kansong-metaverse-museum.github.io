@@ -22,6 +22,9 @@ section .imgarea > ul,
 section .imgarea > div{
   grid-column: 3 / 11;
 }
+#wallet_area + section .Container{
+  padding-top: 16rem;
+}
 
 /* 민팅하기 버튼 */
 #footer-btn{
@@ -362,9 +365,54 @@ section .imgarea > div{
 }
 
 
+
+/* mintpage_banner */
+.section8 .Container{
+  padding-bottom: 2rem;
+}
+.section8 .grid{position: relative;}
+.section8 .grid > div{
+  grid-column: 3 / 11;
+  position: relative;
+}
+.banner_bg{
+ width:100%;
+ height:100%;
+ position: absolute;
+ left:0;
+ top:0;
+ background: rgba(255,255,255,0.2);
+ font-size: 0;
+}
+.section8 .grid > .textarea{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width:100%;
+  height: 100%;
+}
+.section8 .textarea p:nth-child(1){
+  font-size: 4rem;
+  font-weight: 600;
+}
+.section8 .textarea p:nth-child(2){
+  font-size: 2.6rem;
+  font-weight: 600;
+  color:var(--secondary-active-color);
+}
+
+
 /* NFTinfo */
-.section6 .Container{
-  padding-top: 16rem;
+.soldout_img{
+  position: absolute;
+  left:50%;
+  top:3%;
+  font-size: 0;
+  width:140px;
+  transform: translateX(-50%);
 }
 .section6 .textarea table{
   margin: 0 auto;
@@ -703,7 +751,9 @@ position:relative;
   section .imgarea > div{
     grid-column: 1 / 7;
   }
-
+  #wallet_area + section .Container{
+    padding-top: 2rem;
+  }
 
 
   /* wallet_area */
@@ -762,10 +812,23 @@ position:relative;
     padding:2px;
   }
 
+  .section8 .grid > div{
+    grid-column: 1 / 7;
+  }
+  .section8 .textarea p:nth-child(1){
+    font-size: 1.8rem;
+  }
+  .section8 .textarea p:nth-child(2){
+    font-size: 1.4rem;
+  }
+
+
+
 
   /* NFTinfo */
-  .section6 .Container{
-    padding-top: 2rem;
+  .soldout_img{
+    top:1.2%;
+    width:90px;
   }
   .section6 .textarea table td{
     padding:0.2rem 0.4rem;
@@ -820,7 +883,7 @@ position:relative;
     height: 15px;
   }
 
-  
+
   /* NFT variation */
   .section2 .imgarea{
     row-gap: 4.8rem;
