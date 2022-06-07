@@ -457,7 +457,6 @@ section .imgarea > div{
 }
 
 .go_mint_guide{
-  visibility: hidden;
   margin-top: 20px;
   text-decoration: underline;
   color: var(--secondary-active-color);
