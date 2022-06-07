@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <link rel="icon" type="image/png" href="./favicon.ico" />
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/grid.css" />
+  <link rel="stylesheet" href="../css/detail.css" />
+  <body>
+
+    <section id="detail" class="subpage">
+      <div class="Container">
+        <div id="info_container"></div>
+
+        <div class="textarea">
+          <h3 class="subtitle">tokenID를 입력 후 Enter key 또는 확인 버튼을 클릭해주세요.</h3>
+          <div style="display:flex; justify-content:center; text-align:center; margin-bottom: 20px;">
+            <input id="tokenid" onkeypress="handleKeyPress(event)"/>
+            <button id="resut_btn"  onclick="showImage()">확인</button>
+          </div>
+          <div id="resultContainer">
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <script>
+      function handleKeyPress(e){
+      var key=e.keyCode || e.which;
+        if (key==13){
+          showImage();
+        }
+}
+
+      async function showImage(){
+        const _tokenId = document.getElementById("tokenid").value;
+        await reveal_test(_tokenId);
+      }
+
+      async function reveal_test(_id) {
+      let url = 'https://kmm.mypinata.cloud/ipfs/QmSYprDWeZcu6sUb8Abb4881KBLn6Y55PjkAQn6oFKnyU5/'+_id+'.json';
+      let obj = null;
+      
+      try {
+          obj = await (await fetch(url)).json();
+
+
+      } catch(e) {
+          console.log('error =>', e);
+          document.getElementById("resultContainer").innerText="결과가 없습니다.";
+
+      }
+      
+      console.log(obj);
+      console.log("obj.image => ", obj.image);
+      let resultContainer = document.getElementById("resultContainer");
+
+      let htmlcontent = "";
+      htmlcontent = htmlcontent + "<p>" + obj.image + "</p>";
+      htmlcontent = htmlcontent + '<img src="'+obj.image+'" style="width:50%;"/>';
+      resultContainer.innerHTML = htmlcontent;
+    }
+
+    
+    </script>
+  </body>
+</html>
