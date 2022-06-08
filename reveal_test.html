@@ -9,13 +9,20 @@
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/grid.css" />
   <link rel="stylesheet" href="../css/detail.css" />
-  <body>
+  <body style="padding:10px;">
 
     <section id="detail" class="subpage">
       <div class="Container">
         <div id="info_container"></div>
 
         <div class="textarea">
+          <div style="margin-bottom:20px">
+            <p>CID url을 입력해주세요. </p>
+            <p style="word-break: break-all;">예) https://kmm.mypinata.cloud/ipfs/QmSYprDWeZcu6sUb8Abb4881KBLn6Y55PjkAQn6oFKnyU5/ </p>
+            <input id="cidurl" style="width: 80%; font-size: 15px; padding: 10px; text-align: center;word-break: break-all;"/>
+  
+          </div>
+
           <h3 class="subtitle">tokenID를 입력 후 Enter key 또는 확인 버튼을 클릭해주세요.</h3>
           <div style="display:flex; justify-content:center; text-align:center; margin-bottom: 20px;">
             <input id="tokenid" onkeypress="handleKeyPress(event)"/>
@@ -42,7 +49,10 @@
       }
 
       async function reveal_test(_id) {
-      let url = 'https://kmm.mypinata.cloud/ipfs/QmSYprDWeZcu6sUb8Abb4881KBLn6Y55PjkAQn6oFKnyU5/'+_id+'.json';
+      // let url = 'https://kmm.mypinata.cloud/ipfs/QmSYprDWeZcu6sUb8Abb4881KBLn6Y55PjkAQn6oFKnyU5/'+_id+'.json';
+      const cid_url = document.getElementById("cidurl").value;
+      let url = cid_url+_id+'.json';
+
       let obj = null;
       
       try {
@@ -51,7 +61,12 @@
 
       } catch(e) {
           console.log('error =>', e);
-          document.getElementById("resultContainer").innerText="결과가 없습니다.";
+          console.log("cid_url =>", cid_url);
+          if(cid_url != ""){
+            document.getElementById("resultContainer").innerText="결과가 없습니다.";
+          }else{
+            document.getElementById("resultContainer").innerText="CID url을 입력해주세요.";
+          }
 
       }
       
@@ -60,7 +75,7 @@
       let resultContainer = document.getElementById("resultContainer");
 
       let htmlcontent = "";
-      htmlcontent = htmlcontent + "<p>" + obj.image + "</p>";
+      htmlcontent = htmlcontent + "<p style='word-break: break-all;'>" + obj.image + "</p>";
       htmlcontent = htmlcontent + '<img src="'+obj.image+'" style="width:50%;"/>';
       resultContainer.innerHTML = htmlcontent;
     }
