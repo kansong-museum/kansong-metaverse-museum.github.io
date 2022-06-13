@@ -718,6 +718,11 @@ position:relative;
   transform: scale(1.01);
 }
 
+.nft_termsofsale{
+  padding: 10px;
+  text-align: center;
+}
+
 
 /* 모바일 */
 @media screen and (max-width: 900px) {

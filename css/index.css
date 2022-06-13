@@ -650,6 +650,11 @@ nav ol li a {
   }
 }
 
+.nft_termsofsale{
+  padding: 10px;
+  text-align: center;
+}
+
 /* @media screen and (max-width: 410px) {
 
   .section3 .imgarea #masonry .grid-sizer,
