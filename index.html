@@ -718,7 +718,8 @@
       // 데이터 불러오기
       const querySnapshot = await getDocs(collection(db, "address"));
           querySnapshot.forEach((doc) => {
-          console.log(`${doc.id} => ${doc.data()["wallet_address"]}`);
+          console.log(`${doc.id} => ${doc.data()["address"]}`);
+
       });
 
       // 데이터 보내기
