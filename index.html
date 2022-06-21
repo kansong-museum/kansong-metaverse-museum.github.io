@@ -120,6 +120,20 @@
       </div>
     </header>
 
+    <div id="walletModal" class="modal" style="display:none;">
+      <div class="modal_content" 
+           title="클릭하면 창이 닫힙니다.">
+           <input type="text" id="postcode" placeholder="우편번호">
+           <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+           <input type="text" id="address" placeholder="주소"><br>
+           <input type="text" id="detailAddress" placeholder="상세주소">
+           <input type="text" id="extraAddress" placeholder="참고항목">
+           <div id="ethBalance" value=""></div><div id="userAddress" value=""></div>
+        <button class="submit">submit</button>
+        <button class="cancel">cancel</button>
+      </div>
+    </div>
+
     <script type="text/javascript">
       $(function () {
         let navbarToggler = document.querySelector("#navbarToggler");
@@ -641,11 +655,108 @@
       </div>
     </section>
 
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+    function sample6_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    var addr = ''; // 주소 변수
+                    var extraAddr = ''; // 참고항목 변수
+                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                        addr = data.roadAddress;
+                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                        addr = data.jibunAddress;
+                    }
+                    if(data.userSelectedType === 'R'){
+                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                            extraAddr += data.bname;
+                        }
+                        if(data.buildingName !== '' && data.apartment === 'Y'){
+                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                        }
+                        if(extraAddr !== ''){
+                            extraAddr = ' (' + extraAddr + ')';
+                        }
+                        document.getElementById("extraAddress").value = extraAddr;
+                    } else {
+                        document.getElementById("extraAddress").value = '';
+                    }
+                    document.getElementById('postcode').value = data.zonecode;
+                    document.getElementById("address").value = addr;
+                    document.getElementById("detailAddress").focus();
+                }
+            }).open();
+        }
+    </script>
+
     <script type="text/javascript" src="./js/base.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
     <script src="./js/jquery.malihu.PageScroll2id.js"></script>
     <script src="./js/jquery-syaku.rolling.js"></script>
     <script src="https://www.cssscript.com/demo/simple-typewriter-effect-pure-javascript-typewriterjs/typewriter.js"></script>
     <script src="./dist/bundle.js" type="text/javascript"></script>
+    <script type="module" type="text/javascript">
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+      import { getFirestore, doc, getDoc, getDocs, addDoc, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyD7SXftHbWlIkzC0nYs317DojuoKMtoOhY",
+        authDomain: "kansong-metaverse-museum.firebaseapp.com",
+        projectId: "kansong-metaverse-museum",
+        storageBucket: "kansong-metaverse-museum.appspot.com",
+        messagingSenderId: "516424245894",
+        appId: "1:516424245894:web:f4609b8b4917014679e707",
+        measurementId: "G-ELGZEVNNQY",
+      };
+    
+      // Initialize Firebase
+      initializeApp(firebaseConfig);
+      const db = getFirestore();
+      console.log(db)
+  
+      // 데이터 불러오기
+      const querySnapshot = await getDocs(collection(db, "address"));
+          querySnapshot.forEach((doc) => {
+          console.log(`${doc.id} => ${doc.data()["wallet_address"]}`);
+      });
+
+      // 데이터 보내기
+      const submit = document.querySelector('.submit');
+      submit.addEventListener('click', () => {
+      const postcode = document.getElementById('postcode').value;
+      const address = document.getElementById('address').value;
+      const detailAddress = document.getElementById('detailAddress').value;
+      const extraAddress = document.getElementById('extraAddress').value;
+      const ethBalance = document.getElementById('ethBalance').innerHTML;
+      const userAddress = document.getElementById('userAddress').innerHTML;
+      console.log(postcode, address, detailAddress, extraAddress, ethBalance, userAddress);
+
+      try {
+        const docRef = addDoc(collection(db, "address"), {
+          postcode: postcode,
+          address: address,
+          detailAddress: detailAddress,
+          extraAddress: extraAddress,
+          ethBalance: ethBalance,
+          userAddress: userAddress
+        });
+        console.log('submitted');
+        // console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+      })
+  
+      // const docR = doc(db, "address", "gmwhFyBo68A7czbd0FpW");
+      // updateDoc(docR, {born: 1999})
+
+      const cancel = document.querySelector('.cancel');
+      cancel.addEventListener('click', () => {
+        let modal = document.getElementById("walletModal");
+        modal.style.display = "none";
+      })
+    </script>
+  
   </body>
 </html>

@@ -1,18 +1,18 @@
 //nav 스크롤 인식
-(function($){
-  $(window).on("load",function(){
+(function ($) {
+  $(window).on("load", function () {
     $(".snb a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
-      highlightSelector:".snb a"
+      highlightSelector: ".snb a",
     });
 
-    $("a[rel='next']").click(function(e){
+    $("a[rel='next']").click(function (e) {
       e.preventDefault();
-      var to=$(this).parent().parent("section").next().attr("id");
-      $.mPageScroll2id("scrollTo",to);
+      var to = $(this).parent().parent("section").next().attr("id");
+      $.mPageScroll2id("scrollTo", to);
     });
 
-    $(window).scroll(function() {
-      var s = $(window).scrollTop();	// 현재 window scrollTop
+    $(window).scroll(function () {
+      var s = $(window).scrollTop(); // 현재 window scrollTop
       var intro = document.querySelector("#Introduction").offsetTop;
       var mainch = document.querySelector("#DigitalRebirthEvents").offsetTop;
       var nfts = document.querySelector("#NFTs").offsetTop;
@@ -20,14 +20,16 @@
       // var team = document.querySelector("#Team").offsetTop;
       console.log("s = " + s);
 
-      if(s < intro){
-        $('#header, #sidebar, #navbarCollapse, #navbarToggler').removeClass('on');
-      }
-      else if( s < mainch ){
-        $('#header, #sidebar, #navbarCollapse, #navbarToggler').addClass('on');
-      }
-      else if( s < nfts ){
-        $('#header, #sidebar, #navbarCollapse, #navbarToggler').removeClass('on');
+      if (s < intro) {
+        $("#header, #sidebar, #navbarCollapse, #navbarToggler").removeClass(
+          "on"
+        );
+      } else if (s < mainch) {
+        $("#header, #sidebar, #navbarCollapse, #navbarToggler").addClass("on");
+      } else if (s < nfts) {
+        $("#header, #sidebar, #navbarCollapse, #navbarToggler").removeClass(
+          "on"
+        );
       }
       // else if( s < roadmap ){
       //   $('#header, #sidebar, #navbarCollapse, #navbarToggler').addClass('on');
@@ -35,11 +37,10 @@
       // else if (s < team ){
       //   $('#header, #sidebar, #navbarCollapse, #navbarToggler').removeClass('on');
       // }
-      else{
-        $('#header, #sidebar, #navbarCollapse, #navbarToggler').addClass('on');
-      };
-
-     });
+      else {
+        $("#header, #sidebar, #navbarCollapse, #navbarToggler").addClass("on");
+      }
+    });
   });
 })(jQuery);
 // (function($){
@@ -56,7 +57,6 @@
 //   });
 // })(jQuery);
 
-
 $(function () {
   $(".snb>ol>li>a").click(function () {
     $("html, body").animate(
@@ -68,7 +68,6 @@ $(function () {
     return false;
   });
 });
-
 
 //FAQ Accordion
 $(".que").click(function () {
@@ -88,62 +87,55 @@ window.counter = function () {
   span.textContent = current + 1;
 };
 
-
-
 //Introduction 이미지 슬라이드
 $(function () {
   var swiper = new Swiper(".mySwiper", {
     spaceBetween: 10,
     // slidesPerView : 1,
     centeredSlides: true,
-    breakpoints : { // 반응형 설정이 가능 width값으로 조정
-      410 : {
-        slidesPerView : 'auto',
+    breakpoints: {
+      // 반응형 설정이 가능 width값으로 조정
+      410: {
+        slidesPerView: "auto",
       },
     },
-    loop:true,
+    loop: true,
     // centeredSlides: true,
-    speed:3000,
+    speed: 3000,
     autoplay: {
       delay: 500,
       disableOnInteraction: false,
     },
   });
-
 });
-
 
 //home text typing
-$(document).ready(function(){
-  var typing = document.getElementById('typing');
+$(document).ready(function () {
+  var typing = document.getElementById("typing");
   var typewriter = new Typewriter(typing, {
-      loop: true
+    loop: true,
   });
 
-  typewriter.typeString('Metaverse')
-      .pauseFor(2500)
-      .deleteAll()
-      .start();
+  typewriter.typeString("Metaverse").pauseFor(2500).deleteAll().start();
 });
 
-
 //Main Characters Masonry
-$(document).ready(function(){
-  var msnry = new Masonry( '#masonry', {
-    itemSelector: '#masonry li',
+$(document).ready(function () {
+  var msnry = new Masonry("#masonry", {
+    itemSelector: "#masonry li",
     // columnWidth: 200
-    columnWidth: '.grid-sizer',
+    columnWidth: ".grid-sizer",
     percentPosition: true,
-    gutter : 0,
-    });
-    imagesLoaded( '#masonry' ).on( 'progress', function() {
+    gutter: 0,
+  });
+  imagesLoaded("#masonry").on("progress", function () {
     msnry.layout();
   });
 });
 
-$(document).ready(function(){
-  $(".popup_close").click(function(){
-    const close = document.getElementById('popup');
-    close.classList.add('close');
-  })
-})
+$(document).ready(function () {
+  $(".popup_close").click(function () {
+    const close = document.getElementById("popup");
+    close.classList.add("close");
+  });
+});

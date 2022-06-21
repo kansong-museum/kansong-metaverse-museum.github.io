@@ -12,7 +12,19 @@ async function connect() {
         method: "eth_getBalance",
         params: [address, "latest"],
       });
-      console.log(ethers.utils.formatEther(balance));
+      const ethBalance = ethers.utils.formatEther(balance);
+      if (ethBalance >= 1) {
+        console.log(ethBalance);
+        let modal = document.getElementById("walletModal");
+        modal.style.display = "block";
+        let viewBal = document.getElementById("ethBalance");
+        viewBal.innerHTML = ethBalance;
+        let userAddress = document.getElementById("userAddress");
+        userAddress.innerHTML = address;
+      } else {
+        alert("not enough eth..");
+        window.location.reload();
+      }
     } catch (error) {
       console.log(error);
     }
