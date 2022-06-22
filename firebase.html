@@ -1,0 +1,41 @@
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+    import { getFirestore, doc, getDoc, getDocs, addDoc, updateDoc, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+    
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        // ... env
+    };
+  
+    // Initialize Firebase
+    initializeApp(firebaseConfig);
+    const db = getFirestore();
+    console.log(db)
+
+    const querySnapshot = await getDocs(collection(db, "address"));
+        querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()["wallet_address"]}`);
+        });
+
+    // try {
+    //     const docRef = await addDoc(collection(db, "address"), {
+    //         first: "Ada",
+    //         last: "Lovelace",
+    //         born: 1815
+    //     });
+    //     console.log("Document written with ID: ", docRef.id);
+    //     } catch (e) {
+    //     console.error("Error adding document: ", e);
+    //     }
+
+    // const docR = doc(db, "address", "gmwhFyBo68A7czbd0FpW");
+    // updateDoc(docR, {born: 1999})
+  </script>
+
+
+
