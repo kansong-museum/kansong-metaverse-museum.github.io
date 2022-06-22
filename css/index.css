@@ -335,23 +335,12 @@ nav ol li a {
 .section6 .textarea h2 {
   text-align: center;
 }
-.section6 .textarea h3 {
-  text-align: center;
-}
 .section6 .imgarea > div {
   grid-column: 4 / 10;
 }
 .section6 .imgarea .expansion-banner {
   font-size: 0;
   margin-bottom: 10px;
-}
-.section6 .partner_hth {
-  display: block;
-}
-.section6 .partner_hth img {
-  width: 350px;
-  height: auto;
-  margin: 10px;
 }
 
 .Expansion-img {
