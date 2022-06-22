@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import {
   getFirestore,
@@ -6,15 +5,9 @@ import {
   getDoc,
   getDocs,
   addDoc,
-  updateDoc,
   collection,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyD7SXftHbWlIkzC0nYs317DojuoKMtoOhY",
   authDomain: "kansong-metaverse-museum.firebaseapp.com",
@@ -30,25 +23,49 @@ initializeApp(firebaseConfig);
 const db = getFirestore();
 console.log(db);
 
+// 데이터 불러오기
 const querySnapshot = await getDocs(collection(db, "address"));
 querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data()["wallet_address"]}`);
+  console.log(`${doc.id} => ${doc.data()["address"]}`);
 });
 
-function submit() {
-  // const name = document.getElementById('name').value;
-  console.log(ethBalance);
-}
-// try {
-//     const docRef = await addDoc(collection(db, "address"), {
-//         first: "Ada",
-//         last: "Lovelace",
-//         born: 1815
-//     });
-//     console.log("Document written with ID: ", docRef.id);
-//     } catch (e) {
-//     console.error("Error adding document: ", e);
-//     }
+// 데이터 보내기
+const submit = document.querySelector(".submit");
+submit.addEventListener("click", () => {
+  const postcode = document.getElementById("postcode").value;
+  const address = document.getElementById("address").value;
+  const detailAddress = document.getElementById("detailAddress").value;
+  const extraAddress = document.getElementById("extraAddress").value;
+  const ethBalance = document.getElementById("ethBalance").innerHTML;
+  const userAddress = document.getElementById("userAddress").innerHTML;
+
+  if (postcode !== "" && detailAddress !== "" && extraAddress !== "") {
+    try {
+      const docRef = addDoc(collection(db, "address"), {
+        postcode: postcode,
+        address: address,
+        detailAddress: detailAddress,
+        extraAddress: extraAddress,
+        ethBalance: ethBalance,
+        userAddress: userAddress,
+      });
+      alert("submitted🙂");
+      // console.log("Document written with ID: ", docRef.id);
+      let modal = document.getElementById("walletModal");
+      modal.style.display = "none";
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  } else {
+    alert("please enter your address");
+  }
+});
 
 // const docR = doc(db, "address", "gmwhFyBo68A7czbd0FpW");
 // updateDoc(docR, {born: 1999})
+
+const cancel = document.querySelector(".cancel");
+cancel.addEventListener("click", () => {
+  let modal = document.getElementById("walletModal");
+  modal.style.display = "none";
+});
