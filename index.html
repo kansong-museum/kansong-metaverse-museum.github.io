@@ -90,9 +90,17 @@
 
       <div class="header-right-btn">
 
-        <div id="btn-mintingInfo">
+        <!-- <div id="btn-mintingInfo">
           <a href="mintingInfo.html" target="_self">
             NFT Mint
+          </a>
+        </div> -->
+
+        <!--<button type="button" name="button">EN</button>-->
+
+        <div id="btn-mintingInfo">
+          <a id="connectButton" onclick="bundle.connect()" target="_self">
+            Connect Wallet
           </a>
         </div>
 
@@ -113,6 +121,20 @@
         </button>
       </div>
     </header>
+
+    <div id="walletModal" class="modal" style="display:none;">
+      <div class="modal_content"
+           title="주소입력 모달창">
+           <input type="text" id="postcode" placeholder="우편번호">
+           <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
+           <input type="text" id="address" placeholder="주소"><br>
+           <input type="text" id="detailAddress" placeholder="상세주소">
+           <input type="text" id="extraAddress" placeholder="참고항목">
+           <div id="ethBalance" value=""></div><div id="userAddress" value=""></div>
+        <button class="submit">submit</button>
+        <button class="cancel">cancel</button>
+      </div>
+    </div>
 
     <script type="text/javascript">
       $(function () {
@@ -441,10 +463,12 @@
 
         <div class="imgarea grid">
           <div id="thesandbox">
+            <h3 data-scroll="toggle(.fromTopIn, .fromTopOut)">Metaverse Evolution</h3>
+
             <p class="expansion-banner" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
               <img src="https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/expansion-banner-thesandbox_new.jpg" alt="" />
             </p>
-            <div class="Expansion-img">
+            <div class="Expansion-img thesandbox-img">
               <div class="Expansion-img-1 thesandbox-img-1" data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
                 <div>
                   <video autoplay loop muted>
@@ -466,6 +490,20 @@
               </div>
             </div>
           </div>
+
+          <div id="Homage">
+            <h3 data-scroll="toggle(.fromTopIn, .fromTopOut)">Homage to Hyewon</h3>
+
+            <div class="Expansion-img">
+              <div class="partner_hth Expansion-img-1" data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
+                <img src="img\partner\zbz650.jpg" alt="" />
+              </div>
+              <div class="partner_hth Expansion-img-2" data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
+                <img src="img\partner\ydw650.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -629,16 +667,24 @@
       </div>
     </section>
 
-    <section>
+    <section id="footer">
       <div class="nft_termsofsale">
-        <a href="NFT_terms_of_sale_6.3.pdf" target="_blank">NFT 판매 약관</a>
+        <a href="NFT_terms_of_sale_6.3.pdf" target="_blank">
+          <img src="./img/icon-link.svg" alt="">
+          NFT 판매 약관
+        </a>
       </div>
     </section>
 
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="./js/postcode.js" type="text/javascript"></script>
     <script type="text/javascript" src="./js/base.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
     <script src="./js/jquery.malihu.PageScroll2id.js"></script>
     <script src="./js/jquery-syaku.rolling.js"></script>
     <script src="https://www.cssscript.com/demo/simple-typewriter-effect-pure-javascript-typewriterjs/typewriter.js"></script>
+    <script src="./dist/bundle.js" type="text/javascript"></script>
+    <script src="./js/firebase.js" type="module" type="text/javascript"></script>
+
   </body>
 </html>
