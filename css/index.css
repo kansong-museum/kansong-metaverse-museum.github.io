@@ -139,7 +139,7 @@ nav ol li a {
   padding-top: 8rem;
 }
 
-.modal{ 
+.modal{
   position:absolute; width:100%; height:100%; z-index:100; background: rgba(0,0,0,0.8); top:0; left:0; display:none;
 }
 
@@ -150,8 +150,8 @@ nav ol li a {
   margin-top:-100px; margin-left:-200px;
   text-align:center;
   box-sizing:border-box; padding:74px 0;
-  line-height:23px; 
-}  
+  line-height:23px;
+}
 
 /* home */
 #Home {
@@ -347,12 +347,20 @@ nav ol li a {
 .section6 .textarea h2 {
   text-align: center;
 }
+.section6 .imgarea{
+  row-gap:64px;
+}
 .section6 .imgarea > div {
   grid-column: 4 / 10;
 }
 .section6 .imgarea .expansion-banner {
   font-size: 0;
   margin-bottom: 10px;
+}
+
+.section6 h3 {
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 .Expansion-img {
@@ -365,18 +373,15 @@ nav ol li a {
   position: relative;
   font-size: 0;
 }
-.Expansion-img > div img {
+.thesandbox-img > div img {
   width: 15%;
   position: absolute;
   left: 16px;
   top: 16px;
   border: 2px solid #e6e6e8;
 }
-.Expansion-img video {
+.thesandbox-img video {
   width: 100%;
-}
-
-.Expansion-img-2 > div {
 }
 .thesandbox-img-2 > div {
   width: 100%;
@@ -409,6 +414,9 @@ nav ol li a {
   --poster-color: #eee;
 }
 
+
+
+
 /* Roadmap */
 .section7 {
   background-image: url(https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/bg-bk.jpg);
@@ -422,6 +430,8 @@ nav ol li a {
   text-align: center;
   opacity: 0.6;
 }
+
+
 
 /* Team */
 .section10 .textarea,
@@ -487,9 +497,25 @@ nav ol li a {
   max-width: 300px;
 }
 
-.nft_termsofsale{
-  padding: 10px;
+
+#footer{
+  background-image: url(https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/bg-bk.jpg);
+  padding: 64px 0;
   text-align: center;
+}
+.nft_termsofsale{
+  display: inline-block;
+}
+.nft_termsofsale a{
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.nft_termsofsale a img{
+  width:20px;
+  margin-right: 4px;
 }
 
 @media screen and (max-width: 900px) {
@@ -664,6 +690,11 @@ nav ol li a {
   .section11 .imgarea > ul > li {
     width: 50%;
     /* flex: 1 1 50%; */
+  }
+
+  #footer{
+    padding:34px 0;
+    min-height: inherit;
   }
 }
 
