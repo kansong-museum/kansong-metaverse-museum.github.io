@@ -325,6 +325,14 @@ header.on .header-right-btn a:hover svg {
   filter: drop-shadow(0px 0px 2px rgba(180, 67, 50, 0.7));
 }
 
+header #btn-Lang button{
+  text-align: center;
+  padding:0.8rem 1.6rem;
+  border-radius: 4px;
+  font-size:var(--font-size-small);
+  font-weight: 500;
+}
+
 header #btn-mintingInfo a{
   text-align: center;
   padding:0.8rem 1.6rem;
