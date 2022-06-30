@@ -1,0 +1,61 @@
+#news
+{
+    width:  60%;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+    
+}
+
+#name
+{
+    width: 60%;
+    border-bottom: 0.2px solid white;
+}
+
+#day{
+    width: 20%;
+}
+
+#med{
+    width: 20%;
+}
+
+#news_num {
+    width:  80%;
+    margin: auto;
+    text-align: center;
+
+}
+
+#con {
+    height: 60px;
+}
+
+#news2 {
+    width: 70%;
+    margin: auto;
+    display: flex;
+
+}
+
+#left {
+    width: 50%;
+    text-align: left;
+}
+
+#right {
+    width: 50%;
+}
+
+#day2 {
+    font-size: 1rem;
+}
+
+#name2 {
+    font-size: 1.3rem;
+}
+
+#day3 {
+    text-align: right;
+}
