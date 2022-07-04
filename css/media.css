@@ -1,0 +1,16 @@
+#news
+{
+    width:  60%;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+
+}
+
+#main_h1{
+    font-size: var(--font-size-subtitle);
+    text-align: center;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 5px;
+}
