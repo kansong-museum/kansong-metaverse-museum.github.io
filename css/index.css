@@ -200,18 +200,18 @@ nav ol li a {
   left: 0;
   right: 0;
 }
-#Home .textarea h1 {
+#Home .textarea #sub_h1 {
   grid-column: 3 / 13;
 }
-#Home h1 p:nth-child(1){
+#Home #sub_h1 p:nth-child(1){
   font-weight: 800;
 }
-#Home h1 span{
+#Home #sub_h1 span{
   font-weight: 600;
   font-size: 7.2rem;
   /* color: var(--primary-color); */
 }
-#Home h1 p:nth-child(3){
+#Home #sub_h1 p:nth-child(3){
   font-weight: 300;
   letter-spacing: 1.7rem;
 }
@@ -581,13 +581,13 @@ nav ol li a {
   /* home */
   #Home {
   }
-  #Home .textarea h1 {
+  #Home .textarea #sub_h1 {
     grid-column: 2 / 6;
   }
-  #Home h1 span{
+  #Home #sub_h1 span{
     font-size: 2.9rem;
   }
-  #Home h1 p:nth-child(3){
+  #Home #sub_h1 p:nth-child(3){
     letter-spacing: 0.65rem;
   }
 
