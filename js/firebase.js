@@ -23,10 +23,20 @@ initializeApp(firebaseConfig);
 const db = getFirestore();
 console.log(db);
 
+let userArr = [];
+let o_userArr = [];
+
 // 데이터 불러오기
 const querySnapshot = await getDocs(collection(db, "address"));
 querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data()["address"]}`);
+  console.log(`${doc.id} => ${doc.data()["userAddress"]}`);
+  userArr.push(doc.data()["userAddress"]);
+});
+
+const o_querySnapshot = await getDocs(collection(db, "o_address"));
+o_querySnapshot.forEach((doc) => {
+  console.log(`${doc.id} => ${doc.data()["userAddress"]}`);
+  o_userArr.push(doc.data()["userAddress"]);
 });
 
 // 데이터 보내기
@@ -44,6 +54,9 @@ koreaForm.addEventListener("submit", (event) => {
   const detailAddress = document.getElementById("detailAddress").value;
   const nftBalance = document.getElementById("nftBalance").innerHTML;
   const userAddress = document.getElementById("userAddress").innerHTML;
+  if (userArr.find((item) => item == userAddress)) {
+    console.log("이미 등록된 주소");
+  }
 
   if (
     postcode !== "" &&
@@ -63,8 +76,8 @@ koreaForm.addEventListener("submit", (event) => {
           nftBalance: nftBalance,
           userAddress: userAddress,
         });
-        alert("submitted🙂");
         console.log("Document written with ID: ", docRef.id);
+        alert("submitted🙂");
         // let delivery = document.querySelector(".delivery");
         // delivery.style.display = "none";
       } catch (e) {
@@ -92,7 +105,8 @@ overseasForm.addEventListener("submit", (event) => {
     "overseas_country_code"
   ).value;
   const overseas_tel = document.getElementById("overseas_tel").value;
-  const contactNum = formatPhoneNumber(overseas_country_code + overseas_tel);
+  const contactNum =
+    overseas_country_code + "-" + formatPhoneNumber(overseas_tel);
 
   const o_address = document.getElementById("o_address").value;
   const o_cityAddress = document.getElementById("o_cityAddress").value;
@@ -102,7 +116,9 @@ overseasForm.addEventListener("submit", (event) => {
 
   const nftBalance = document.getElementById("nftBalance").innerHTML;
   const userAddress = document.getElementById("userAddress").innerHTML;
-
+  if (o_userArr.find((item) => item == userAddress)) {
+    console.log("이미 등록된 주소");
+  }
   if (
     country !== "" &&
     o_name !== "" &&
@@ -128,8 +144,8 @@ overseasForm.addEventListener("submit", (event) => {
             nftBalance: nftBalance,
             userAddress: userAddress,
           });
-          alert("submitted🙂");
           console.log("Document written with ID: ", docRef.id);
+          alert("submitted🙂");
           // let delivery = document.querySelector(".delivery");
           // delivery.style.display = "none";
         } catch (e) {

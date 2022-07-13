@@ -1106,35 +1106,35 @@ async function connect() {
       const accounts = await ethereum.request({ method: "eth_accounts" });
       const address = accounts.toString();
 
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const nftInstance = new ethers.Contract(
-        "0xc89E09e68DEa544aBff8A4d744085De8fFc55e08",
-        nftAbi_rinkeby,
-        signer
-      );
+      let chainId = await ethereum.request({ method: "eth_chainId" });
+      if (chainId == 4) {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        const nftInstance = new ethers.Contract(
+          "0xc89E09e68DEa544aBff8A4d744085De8fFc55e08",
+          nftAbi_rinkeby,
+          signer
+        );
 
-      const nftBal = await nftInstance.balanceOf(address);
-      const nftBalance = ethers.utils.formatEther(nftBal) * 10 ** 18;
+        const nftBal = await nftInstance.balanceOf(address);
+        const nftBalance = ethers.utils.formatEther(nftBal) * 10 ** 18;
 
-      if (nftBalance >= 1) {
-        let chainId = await ethereum.request({ method: "eth_chainId" });
-        let viewBal = document.getElementById("nftBalance");
-        viewBal.innerHTML = nftBalance;
-        let walletAddress = document.getElementById("userAddress");
-        walletAddress.innerHTML = address;
+        if (nftBalance >= 1) {
+          let viewBal = document.getElementById("nftBalance");
+          viewBal.innerHTML = nftBalance;
+          let walletAddress = document.getElementById("userAddress");
+          walletAddress.innerHTML = address;
 
-        console.log(nftBalance, address);
-        if (chainId == 4) {
+          console.log(nftBalance, address);
           let delivery = document.querySelector(".delivery");
           delivery.style.display = "block";
           let korea = document.getElementById("korea");
           korea.style.display = "block";
         } else {
-          alert("please change to mainnet");
+          alert("There must be at least one NFT.");
         }
       } else {
-        alert("There must be at least one NFT.");
+        alert("Please change to ethereum mainnet");
       }
     } catch (error) {
       console.log(error);
