@@ -98,43 +98,46 @@
             <p>High-definition print of 'A dano day scene'</p>
 
             <div class="ConnectWallet_content" style="display:block;">
-              <button type="button" name="button">Connect wallet</button>
+              <button type="button" id="connectButton" onclick="bundle.connect()" name="button">Connect wallet</button>
             </div>
 
+            <div id="nftBalance" style="opacity:0;"></div>
+            <div id="userAddress" style="opacity:0;"></div>
+
             <div class="modal_content" >
-              <div class="delivery">
+              <div class="delivery" style="display:none;">
                 <span>
-                  <input type="radio" name="delivery" value="" id="k_delivery" checked>
+                  <input type="radio" name="delivery" id="k_delivery" onclick="bundle.k_del()" checked>
                   <label for="k_delivery">Domestic Korea delivery</label>
                 </span>
                 <span>
-                  <input type="radio" name="delivery" value="" id="o_delivery">
+                  <input type="radio" name="delivery" id="o_delivery" onclick="bundle.o_del()">
                   <label for="o_delivery">Overseas delivery</label>
                 </span>
               </div>
 
-              <form name="korea"style="display:block;">
+              <form name="korea" class="koreaForm" id ="korea" style="display:none;">
                 <div>
                   <p>받는 분</p>
-                  <input type="text" id="userName" placeholder="이름" onfocus="this.placeholder=''" onblur="this.placeholder='이름'">
-                  <input type="tel" id="phoneNumber" placeholder="전화번호" onfocus="this.placeholder=''" onblur="this.placeholder='전화번호'">
+                  <input type="text" id="userName" placeholder="이름" onfocus="this.placeholder=''" onblur="this.placeholder='이름'" value="">
+                  <input type="tel" id="phoneNumber" placeholder="전화번호" onfocus="this.placeholder=''" onblur="this.placeholder='전화번호'" value="">
                 </div>
 
                 <div class="addresArea">
                   <p>주소</p>
                   <span>
-                    <input type="text" id="postcode" placeholder="우편번호" onfocus="this.placeholder=''" onblur="this.placeholder='우편번호'">
+                    <input type="text" id="postcode" placeholder="우편번호" onfocus="this.placeholder=''" onblur="this.placeholder='우편번호'" value="">
                     <input type="button" id="btn_postcode" onclick="execDaumPostcode()" value="우편번호 찾기">
                   </span>
-                  <input type="text" id="address" placeholder="주소" onfocus="this.placeholder=''" onblur="this.placeholder='주소'">
-                  <input type="text" id="detailAddress" placeholder="상세주소" onfocus="this.placeholder=''" onblur="this.placeholder='상세주소'">
+                  <input type="text" id="address" placeholder="주소" onfocus="this.placeholder=''" onblur="this.placeholder='주소'" value="">
+                  <input type="text" id="detailAddress" placeholder="상세주소" onfocus="this.placeholder=''" onblur="this.placeholder='상세주소'" value="">
                 </div>
 
                 <div>
                   <p>개인정보의 수집 및 이용목적</p>
                   <textarea rows="5" placeholder="참고항목" disabled>서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산 구매 및 요금 결제, 물품배송 또는 청구지 등 발송, 금융거래 본인 인증 및 금융 서비스, 요금추심, 서비스 이용과 관련한 고객문의사항 응대</textarea>
                   <span class="agree">
-                    <input type="checkbox" id="k_agree">
+                    <input type="checkbox" id="k_agree" onchange="k_checked()" value="false">
                     <label for="k_agree">위 개인정보 수집·이용에 동의합니다</label>
                   </span>
                 </div>
@@ -142,46 +145,43 @@
                 <div>
                   <span class="btnArea">
                     <input type="reset" value="Reset" class="btn_reset">
-                    <button class="submit">Submit</button>
+                    <button class="submitBtn">Submit</button>
                   </span>
                 </div>
               </form>
 
-              <form name="overseas" >
+              <form name="overseas" class="overseasForm" id ="overseas" style="display:none;">
                 <div>
                   <p>Recipient</p>
-                  <select name="Country to ship">
-                      <option value="" disabled selected>Country to ship</option>
-                      <option value="United States">United States</option>
-                      <option value="United Kingdom">United Kingdom</option>
-                      <option value="Sweden">Sweden</option>
+                  <select name="Country to ship" id="country" onChange="getselect()">
+                      <option value="" selected>Country to ship</option>
                   </select>
-                  <input type="text" placeholder="Name" onfocus="this.placeholder=''" onblur="this.placeholder='Name'">
+                  <input type="text" id="o_name" placeholder="Name" onfocus="this.placeholder=''" onblur="this.placeholder='Name'" value="">
                   <span class="overseasTelArea">
-                    <input type="text" id="overseas_country_code" value="" disabled>
-                    <input type="tel" id="overseas_tel" placeholder="Contact No." onfocus="this.placeholder=''" onblur="this.placeholder='Contact No.'">
+                    <input type="text" id="overseas_country_code" value="">
+                    <input type="tel" id="overseas_tel" placeholder="Contact No." onfocus="this.placeholder=''" onblur="this.placeholder='Contact No.'" value="">
                   </span>
 
                 </div>
 
                 <div class="addresArea">
                   <p>Address</p>
-                  <input type="text" id="address" placeholder="Address" onfocus="this.placeholder=''" onblur="this.placeholder='Address'">
-                  <input type="text" id="cityAddress" placeholder="City" onfocus="this.placeholder=''" onblur="this.placeholder='City'">
-                  <input type="text" id="detailAddress" placeholder="State/Province" onfocus="this.placeholder=''" onblur="this.placeholder='Province'">
-                  <input type="text" id="postcode" placeholder="Zip Code" onfocus="this.placeholder=''" onblur="this.placeholder='Zip Code'">
+                  <input type="text" id="o_address" placeholder="Address" onfocus="this.placeholder=''" onblur="this.placeholder='Address'" value="">
+                  <input type="text" id="o_cityAddress" placeholder="City" onfocus="this.placeholder=''" onblur="this.placeholder='City'" value="">
+                  <input type="text" id="o_detailAddress" placeholder="State/Province" onfocus="this.placeholder=''" onblur="this.placeholder='Province'" value="">
+                  <input type="text" id="o_postcode" placeholder="Zip Code" onfocus="this.placeholder=''" onblur="this.placeholder='Zip Code'" value="">
                 </div>
 
                 <div>
                   <p>E-mail</p>
-                  <input type="email" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'">
+                  <input type="email" id="o_email" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" value="">
                 </div>
 
                 <div>
                   <p>개인정보의 수집 및 이용목적</p>
                   <textarea rows="5" placeholder="참고항목" disabled>서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산 구매 및 요금 결제, 물품배송 또는 청구지 등 발송, 금융거래 본인 인증 및 금융 서비스, 요금추심, 서비스 이용과 관련한 고객문의사항 응대</textarea>
                   <span class="agree">
-                    <input type="checkbox" id="o_agree">
+                    <input type="checkbox" id="o_agree" onchange="o_checked()">
                     <label for="o_agree">위 개인정보 수집·이용에 동의합니다</label>
                   </span>
                 </div>
@@ -189,7 +189,7 @@
                 <div>
                   <span class="btnArea">
                     <input type="reset" value="Reset" class="btn_reset">
-                    <button class="submit">Submit</button>
+                    <button class="o_submit">Submit</button>
                   </span>
                 </div>
               </form>
@@ -203,7 +203,30 @@
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="./js/postcode.js" type="text/javascript"></script>
     <script src="./dist/bundle.js" type="text/javascript"></script>
-    <script src="./js/firebase.js" type="module" type="text/javascript"></script>
+    <script src="./js/firebase.js" defer type="module" type="text/javascript"></script>
+    <script src="./js/countryCode.js" type="text/javascript"></script>
+    <script>
+      for(let i = 0; i < country.length; i++) {
+        const newOption = document.createElement("option");
+        newOption.value = country[i].dial_code; 
+        newOption.textContent = country[i].name
+        document.getElementsByTagName("select")[0].appendChild(newOption);
+        
+      }
 
+      function getselect() {
+        let select = document.getElementById('country');
+        let option = select.options[select.selectedIndex];
+        document.getElementById('overseas_country_code').value = option.value;
+        document.getElementById('overseas_country_code').innerHTML = option.value;
+      }
+
+      function k_checked() {
+        document.getElementById('k_agree').value = "true"
+      }
+      function o_checked() {
+        document.getElementById('o_agree').value = "true"
+      }
+    </script>
   </body>
 </html>

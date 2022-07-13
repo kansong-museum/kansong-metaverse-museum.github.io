@@ -1,4 +1,5 @@
 const { ethers } = require("ethers");
+let { nftAbi_rinkeby } = require("../contractabi/ntfAbi_rinkeby");
 
 async function connect() {
   if (typeof window.ethereum !== "undefined") {
@@ -6,31 +7,36 @@ async function connect() {
       await ethereum.request({ method: "eth_requestAccounts" });
       const accounts = await ethereum.request({ method: "eth_accounts" });
       const address = accounts.toString();
-      console.log(address);
 
-      let balance = await ethereum.request({
-        method: "eth_getBalance",
-        params: [address, "latest"],
-      });
-      const ethBalance = ethers.utils.formatEther(balance);
-      if (ethBalance >= 1) {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const nftInstance = new ethers.Contract(
+        "0xc89E09e68DEa544aBff8A4d744085De8fFc55e08",
+        nftAbi_rinkeby,
+        signer
+      );
+
+      const nftBal = await nftInstance.balanceOf(address);
+      const nftBalance = ethers.utils.formatEther(nftBal) * 10 ** 18;
+
+      if (nftBalance >= 1) {
         let chainId = await ethereum.request({ method: "eth_chainId" });
-        console.log(chainId);
+        let viewBal = document.getElementById("nftBalance");
+        viewBal.innerHTML = nftBalance;
+        let walletAddress = document.getElementById("userAddress");
+        walletAddress.innerHTML = address;
+
+        console.log(nftBalance, address);
         if (chainId == 4) {
-          console.log(ethBalance);
-          let modal = document.getElementById("walletModal");
-          modal.style.display = "block";
-          let viewBal = document.getElementById("ethBalance");
-          viewBal.innerHTML = ethBalance;
-          let userAddress = document.getElementById("userAddress");
-          userAddress.innerHTML = address;
+          let delivery = document.querySelector(".delivery");
+          delivery.style.display = "block";
+          let korea = document.getElementById("korea");
+          korea.style.display = "block";
         } else {
           alert("please change to mainnet");
-          window.location.reload();
         }
       } else {
-        alert("not enough eth..");
-        window.location.reload();
+        alert("There must be at least one NFT.");
       }
     } catch (error) {
       console.log(error);
@@ -42,6 +48,19 @@ async function connect() {
   }
 }
 
+function k_del() {
+  let korea = document.getElementById("korea");
+  korea.style.display = "block";
+  overseas.style.display = "none";
+}
+function o_del() {
+  let overseas = document.getElementById("overseas");
+  korea.style.display = "none";
+  overseas.style.display = "block";
+}
+
 module.exports = {
   connect,
+  k_del,
+  o_del,
 };

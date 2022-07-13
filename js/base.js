@@ -13,10 +13,9 @@ $(function () {
   };
 });
 
-
 //ScrollTrigger
-document.addEventListener("DOMContentLoaded", function () {
-  var trigger = new ScrollTrigger({
-    addHeight: true,
-  });
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   var trigger = new ScrollTrigger({
+//     addHeight: true,
+//   });
+// });
