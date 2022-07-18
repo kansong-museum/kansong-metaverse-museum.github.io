@@ -1,5 +1,8 @@
 const { ethers } = require("ethers");
 let { nftAbi_rinkeby } = require("../contractabi/ntfAbi_rinkeby");
+let { ntfAbi_eth_mainnet } = require("../contractabi/ntfAbi_eth_mainnet");
+let rinkebyContractAddress = "0xc89E09e68DEa544aBff8A4d744085De8fFc55e08";
+let contractAddess = "0x82f58182bE996DF3F8B9922dFa0e8F8aCf71f76C";
 
 async function connect() {
   if (typeof window.ethereum !== "undefined") {
@@ -17,8 +20,8 @@ async function connect() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const nftInstance = new ethers.Contract(
-        "0xc89E09e68DEa544aBff8A4d744085De8fFc55e08",
-        nftAbi_rinkeby,
+        contractAddess,
+        ntfAbi_eth_mainnet,
         signer
       );
 
