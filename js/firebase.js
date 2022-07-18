@@ -21,7 +21,6 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 const db = getFirestore();
-console.log(db);
 
 let userArr = [];
 let o_userArr = [];
@@ -29,13 +28,11 @@ let o_userArr = [];
 // 데이터 불러오기
 const querySnapshot = await getDocs(collection(db, "address"));
 querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data()["userAddress"]}`);
   userArr.push(doc.data()["userAddress"]);
 });
 
 const o_querySnapshot = await getDocs(collection(db, "o_address"));
 o_querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data()["userAddress"]}`);
   o_userArr.push(doc.data()["userAddress"]);
 });
 
@@ -55,39 +52,43 @@ koreaForm.addEventListener("submit", (event) => {
   const nftBalance = document.getElementById("nftBalance").innerHTML;
   const userAddress = document.getElementById("userAddress").innerHTML;
   if (userArr.find((item) => item == userAddress)) {
-    console.log("이미 등록된 주소");
-  }
-
-  if (
-    postcode !== "" &&
-    detailAddress !== "" &&
-    userName !== "" &&
-    phoneNumber !== "" &&
-    address !== ""
-  ) {
-    if (document.getElementById("k_agree").value === "true") {
-      try {
-        let docRef = addDoc(collection(db, "address"), {
-          userName: userName,
-          phoneNumber: phoneNumber,
-          postcode: postcode,
-          address: address,
-          detailAddress: detailAddress,
-          nftBalance: nftBalance,
-          userAddress: userAddress,
-        });
-        console.log("Document written with ID: ", docRef.id);
-        alert("submitted🙂");
-        // let delivery = document.querySelector(".delivery");
-        // delivery.style.display = "none";
-      } catch (e) {
-        console.error("Error adding document: ", e);
+    alert("The address is already registered.");
+  } else {
+    if (
+      postcode !== "" &&
+      detailAddress !== "" &&
+      userName !== "" &&
+      phoneNumber !== "" &&
+      address !== ""
+    ) {
+      if (document.getElementById("k_agree").value === "true") {
+        try {
+          let docRef = addDoc(collection(db, "address"), {
+            userName: userName,
+            phoneNumber: phoneNumber,
+            postcode: postcode,
+            address: address,
+            detailAddress: detailAddress,
+            nftBalance: nftBalance,
+            userAddress: userAddress,
+          });
+          console.log("Document written with ID: ", docRef.id);
+          alert("Submitted🙂");
+          let delivery = document.querySelector(".delivery");
+          delivery.style.display = "none";
+          let korea = document.getElementById("korea");
+          korea.style.display = "none";
+          let Submit_result_ko = document.querySelector(".Submit_result_ko");
+          Submit_result_ko.style.display = "block";
+        } catch (e) {
+          console.error("Error adding document: ", e);
+        }
+      } else {
+        alert("Please agree to the collection and use of personal information");
       }
     } else {
-      alert("Please agree to the collection and use of personal information");
+      alert("Please enter all shipping information");
     }
-  } else {
-    alert("Please enter all shipping information");
   }
 });
 
@@ -117,48 +118,55 @@ overseasForm.addEventListener("submit", (event) => {
   const nftBalance = document.getElementById("nftBalance").innerHTML;
   const userAddress = document.getElementById("userAddress").innerHTML;
   if (o_userArr.find((item) => item == userAddress)) {
-    console.log("이미 등록된 주소");
-  }
-  if (
-    country !== "" &&
-    o_name !== "" &&
-    overseas_tel !== "" &&
-    o_address !== "" &&
-    o_cityAddress !== "" &&
-    o_detailAddress !== "" &&
-    o_postcode !== "" &&
-    o_email !== ""
-  ) {
-    if (isEmail(o_email)) {
-      if (document.getElementById("o_agree").value === "true") {
-        try {
-          let docRef = addDoc(collection(db, "o_address"), {
-            country: country,
-            o_name: o_name,
-            contactNum: contactNum,
-            o_address: o_address,
-            o_cityAddress: o_cityAddress,
-            o_detailAddress: o_detailAddress,
-            o_postcode: o_postcode,
-            o_email: o_email,
-            nftBalance: nftBalance,
-            userAddress: userAddress,
-          });
-          console.log("Document written with ID: ", docRef.id);
-          alert("submitted🙂");
-          // let delivery = document.querySelector(".delivery");
-          // delivery.style.display = "none";
-        } catch (e) {
-          console.error("Error adding document: ", e);
+    alert("The address is already registered.");
+  } else {
+    if (
+      country !== "" &&
+      o_name !== "" &&
+      overseas_tel !== "" &&
+      o_address !== "" &&
+      o_cityAddress !== "" &&
+      o_detailAddress !== "" &&
+      o_postcode !== "" &&
+      o_email !== ""
+    ) {
+      if (isEmail(o_email)) {
+        if (document.getElementById("o_agree").value === "true") {
+          try {
+            let docRef = addDoc(collection(db, "o_address"), {
+              country: country,
+              o_name: o_name,
+              contactNum: contactNum,
+              o_address: o_address,
+              o_cityAddress: o_cityAddress,
+              o_detailAddress: o_detailAddress,
+              o_postcode: o_postcode,
+              o_email: o_email,
+              nftBalance: nftBalance,
+              userAddress: userAddress,
+            });
+            console.log("Document written with ID: ", docRef.id);
+            alert("Submitted🙂");
+            let delivery = document.querySelector(".delivery");
+            delivery.style.display = "none";
+            let overseas = document.getElementById("overseas");
+            overseas.style.display = "none";
+            let Submit_result_en = document.querySelector(".Submit_result_en");
+            Submit_result_en.style.display = "block";
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+        } else {
+          alert(
+            "Please agree to the collection and use of personal information"
+          );
         }
       } else {
-        alert("Please agree to the collection and use of personal information");
+        alert("Please enter the correct email format");
       }
     } else {
-      alert("Please enter the correct email format");
+      alert("Please Enter Whole Address");
     }
-  } else {
-    alert("Please Enter Whole Address");
   }
 });
 
@@ -175,7 +183,7 @@ const formatPhoneNumber = (input) => {
   } else {
     result = undefined;
   }
-  console.log(`${input} -> ${result}`);
+
   return result;
 };
 
@@ -185,6 +193,3 @@ function isEmail(asValue) {
 
   return regExp.test(asValue); // 형식에 맞는 경우 true 리턴
 }
-
-// const docR = doc(db, "address", "gmwhFyBo68A7czbd0FpW");
-// updateDoc(docR, {born: 1999})

@@ -49,9 +49,9 @@
     <link rel="icon" type="image/png" href="./favicon.ico" />
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/base.js"></script>
-    <link rel="stylesheet" href="../css/base.css" />
-    <link rel="stylesheet" href="../css/grid.css" />
-    <link rel="stylesheet" href="../css/address.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/grid.css" />
+    <link rel="stylesheet" href="./css/address.css" />
 
     <script type="text/javascript">
       $(document).ready(function () {
@@ -70,11 +70,14 @@
 
     <section class="section1">
       <div class="Container">
+        <h3>Pre-sale benefits</h3>
+        <p>High-definition print of 'A dano day scene'</p>
+
         <div class="imgarea grid">
           <div><img src="img\introduction\017.jpg" alt=""></div>
         </div>
 
-        <div class="textarea grid">
+        <div class="textarea grid" style="display:none;">
           <div>
             <h5>주의사항</h5>
             <ul>
@@ -94,26 +97,27 @@
       <div class="Container">
         <div class="textarea grid">
           <div>
-            <h4>Pre-sale benefits</h4>
-            <p>High-definition print of 'A dano day scene'</p>
-
             <div class="ConnectWallet_content" style="display:block;">
-              <button type="button" id="connectButton" onclick="bundle.connect()" name="button">Connect wallet</button>
+              <div>
+                <button type="button" id="connectButton" onclick="bundle.connect()" name="button">Connect wallet</button>
+              </div>
             </div>
 
             <div id="nftBalance" style="opacity:0;"></div>
             <div id="userAddress" style="opacity:0;"></div>
 
-            <div class="modal_content" >
+            <div class="modal_content">
               <div class="delivery" style="display:none;">
-                <span>
-                  <input type="radio" name="delivery" id="k_delivery" onclick="bundle.k_del()" checked>
-                  <label for="k_delivery">Domestic Korea delivery</label>
-                </span>
-                <span>
-                  <input type="radio" name="delivery" id="o_delivery" onclick="bundle.o_del()">
-                  <label for="o_delivery">Overseas delivery</label>
-                </span>
+                <div>
+                  <span>
+                    <input type="radio" name="delivery" id="k_delivery" onclick="bundle.k_del()" checked>
+                    <label for="k_delivery">Domestic Korea delivery</label>
+                  </span>
+                  <span>
+                    <input type="radio" name="delivery" id="o_delivery" onclick="bundle.o_del()">
+                    <label for="o_delivery">Overseas delivery</label>
+                  </span>
+                </div>
               </div>
 
               <form name="korea" class="koreaForm" id ="korea" style="display:none;">
@@ -135,7 +139,12 @@
 
                 <div>
                   <p>개인정보의 수집 및 이용목적</p>
-                  <textarea rows="5" placeholder="참고항목" disabled>서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산 구매 및 요금 결제, 물품배송 또는 청구지 등 발송, 금융거래 본인 인증 및 금융 서비스, 요금추심, 서비스 이용과 관련한 고객문의사항 응대</textarea>
+                  <textarea rows="5" placeholder="참고항목" disabled>간송 메타버스 뮤지엄에서는 프리세일 인쇄본 증정 이벤트 진행을 위해 아래와 같이 개인정보를 수집 이용하고자 합니다. 내용을 자세히 읽으신 후 동의 여부를 결정하여 주십시오
+                    1) 수집 및 이용 목적 : 이벤트 참여에 따른 인쇄본 발송 및 지급내역 관리
+                    2) 수집 및 이용 항목 : 수령지 주소, 연락처
+                    3) 보유 및 이용 기간 : 인쇄본 지급 완료일로부터 90일 후 파기
+                    위의 개인정보 수집 및 이용 동의를 거부할 권리가 있습니다.
+                    다만, 동의하지 않으실 경우 게릴라 이벤트 참여에 제한을 받을 수 있습니다.</textarea>
                   <span class="agree">
                     <input type="checkbox" id="k_agree" onchange="k_checked()" value="false">
                     <label for="k_agree">위 개인정보 수집·이용에 동의합니다</label>
@@ -172,14 +181,22 @@
                   <input type="text" id="o_postcode" placeholder="Zip Code" onfocus="this.placeholder=''" onblur="this.placeholder='Zip Code'" value="">
                 </div>
 
-                <div>
+                <div class="email">
                   <p>E-mail</p>
                   <input type="email" id="o_email" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" value="">
+                  <span class="caption">* If the delivery address is overseas, a separate delivery fee is charged. Delivery charges will be notified via personal email.</span>
                 </div>
 
                 <div>
                   <p>개인정보의 수집 및 이용목적</p>
-                  <textarea rows="5" placeholder="참고항목" disabled>서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산 구매 및 요금 결제, 물품배송 또는 청구지 등 발송, 금융거래 본인 인증 및 금융 서비스, 요금추심, 서비스 이용과 관련한 고객문의사항 응대</textarea>
+                  <textarea rows="5" placeholder="참고항목" disabled>Kansong Metaverse Museum intends to collect and use personal information as follows for the pre-sale printed copy presentation event. Please read the contents carefully and decide whether to agree or not.
+
+                    1) Purpose of collection and use: Sending printed copies according to event participation and managing payment details
+                    2) Items to be collected and used: address, contact information
+                    3) Retention and use period: Destroyed after 90 days from the date of payment of printed copies
+                    
+                    You have the right to refuse to consent to the collection and use of personal information above.
+                    However, if you do not agree, participation in the guerrilla event may be restricted.</textarea>
                   <span class="agree">
                     <input type="checkbox" id="o_agree" onchange="o_checked()">
                     <label for="o_agree">위 개인정보 수집·이용에 동의합니다</label>
@@ -195,6 +212,18 @@
               </form>
             </div>
 
+            <div class="Submit_result">
+              <div class="Submit_result_ko" style="display:none;">
+                <h4>성공적으로 제출되었습니다.</h4>
+                <p>스냅샷은 8월 7일 10 AM (UTC +9)에 진행한 후 그림 발송 시작합니다.</p>
+              </div>
+
+              <div class="Submit_result_en" style="display:none;">
+                <h4>Submitted successfully.</h4>
+                <p>Snapshots will be taken on August 7th at 10am (UTC +9) and pictures will be sent out.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -208,10 +237,10 @@
     <script>
       for(let i = 0; i < country.length; i++) {
         const newOption = document.createElement("option");
-        newOption.value = country[i].dial_code; 
+        newOption.value = country[i].dial_code;
         newOption.textContent = country[i].name
         document.getElementsByTagName("select")[0].appendChild(newOption);
-        
+
       }
 
       function getselect() {

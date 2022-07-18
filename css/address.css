@@ -1,3 +1,4 @@
+body{font-weight:400;}
 section .grid > div{
   grid-column: 3 / 11;
 }
@@ -7,6 +8,18 @@ section .grid > div{
 .section1 .imgarea{
   margin-top:0;
 }
+.section1 .Container > h3{
+  font-weight: 600;
+  font-size: var(--font-size-subtitle);
+  text-align: center;
+  margin-bottom: 0;
+}
+.section1 .Container > p{
+  margin-bottom: 3.2rem;
+  text-align: center;
+}
+
+
 .section1 .textarea > div{
   padding:1.6rem;
   background-image: url(https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/bg-bk.jpg);
@@ -18,7 +31,6 @@ section .grid > div{
 }
 .section1 .textarea li{
   line-height: 1.6;
-  font-weight: 400;
   margin-left:0.8rem;
 }
 .section1 .textarea li::marker{
@@ -28,21 +40,13 @@ section .grid > div{
 .section2 .Container{
   padding-top: 6rem;
 }
-.section2 .ConnectWallet_content{
+.section2 .ConnectWallet_content > div{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center
 }
-.section2 .textarea > div > h4{
-  font-weight: 600;
-  font-size: var(--font-size-subtitle);
-  text-align: center;
-}
-.section2 .textarea > div > p{
-  margin-bottom: 3.2rem;
-  text-align: center;
-}
+
 
 .section2 .modal_content{
   display: flex;
@@ -58,7 +62,7 @@ section .grid > div{
 .section2 .modal_content label{
   cursor: pointer;
 }
-.section2 .modal_content .delivery{
+.section2 .modal_content .delivery > div{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -67,7 +71,6 @@ section .grid > div{
   margin-bottom: 1.6rem;
 }
 .section2 .modal_content .delivery span{
-  font-weight: 400;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -83,7 +86,6 @@ section .grid > div{
 }
 .section2 .modal_content form div > p{
   margin-bottom: 0.4rem;
-  font-weight: 400;
 }
 
 .section2 .modal_content form select,
@@ -157,7 +159,6 @@ section .grid > div{
   padding-left: 0;
 }
 
-
 .section2 .modal_content .agree{
   display: flex;
   flex-direction: row;
@@ -173,7 +174,6 @@ section .grid > div{
 }
 .section2 .modal_content .agree label{
   font-size: var(--font-size-small);
-  font-weight: 400;
 }
 
 .section2 .modal_content .btnArea{
@@ -200,12 +200,28 @@ section .grid > div{
 }
 
 
+.section2 .Submit_result{
+ text-align: center;
+}
+.section2 .Submit_result h4{
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
 
 
 /* 모바일 */
 @media screen and (max-width: 900px) {
   section .grid > div{
     grid-column: 1 / 7;
+  }
+
+  .section1 .Container > h3{
+    font-size: var(--font-size-subtitle-m);
+  }
+  .section1 .Container > p{
+    margin-bottom: 3.2rem;
+    text-align: center;
   }
 
   .section1 .textarea > div{
@@ -220,13 +236,11 @@ section .grid > div{
     font-size: var(--font-size-content-m);
   }
 
-  .section2 .textarea > div > h4{
-    font-size: var(--font-size-subtitle-m);
-  }
-  .section2 .modal_content .delivery{
+
+  .section2 .modal_content .delivery > div{
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
+    /* justify-content: flex-start; */
+    /* align-items: stretch; */
     row-gap:1.2rem;
     margin-bottom: 1.6rem;
   }
@@ -236,6 +250,12 @@ section .grid > div{
   }
   .section2 .modal_content form[name="korea"] input#btn_postcode{
     width:45%;
+  }
+
+
+  .section2 .Submit_result h4{
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
   }
 
 

@@ -31,13 +31,12 @@ async function connect() {
         let walletAddress = document.getElementById("userAddress");
         walletAddress.innerHTML = address;
 
-        console.log(nftBalance, address);
         let delivery = document.querySelector(".delivery");
         delivery.style.display = "block";
         let korea = document.getElementById("korea");
         korea.style.display = "block";
       } else {
-        alert("There must be at least one NFT.");
+        alert("Sorry. You have no NFT.");
       }
     } catch (error) {
       console.log(error);
