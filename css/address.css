@@ -1,0 +1,263 @@
+body{font-weight:400;}
+section .grid > div{
+  grid-column: 3 / 11;
+}
+.section1 .Container{
+  padding-bottom: 0;
+}
+.section1 .imgarea{
+  margin-top:0;
+}
+.section1 .Container > h3{
+  font-weight: 600;
+  font-size: var(--font-size-subtitle);
+  text-align: center;
+  margin-bottom: 0;
+}
+.section1 .Container > p{
+  margin-bottom: 3.2rem;
+  text-align: center;
+}
+
+
+.section1 .textarea > div{
+  padding:1.6rem;
+  background-image: url(https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/bg-bk.jpg);
+  color: #A9A9A9;
+  font-size: var(--font-size-small);
+}
+.section1 .textarea h5{
+  line-height: 1.6;
+}
+.section1 .textarea li{
+  line-height: 1.6;
+  margin-left:0.8rem;
+}
+.section1 .textarea li::marker{
+  content: "ㆍ ";
+}
+
+.section2 .Container{
+  padding-top: 6rem;
+}
+.section2 .ConnectWallet_content > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+
+.section2 .modal_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  min-width:280px;
+  max-width:500px;
+  margin: 0 auto;
+}
+.section2 .modal_content input[type="radio"],
+.section2 .modal_content label{
+  cursor: pointer;
+}
+.section2 .modal_content .delivery > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap:2.4rem;
+  margin-bottom: 1.6rem;
+}
+.section2 .modal_content .delivery span{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.4rem;
+}
+
+.section2 .modal_content form {
+  width:100%;
+}
+.section2 .modal_content form > div{
+  width:100%;
+  margin-bottom: 0.8rem;
+}
+.section2 .modal_content form div > p{
+  margin-bottom: 0.4rem;
+}
+
+.section2 .modal_content form select,
+.section2 .modal_content form input,
+.section2 .modal_content form textarea{
+  background: var(--white);
+  color:var(--black);
+  border:1px solid #ccc;
+  margin-bottom: 4px;
+  padding:0.8rem 0.8rem;
+  width:100%;
+  resize: none;
+}
+.section2 .modal_content form input{
+  line-height: 1.8;
+}
+.section2 .modal_content form textarea{
+  letter-spacing: -0.5px;
+  line-height: 1.4;
+}
+.section2 .modal_content form select:focus,
+.section2 .modal_content form input:focus,
+.section2 .modal_content form textarea:focus{
+  border:1px solid var(--black);
+  outline: none;
+}
+.section2 .modal_content ::placeholder{
+  color: #A9A9A9;
+}
+
+.section2 .modal_content form span{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.section2 form[name="korea"] .addresArea input#postcode{
+  width:65%;
+  float: left;
+}
+.section2 form[name="korea"] .addresArea input#btn_postcode{
+  float: right;
+  width:calc(35% - 0.4rem);
+  border-color: var(--black);
+  font-size: 11px;
+  cursor: pointer;
+  padding:1rem 0;
+}
+
+.section2 form[name="overseas"] .overseasTelArea{
+  background: var(--white);
+  color:var(--black);
+  border:1px solid #ccc;
+}
+.section2 form[name="overseas"] .overseasTelArea:focus{
+  border:1px solid var(--black);
+}
+.section2 form[name="overseas"] .overseasTelArea input{
+  border:0;
+}
+.section2 form[name="overseas"] .overseasTelArea input#overseas_country_code{
+  width:22%;
+  float: left;
+}
+.section2 form[name="overseas"] .overseasTelArea input#overseas_tel{
+  float: right;
+  width:78%;
+  border-color: var(--black);
+  cursor: inherit;
+  padding-left: 0;
+}
+
+.section2 .modal_content .agree{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+
+}
+.section2 .modal_content .agree input{
+  width:inherit;
+  margin:0;
+  margin-right: 0.4rem;
+}
+.section2 .modal_content .agree label{
+  font-size: var(--font-size-small);
+}
+
+.section2 .modal_content .btnArea{
+  justify-content: center;
+  margin-top: 2.4rem;
+}
+.section2 .modal_content .btnArea .btn_reset{
+  width:inherit;
+  margin:0;
+  margin-right: 1.6rem;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  border: 0;
+  background: none;
+  font-size:var(--font-size-content);
+  cursor: pointer;
+  transition: all 0.3s;
+  line-height: 1.5;
+}
+.section2 .modal_content .btnArea .btn_reset:hover{
+  background: var(--secondary-active-color);
+  box-shadow: 0px 0px 8px rgba(180, 67, 50, 0.7);
+  color:var(--white);
+}
+
+
+.section2 .Submit_result{
+ text-align: center;
+}
+.section2 .Submit_result h4{
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+
+/* 모바일 */
+@media screen and (max-width: 900px) {
+  section .grid > div{
+    grid-column: 1 / 7;
+  }
+
+  .section1 .Container > h3{
+    font-size: var(--font-size-subtitle-m);
+  }
+  .section1 .Container > p{
+    margin-bottom: 3.2rem;
+    text-align: center;
+  }
+
+  .section1 .textarea > div{
+    font-size: var(--font-size-small-m);
+  }
+  .section1 .textarea li{
+    line-height: 1.5;
+  }
+
+  button{
+    padding: 0.8rem 2rem;
+    font-size: var(--font-size-content-m);
+  }
+
+
+  .section2 .modal_content .delivery > div{
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    /* align-items: stretch; */
+    row-gap:1.2rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .section2 .modal_content form[name="korea"] input#postcode{
+    width:52%;
+  }
+  .section2 .modal_content form[name="korea"] input#btn_postcode{
+    width:45%;
+  }
+
+
+  .section2 .Submit_result h4{
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+
+
+}
