@@ -2225,8 +2225,13 @@ async function connect() {
         delivery.style.display = "block";
         let korea = document.getElementById("korea");
         korea.style.display = "block";
+        $("#connectButton").hide();
       } else {
-        alert("Sorry. You have no NFT.");
+        let no_nft = document.querySelector(".no_nft");
+        no_nft.style.display = "block";
+        let currentAddress = document.getElementById("currentAddress");
+        currentAddress.innerHTML = address;
+        $("#connectButton").hide();
       }
     } catch (error) {
       console.log(error);
