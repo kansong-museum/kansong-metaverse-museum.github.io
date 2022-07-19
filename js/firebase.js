@@ -80,6 +80,7 @@ koreaForm.addEventListener("submit", (event) => {
           delivery.style.display = "none";
           let korea = document.getElementById("korea");
           korea.style.display = "none";
+          $("#connectButton").hide();
           let Submit_result_ko = document.querySelector(".Submit_result_ko");
           Submit_result_ko.style.display = "block";
         } catch (e) {
@@ -155,6 +156,7 @@ overseasForm.addEventListener("submit", (event) => {
             delivery.style.display = "none";
             let overseas = document.getElementById("overseas");
             overseas.style.display = "none";
+            $("#connectButton").hide();
             let Submit_result_en = document.querySelector(".Submit_result_en");
             Submit_result_en.style.display = "block";
           } catch (e) {
