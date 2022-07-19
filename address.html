@@ -103,8 +103,11 @@
               </div>
             </div>
 
-            <div id="nftBalance" style="opacity:0;"></div>
-            <div id="userAddress" style="opacity:0;"></div>
+            <div class="myInfo" style="display:none;">
+              <div id="nftBal">보유한 NFT 수량 : <span id="nftBalance"></span></div>
+              <div id="userAddress"></div>
+            </div>
+
 
             <div class="modal_content">
               <div class="delivery" style="display:none;">
@@ -196,7 +199,7 @@
 1) Purpose of collection and use: Sending printed copies according to event participation and managing payment details
 2) Items to be collected and used: address, contact information
 3) Retention and use period: Destroyed after 90 days from the date of payment of printed copies
-                    
+
 You have the right to refuse to consent to the collection and use of personal information above.
 However, if you do not agree, participation in the guerrilla event may be restricted.</textarea>
                   <span class="agree">
@@ -236,7 +239,7 @@ However, if you do not agree, participation in the guerrilla event may be restri
     <script src="./dist/bundle.js" type="text/javascript"></script>
     <script src="./js/firebase.js" defer type="module" type="text/javascript"></script>
     <script src="./js/countryCode.js" type="text/javascript"></script>
-    <script>
+    <!-- <script>
       for(let i = 0; i < country.length; i++) {
         const newOption = document.createElement("option");
         newOption.value = country[i].dial_code;
@@ -258,6 +261,6 @@ However, if you do not agree, participation in the guerrilla event may be restri
       function o_checked() {
         document.getElementById('o_agree').value = "true"
       }
-    </script>
+    </script> -->
   </body>
 </html>

@@ -2219,6 +2219,8 @@ async function connect() {
         let walletAddress = document.getElementById("userAddress");
         walletAddress.innerHTML = address;
 
+        let myInfo = document.querySelector(".myInfo");
+        myInfo.style.display = "block";
         let delivery = document.querySelector(".delivery");
         delivery.style.display = "block";
         let korea = document.getElementById("korea");

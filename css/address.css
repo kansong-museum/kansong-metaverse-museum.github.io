@@ -1,4 +1,7 @@
-body{font-weight:400;}
+section{
+  font-weight:400;
+  min-height: inherit;
+}
 section .grid > div{
   grid-column: 3 / 11;
 }
@@ -44,9 +47,21 @@ section .grid > div{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  margin-bottom:3.2rem;
 }
 
+.section2 .myInfo{
+  text-align: center;
+  margin-bottom:3.2rem;
+}
+#nftBal{
+  font-weight: 600;
+  font-size: var(--font-size-subtitle);
+}
+#userAddress{
+  font-weight: 500;
+}
 
 .section2 .modal_content{
   display: flex;
@@ -234,6 +249,20 @@ section .grid > div{
   button{
     padding: 0.8rem 2rem;
     font-size: var(--font-size-content-m);
+  }
+
+  .section2 .ConnectWallet_content > div{
+    margin-bottom:2.4rem;
+  }
+
+  .section2 .myInfo{
+    margin-bottom:2.4rem;
+  }
+  #nftBalance{
+    font-size: var(--font-size-subtitle-m);
+  }
+  #userAddress{
+    font-size: var(--font-size-small-m);
   }
 
 
