@@ -1,16 +1,58 @@
+.section7 .imgarea > div {
+  grid-column: 3 / 11;
+}
 #news
 {
-    width:  60%;
-    height: 200px;
-    margin: auto;
-    text-align: center;
-
+    color: var(--white);
+}
+#news > div{
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px; /* left, right 사이 여백값 */
+}
+#news a{
+  color: var(--white);
+  padding: 5px;
+}
+#left {
+    flex:1;
+    text-align: left;
 }
 
-#main_h1{
-    font-size: var(--font-size-subtitle);
-    text-align: center;
-    font-weight: 500;
-    line-height: 1;
-    margin-bottom: 5px;
+
+
+#right {
+    flex:1;
+    text-align: left;
+}
+
+#day {
+    font-size: 1rem;
+}
+
+#name2 {
+    font-size: 1.5rem;
+}
+
+#name {
+    font-size: 3rem;
+}
+
+#news_name
+{
+   font-size: 1rem;
+}
+
+
+
+/* 모바일 */
+@media screen and (max-width: 900px) {
+  .section7 .imgarea > div {
+    grid-column: 1 / 7;
+  }
+  #news > div{
+    flex-direction: column;
+    row-gap: 15px; /* left, right 위아래 여백값 */
+  }
+
 }
