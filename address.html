@@ -261,11 +261,22 @@ However, if you do not agree, participation in the guerrilla event may be restri
         document.getElementById('overseas_country_code').value = option.value;
         document.getElementById('overseas_country_code').innerHTML = option.value;
       }
+      let counter = 0;
       function k_checked() {
-        document.getElementById('k_agree').value = "true"
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById('k_agree').value = "false"
+        } else {
+          document.getElementById('k_agree').value = "true"
+        }
       }
       function o_checked() {
-        document.getElementById('o_agree').value = "true"
+        counter += 1
+        if (counter % 2 == 0) {
+          document.getElementById('o_agree').value = "false"
+        } else {
+          document.getElementById('o_agree').value = "true"
+        }
       }
       async function CheckConnection(){
         if (typeof window.ethereum !== "undefined") {
