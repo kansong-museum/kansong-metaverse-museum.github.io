@@ -63,6 +63,14 @@ section .grid > div{
   font-weight: 500;
 }
 
+.section2 .no_nft{
+  text-align: center;
+  margin-bottom:3.2rem;
+}
+#currentAddress {
+  font-weight: 500;
+}
+
 .section2 .modal_content{
   display: flex;
   flex-direction: column;
