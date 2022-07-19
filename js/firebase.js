@@ -74,6 +74,8 @@ koreaForm.addEventListener("submit", (event) => {
           });
           console.log("Document written with ID: ", docRef.id);
           alert("Submitted🙂");
+          let myInfo = document.querySelector(".myInfo");
+          myInfo.style.display = "none";
           let delivery = document.querySelector(".delivery");
           delivery.style.display = "none";
           let korea = document.getElementById("korea");
@@ -147,6 +149,8 @@ overseasForm.addEventListener("submit", (event) => {
             });
             console.log("Document written with ID: ", docRef.id);
             alert("Submitted🙂");
+            let myInfo = document.querySelector(".myInfo");
+            myInfo.style.display = "none";
             let delivery = document.querySelector(".delivery");
             delivery.style.display = "none";
             let overseas = document.getElementById("overseas");
