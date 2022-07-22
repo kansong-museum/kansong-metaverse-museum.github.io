@@ -29,11 +29,13 @@ let o_userArr = [];
 const querySnapshot = await getDocs(collection(db, "address"));
 querySnapshot.forEach((doc) => {
   userArr.push(doc.data()["userAddress"]);
+  document.getElementById("userArr").innerHTML = userArr;
 });
 
 const o_querySnapshot = await getDocs(collection(db, "o_address"));
 o_querySnapshot.forEach((doc) => {
   o_userArr.push(doc.data()["userAddress"]);
+  document.getElementById("o_userArr").innerHTML = o_userArr;
 });
 
 // 데이터 보내기

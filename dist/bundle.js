@@ -2219,13 +2219,28 @@ async function connect() {
         let walletAddress = document.getElementById("userAddress");
         walletAddress.innerHTML = address;
 
-        let myInfo = document.querySelector(".myInfo");
-        myInfo.style.display = "block";
-        let delivery = document.querySelector(".delivery");
-        delivery.style.display = "block";
-        let korea = document.getElementById("korea");
-        korea.style.display = "block";
-        $("#connectButton").hide();
+        let userArr = document.getElementById("userArr").innerHTML;
+        let o_userArr = document.getElementById("o_userArr").innerHTML;
+        let spArr = userArr.split(",");
+        let o_spArr = o_userArr.split(",");
+
+        if (spArr.find((item) => item == address)) {
+          let Submit_result_ko = document.querySelector(".Submit_result_ko");
+          Submit_result_ko.style.display = "block";
+          $("#connectButton").hide();
+        } else if (o_spArr.find((item) => item == address)) {
+          let Submit_result_en = document.querySelector(".Submit_result_en");
+          Submit_result_en.style.display = "block";
+          $("#connectButton").hide();
+        } else {
+          let myInfo = document.querySelector(".myInfo");
+          myInfo.style.display = "block";
+          let delivery = document.querySelector(".delivery");
+          delivery.style.display = "block";
+          let korea = document.getElementById("korea");
+          korea.style.display = "block";
+          $("#connectButton").hide();
+        }
       } else {
         let no_nft = document.querySelector(".no_nft");
         no_nft.style.display = "block";
