@@ -83,6 +83,10 @@ koreaForm.addEventListener("submit", (event) => {
           let korea = document.getElementById("korea");
           korea.style.display = "none";
           $("#connectButton").hide();
+          let imgFrame = document.querySelector(".imgFrame");
+          imgFrame.style.display = "none";
+          let youTubeFrame = document.querySelector(".youTubeFrame");
+          youTubeFrame.style.display = "block";
           let Submit_result_ko = document.querySelector(".Submit_result_ko");
           Submit_result_ko.style.display = "block";
         } catch (e) {
@@ -111,8 +115,7 @@ overseasForm.addEventListener("submit", (event) => {
     "overseas_country_code"
   ).value;
   const overseas_tel = document.getElementById("overseas_tel").value;
-  const contactNum =
-    overseas_country_code + "-" + formatPhoneNumber(overseas_tel);
+  const contactNum = overseas_country_code + "-" + overseas_tel;
 
   const o_address = document.getElementById("o_address").value;
   const o_cityAddress = document.getElementById("o_cityAddress").value;
@@ -159,6 +162,10 @@ overseasForm.addEventListener("submit", (event) => {
             let overseas = document.getElementById("overseas");
             overseas.style.display = "none";
             $("#connectButton").hide();
+            let imgFrame = document.querySelector(".imgFrame");
+            imgFrame.style.display = "none";
+            let youTubeFrame = document.querySelector(".youTubeFrame");
+            youTubeFrame.style.display = "block";
             let Submit_result_en = document.querySelector(".Submit_result_en");
             Submit_result_en.style.display = "block";
           } catch (e) {
