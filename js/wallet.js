@@ -40,12 +40,24 @@ async function connect() {
         let o_spArr = o_userArr.split(",");
 
         if (spArr.find((item) => item == address)) {
+          let imgFrame = document.querySelector(".imgFrame");
+          imgFrame.style.display = "none";
+          let youTubeFrame = document.querySelector(".youTubeFrame");
+          youTubeFrame.style.display = "none";
           let Submit_result_ko = document.querySelector(".Submit_result_ko");
           Submit_result_ko.style.display = "block";
+          let tubeFrame = document.querySelector(".tubeFrame");
+          tubeFrame.style.display = "block";
           $("#connectButton").hide();
         } else if (o_spArr.find((item) => item == address)) {
+          let imgFrame = document.querySelector(".imgFrame");
+          imgFrame.style.display = "none";
+          let youTubeFrame = document.querySelector(".youTubeFrame");
+          youTubeFrame.style.display = "none";
           let Submit_result_en = document.querySelector(".Submit_result_en");
           Submit_result_en.style.display = "block";
+          let tubeFrame = document.querySelector(".tubeFrame");
+          tubeFrame.style.display = "block";
           $("#connectButton").hide();
         } else {
           let myInfo = document.querySelector(".myInfo");

@@ -21,6 +21,26 @@ section .grid > div{
   margin-bottom: 3.2rem;
   text-align: center;
 }
+.section1 .imgarea > .grid{
+  padding:0;
+}
+.section1 .imgarea > .grid > .imgFrame{
+  grid-column: 1 / 6;
+}
+.section1 .imgarea > .grid > .youTubeFrame{
+  grid-column: 6 / 13;
+  width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  position: relative;
+}
+.section1 .imgarea > .grid > .youTubeFrame iframe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
 
 
 .section1 .textarea > div{
@@ -245,6 +265,17 @@ section .grid > div{
   .section1 .Container > p{
     margin-bottom: 3.2rem;
     text-align: center;
+  }
+
+  .section1 .imgarea > .grid{
+    padding:0;
+    row-gap:1rem;
+  }
+  .section1 .imgarea > .grid > .imgFrame{
+    grid-column: 1 / 7;
+  }
+  .section1 .imgarea > .grid > .youTubeFrame{
+    grid-column: 1 / 7;
   }
 
   .section1 .textarea > div{
