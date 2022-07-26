@@ -2233,6 +2233,8 @@ async function connect() {
           Submit_result_ko.style.display = "block";
           let tubeFrame = document.querySelector(".tubeFrame");
           tubeFrame.style.display = "block";
+          let explain = document.getElementById("explain");
+          explain.style.display = "none";
           $("#connectButton").hide();
         } else if (o_spArr.find((item) => item == address)) {
           let imgFrame = document.querySelector(".imgFrame");
@@ -2243,6 +2245,8 @@ async function connect() {
           Submit_result_en.style.display = "block";
           let tubeFrame = document.querySelector(".tubeFrame");
           tubeFrame.style.display = "block";
+          let explain = document.getElementById("explain");
+          explain.style.display = "none";
           $("#connectButton").hide();
         } else {
           let myInfo = document.querySelector(".myInfo");
@@ -2251,6 +2255,8 @@ async function connect() {
           delivery.style.display = "block";
           let korea = document.getElementById("korea");
           korea.style.display = "block";
+          let explain = document.getElementById("explain");
+          explain.style.display = "none";
           $("#connectButton").hide();
         }
       } else {
@@ -2258,6 +2264,8 @@ async function connect() {
         no_nft.style.display = "block";
         let currentAddress = document.getElementById("currentAddress");
         currentAddress.innerHTML = address;
+        let explain = document.getElementById("explain");
+        explain.style.display = "none";
         $("#connectButton").hide();
       }
     } catch (error) {
