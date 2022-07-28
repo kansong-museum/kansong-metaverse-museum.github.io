@@ -485,6 +485,10 @@ body{
     margin-top:20px;
     color: white;
   }
+  .presale div {
+    padding: 5px;
+
+  }
   .presale p{
     width:90%;
     margin:0 auto;
