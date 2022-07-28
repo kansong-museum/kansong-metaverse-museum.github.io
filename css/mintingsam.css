@@ -480,20 +480,22 @@ body{
   
   .presale{
     border-radius: 20px;
-    background-color: #C6DEDC;
+    background-color: #264a58;
     padding: 10px 10px;
-    margin-top:20px
+    margin-top:20px;
+    color: white;
   }
   .presale p{
     width:620px;
     margin:0 auto;
-    text-align: center;
   }
   
   .presale a{
     width:620px;
     margin:0 auto;
     text-align: center;
+    text-decoration: underline;
+    color: white;
   }
   
   .nft-address{
@@ -886,7 +888,6 @@ body{
     .presale p{
       width:100%;
       font-weight: 400;
-  
     }
   
     /* Progress bar*/
