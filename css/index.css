@@ -24,6 +24,32 @@
   font-size:3.2rem;
 }
 
+#popup2{
+  position: absolute;
+  right:100px;
+  top:520px;
+  width:360px;
+  height:auto;
+  z-index: 9999;
+}
+#popup2 a{
+  font-size: 0;
+}
+#popup2.close {
+  display: none;
+}
+#popup2 .popup_close{
+  position: absolute;
+  right:0;
+  top:0;
+}
+#popup2 .popup_close div{
+  background:none;
+  padding:0 1.2rem;
+  cursor:pointer;
+  font-size:3.2rem;
+}
+
 
 
 /* snb 왼쪽메뉴 */
@@ -525,10 +551,16 @@ nav ol li a {
 
   #popup{
     left:50%;
-    top:50%;
-    transform:translate(-50%, -50%);
-    width:80%;
-    max-width:300px;
+    top:100px;
+    transform:translate(-50%);
+    width:300px;
+  }
+
+  #popup2{
+    left:50%;
+    top:450px;
+    transform:translate(-50%);
+    width:300px;
   }
 
   nav {

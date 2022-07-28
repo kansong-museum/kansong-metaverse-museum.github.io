@@ -25,10 +25,10 @@ section .grid > div{
   padding:0;
 }
 .section1 .imgarea > .grid > .imgFrame{
-  grid-column: 1 / 6;
+  grid-column: 1 / 7;
 }
 .section1 .imgarea > .grid > .youTubeFrame{
-  grid-column: 6 / 13;
+  grid-column: 7 / 13;
   width: 100%;
   padding-bottom: 56.25%;
   overflow: hidden;
@@ -57,7 +57,7 @@ section .grid > div{
   margin-left:0.8rem;
 }
 .section1 .textarea li::marker{
-  content: "ㆍ ";
+  content: "??";
 }
 
 .section2 .Container{
@@ -253,7 +253,7 @@ section .grid > div{
 }
 
 
-/* 모바일 */
+/* 紐⑤컮??*/
 @media screen and (max-width: 900px) {
   section .grid > div{
     grid-column: 1 / 7;
