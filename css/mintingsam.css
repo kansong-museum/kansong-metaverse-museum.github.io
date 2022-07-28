@@ -486,16 +486,17 @@ body{
     color: white;
   }
   .presale p{
-    width:620px;
+    width:90%;
     margin:0 auto;
+    text-align: center;
   }
   
   .presale a{
-    width:620px;
+    width:90%;
     margin:0 auto;
-    text-align: center;
     text-decoration: underline;
     color: white;
+    text-align: center;
   }
   
   .nft-address{
