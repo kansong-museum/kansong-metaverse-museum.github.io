@@ -2219,53 +2219,19 @@ async function connect() {
         let walletAddress = document.getElementById("userAddress");
         walletAddress.innerHTML = address;
 
-        let userArr = document.getElementById("userArr").innerHTML;
-        let o_userArr = document.getElementById("o_userArr").innerHTML;
-        let spArr = userArr.split(",");
-        let o_spArr = o_userArr.split(",");
-
-        if (spArr.find((item) => item == address)) {
-          let imgFrame = document.querySelector(".imgFrame");
-          imgFrame.style.display = "none";
-          let youTubeFrame = document.querySelector(".youTubeFrame");
-          youTubeFrame.style.display = "none";
-          let Submit_result_ko = document.querySelector(".Submit_result_ko");
-          Submit_result_ko.style.display = "block";
-          let tubeFrame = document.querySelector(".tubeFrame");
-          tubeFrame.style.display = "block";
-          let explain = document.getElementById("explain");
-          explain.style.display = "none";
-          $("#connectButton").hide();
-        } else if (o_spArr.find((item) => item == address)) {
-          let imgFrame = document.querySelector(".imgFrame");
-          imgFrame.style.display = "none";
-          let youTubeFrame = document.querySelector(".youTubeFrame");
-          youTubeFrame.style.display = "none";
-          let Submit_result_en = document.querySelector(".Submit_result_en");
-          Submit_result_en.style.display = "block";
-          let tubeFrame = document.querySelector(".tubeFrame");
-          tubeFrame.style.display = "block";
-          let explain = document.getElementById("explain");
-          explain.style.display = "none";
-          $("#connectButton").hide();
+        let surveyArr = document.getElementById("surveyArr").innerHTML;
+        let Arr = surveyArr.split(",");
+        $("#connectButton").hide();
+        if (Arr.find((item) => item == address)) {
+          $("#korea").hide();
         } else {
-          let myInfo = document.querySelector(".myInfo");
-          myInfo.style.display = "block";
-          let delivery = document.querySelector(".delivery");
-          delivery.style.display = "block";
-          let korea = document.getElementById("korea");
-          korea.style.display = "block";
-          let explain = document.getElementById("explain");
-          explain.style.display = "none";
-          $("#connectButton").hide();
+          $("#korea").show();
         }
       } else {
         let no_nft = document.querySelector(".no_nft");
         no_nft.style.display = "block";
         let currentAddress = document.getElementById("currentAddress");
         currentAddress.innerHTML = address;
-        let explain = document.getElementById("explain");
-        explain.style.display = "none";
         $("#connectButton").hide();
       }
     } catch (error) {
@@ -2289,21 +2255,8 @@ async function switchChain() {
   }
 }
 
-function k_del() {
-  let korea = document.getElementById("korea");
-  korea.style.display = "block";
-  overseas.style.display = "none";
-}
-function o_del() {
-  let overseas = document.getElementById("overseas");
-  korea.style.display = "none";
-  overseas.style.display = "block";
-}
-
 module.exports = {
   connect,
-  k_del,
-  o_del,
 };
 
 },{"../contractabi/ntfAbi_eth_mainnet":1,"../contractabi/ntfAbi_rinkeby":2,"ethers":149}],4:[function(require,module,exports){

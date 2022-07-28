@@ -189,6 +189,57 @@ overseasForm.addEventListener("submit", (event) => {
   }
 });
 
+const surveyForm = document.querySelector(".surveyForm");
+
+surveyForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  var YesOrNo = $('input[name="delivery"]:checked').val();
+  const amount_needs = document.getElementById("amount_needs").value;
+  const phoneNumber = formatPhoneNumber(
+    document.getElementById("phoneNumber").value
+  );
+  const email = document.getElementById("email").value;
+  const nftBalance = document.getElementById("nftBalance").innerHTML;
+  const userAddress = document.getElementById("userAddress").innerHTML;
+
+  if (amount_needs !== "" && phoneNumber !== "" && email !== "") {
+    if (isEmail(email)) {
+      if (document.getElementById("k_agree").value === "true") {
+        try {
+          let docRef = addDoc(collection(db, "survey"), {
+            YesOrNo: YesOrNo,
+            amount_needs: amount_needs,
+            phoneNumber: phoneNumber,
+            email: email,
+            nftBalance: nftBalance,
+            userAddress: userAddress,
+          });
+          console.log("Document written with ID: ", docRef.id);
+          alert("Submitted");
+          let myInfo = document.querySelector(".myInfo");
+          myInfo.style.display = "none";
+          let korea = document.getElementById("korea");
+          korea.style.display = "none";
+          $("#connectButton").hide();
+          let imgFrame = document.querySelector(".imgFrame");
+          imgFrame.style.display = "none";
+          let youTubeFrame = document.querySelector(".youTubeFrame");
+          youTubeFrame.style.display = "none";
+        } catch (e) {
+          console.error("Error adding document: ", e);
+        }
+      } else {
+        alert("Please agree to the collection and use of personal information");
+      }
+    } else {
+      alert("Please enter the correct email format");
+    }
+  } else {
+    alert("Please enter all information");
+  }
+});
+
 const formatPhoneNumber = (input) => {
   const cleanInput = input.replaceAll(/[^0-9]/g, "");
   let result = "";
