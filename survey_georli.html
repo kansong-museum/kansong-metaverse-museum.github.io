@@ -52,6 +52,44 @@
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/grid.css" />
     <link rel="stylesheet" href="./css/survey.css" />
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"></script>
+
+    <script type="module" defer>
+      import {fire} from './js/firebase2.mjs'
+      import {connect} from './js/georli.mjs'
+      import { nftAbi_georli } from "./contractabi/nftAbi_georli.mjs";
+      async function ConnectBtnHandler() {
+        // await bundle2.connect();
+        await connect(nftAbi_georli);
+        fire();
+      }
+      window.ConnectBtnHandler = ConnectBtnHandler
+    </script>
+    <script type="module" defer>
+        import {fire} from './js/firebase2.mjs'
+        import {connect} from './js/georli.mjs'
+        import { nftAbi_georli } from "./contractabi/nftAbi_georli.mjs";
+        (async () => {
+          await CheckConnection();
+          fire();
+        })();
+    
+        async function CheckConnection(){
+          if (typeof window.ethereum !== "undefined") {
+            try {
+              const accounts = await ethereum.request({ method: "eth_accounts" });
+              console.log("accounts =>", accounts);
+              if(accounts.length > 0){
+                // await bundle2.connect();
+                await connect(nftAbi_georli);
+              }
+            } catch (error) {
+              console.log(error);
+            }
+          }
+        }
+    </script>
 
     <script type="text/javascript">
       $(document).ready(function () {
@@ -97,7 +135,7 @@
           <div>
             <div class="ConnectWallet_content" style="display:block;">
               <div>
-                <button type="button" id="connectButton" onclick="georli.connect()" name="button">Connect wallet</button>
+                <button type="button" id="connectButton" onclick="ConnectBtnHandler()" name="button">Connect wallet</button>
               </div>
             </div>
 
@@ -186,11 +224,10 @@
 
 
     </section>
-    <script src="./dist/georli.js" type="text/javascript"></script>
-    <script src="./js/firebase.mjs" defer type="module" type="text/javascript"></script>
+    <!-- <script src="./dist/georli.js" type="text/javascript"></script>
+    <script src="./js/firebase.mjs" defer type="module" type="text/javascript"></script> -->
     
     <script>
-      CheckConnection();
       let counter = 0;
       function k_checked() {
         counter += 1
@@ -200,19 +237,7 @@
           document.getElementById('k_agree').value = "true"
         }
       }
-      async function CheckConnection(){
-        if (typeof window.ethereum !== "undefined") {
-          try {
-            const accounts = await ethereum.request({ method: "eth_accounts" });
-            console.log("accounts =>", accounts);
-            if(accounts.length > 0){
-              georli.connect();
-            }
-          } catch (error) {
-            console.log(error);
-          }
-        }
-      }
+
       document.getElementById("click_submit").addEventListener("click", function(event){
           event.preventDefault()
 
