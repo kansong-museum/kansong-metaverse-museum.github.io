@@ -54,7 +54,7 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="./css/base.css" />
   <link rel="stylesheet" href="./css/grid.css" />
-  <link rel="stylesheet" href="./css/mintingInfo.css" />
+  <link rel="stylesheet" href="./css/mintingsam.css" />
   <link rel="stylesheet" href="./css/ScrollTrigger.css" />
   <script type="text/javascript" src="./js/base.js"></script>
   <script type="text/javascript" src="./js/ScrollTrigger.js"></script>
@@ -107,7 +107,7 @@
   </header>
 
   <aside id="sidebar" class="sidebar on"></aside>
-
+  <!--
   <section id="wallet_area" class="section5">
       <div  id="connect-btn" class="wallet_btn" style="display:none" >
         <button type="button" name="btn-wallet" id="btn-wallet" onclick="connectWallet()">
@@ -125,18 +125,18 @@
         <p id="net_info_msg">지갑의 네트워크를 Ethereum Mainnet으로 설정하세요.</p>
       </div>
   </section>
-
+-->
   <section id="mintpage_banner" class="section8">
     <div class="Container">
       <div class="grid">
         <div>
-          <img src="./img/image.png" alt="">
-          <div class="banner_bg"></div>
+          <img src="img\AUGUST_mintingpage\banner3.jpg" alt="">
+          <!--<div class="banner_bg"></div>-->
         </div>
-        <div class="textarea">
+        <!--<div class="textarea">
           <p>혜원 전신첩 NFT Public Sale</p>
           <p>Coming soon</p>
-        </div>
+        </div>-->
       </div>
     </div>
   </section>
@@ -144,9 +144,12 @@
   <section id="NFTinfo" class="section6">
     <div class="Container">
       <div class="textarea grid">
-        <div class="soldout_img"><img src="./img/soldout_3.png" alt=""></div>
+        <!--<div class="soldout_img"><img src="./img/soldout_3.png" alt=""></div>-->
         <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">
-          혜원 전신첩 NFT 프리세일
+          Hyewon NFT Public Sale
+        </h2>
+        <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)" style="font-size: 3rem; font-weight: 400;">
+          'Boating on the clear river' collection
         </h2>
         <div id="div-countdown" class="div-countdown" style="display: none">
           <h3
@@ -158,43 +161,44 @@
             <tbody>
               <tr>
                 <td>시작시간</td>
-                <td>2022. 6. 3. 오후 10시</td>
+                <td>2022. 8월 판매예정</td>
               </tr>
-
+              <!---
               <tr>
                 <td>네트워크</td>
                 <td>Ethereum Mainnet</td>
               </tr>
+            -->
               <tr>
                 <td>가격</td>
-                <td>개당 0.08 ETH </td>
+                <td>개당 25만원 </td>
               </tr>
               <tr>
                 <td>NFT 판매 수량</td>
-                <td>355개</td>
+                <td>1140개</td>
               </tr>
               <tr class="howMinting">
                 <td>Minting 방법</td>
                 <td><a class="tooltip_event" href="#" title="랜덤 민팅이란?
 
-                  구매자는 민팅 직후에는 어떤 NFT 이미지를 소유하게 될 지 알 수 없습니다.
-                  판매 종료 이후 최대 3일 이내에 랜덤 방식으로 본인 소유의 NFT 이미지가 확정됩니다.
-                  확정 이전에는 OpenSea에 데모이미지가 보여지나 이후에는 구매자 소유의 NFT 이미지가 정상적으로 보여집니다.">
+                    구매자는 민팅 직후에는 어떤 NFT이미지를 소유하게 될 지 알 수 없습니다.
+                    판매 종료 이후 최대 7일 이내에 랜덤 방식으로 본인소유의 NFT 이미지가 확정됩니다. 
+                    확정 이전에는 해당 NFT마켓플레이스에 데모이미지가 보여지나 이후에는 구매자 소유의 NFT이미지가 정상적으로 보여집니다.
+                    ">
                   Random Minting
                   <img src="./img/icon-question.png" alt="" ></a>
                 </td>
               </tr>
               <tr>
-                <td colspan='2'>* 1회에 최대 20개까지 민팅 가능합니다.</td>
+                <td colspan='2'>* 주유청강 컬렉션 판매완료 후 7일 이내 실제 NFT 이미지로 리빌됩니다.</td>
               </tr>
             </tbody>
           </table>
-          <div class="progress_container" id="progress_container">
-          </div>
+          <!--<div class="progress_container" id="progress_container"></div>-->
         </div>
-        <div class="erc721a_info">
+        <!--<div class="erc721a_info">
           <p >혜원 전신첩 NFT는 가스비 절감을 위해 ERC721A(https://www.azuki.com/erc721a)를 기반으로 해서 제작되었습니다.<br> 한 번에 다수의 NFT를 민팅하는 가스비가 1개 민팅 비용과 크게 차이가 나지 않습니다. 따라서 한 번에 여러개의 NFT를 민팅하면 가스비 절감에 많은 도움이 됩니다.</p>
-        </div>
+        </div>-->
 
         <div style="display:none">
             <a
@@ -205,89 +209,34 @@
         </div>
 
         <div class="presale">
-          <h3>프리세일 혜택</h3>
-          <div >
-            <p>
-              (1) 추후 모든 혜원 전신첩 민팅에 화이트 리스트 우선 배정권<br />
-              (2) 고화질 단오풍정 그림 인쇄본 1매 증정 (국내 배송 무료, 해외 배송 유료)<br />
-              (3) 간송 메타버스 뮤지엄 전시회 우선 초대<br />
-              (4) 각종 간송 메타버스 뮤지엄 온오프라인 파티 우선 초대<br />
-              (5) 공연, 제작 발표회 등 각종 생태계 이벤트 우선 초대
-            </p>
-
+          <div></div>
+          <h3>구매자 혜택</h3>
+            <div>
+              <div>
+                <p>
+                혜택1. 주유청강 컬렉션 NFT를 구매하신 분에게는 주유청강 영인본을 보내드립니다.
+              </p>
+              <a href="https://youtu.be/hus-Lmvib4s" target="_blank"><예시- 단오풍정 영인본 영상></a>
+            </div>
+            <div>
+              <p>
+                혜택2. 주유청강 컬렉션 판매완료 2개월 뒤 이더리움 메인넷으로 동일NFT가 에어드롭 될 예정입니다.
+              </p>
+              <a href="https://opensea.io/collection/hyewons-album-of-genre-paintings" target="_blank"><예시- 이더리움 메인넷 상 단오풍정NFT></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="cropImg" class="section1">
-    <div class="Container">
-      <div class="imgarea">
-        <ul id="masonry" class="masonry">
-          <div class="grid-sizer"></div>
-          <li class="masonry-item"><img src="./img/crop/body/yb017002001.jpg" alt="" class="" /></li>
-          <li class="masonry-item"><img src="./img/crop/body/yb017002002.jpg" alt="" class="" /></li>
-          <li class="masonry-item"><img src="./img/crop/body/yb017002003.jpg" alt="" class="" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/body/yb017002004.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/body/yb017002005.jpg" alt="" class="delay-3" /></li>
-          <li class="masonry-item"><img src="./img/crop/body/yb017002006.jpg" alt="" class="" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/body/yb017002007.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/body/yb017002008.jpg" alt="" class="" /></li>
-          <li class="masonry-item"><img src="./img/crop/body/yb017002009.jpg" alt="" class="delay-3" /></li>
-          <li class="masonry-item"><img src="./img/crop/body/yb017002010.jpg" alt="" class="delay-3" /></li>
-          <li class="masonry-item"><img src="./img/crop/body/yb017002011.jpg" alt="" class="" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/body/yb017002012.jpg" alt="" class="delay-3" /></li> -->
-
-          <li class="masonry-item"><img src="./img/crop/bust/yb017003003.jpg" alt="" class="delay-3" /></li>
-          <li class="masonry-item"><img src="./img/crop/bust/yb017003004.jpg" alt="" class="" /></li>
-          <li class="masonry-item"><img src="./img/crop/bust/yb017003005.jpg" alt="" class="" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/bust/yb017003006.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/bust/yb017003007.jpg" alt="" class="delay-3" /></li>
-          <li class="masonry-item"><img src="./img/crop/bust/yb017003008.jpg" alt="" class="" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/bust/yb017003009.jpg" alt="" class="delay-3" /></li> -->
-          <!-- <li class="masonry-item"><img src="./img/crop/bust/yb017003010.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/bust/yb017003011.jpg" alt="" class="delay-3" /></li>
-
-          <li class="masonry-item"><img src="./img/crop/face/yb017006001.jpg" alt="" class="delay-3" /></li>
-          <li class="masonry-item"><img src="./img/crop/face/yb017006002.jpg" alt="" class="" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/face/yb017006003.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/face/yb017006004.jpg" alt="" class="delay-3" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/face/yb017006005.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/face/yb017006006.jpg" alt="" class="delay-3" /></li>
-          <li class="masonry-item"><img src="./img/crop/face/yb017006007.jpg" alt="" class="delay-3" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/face/yb017006008.jpg" alt="" class="delay-3" /></li> -->
-
-          <li class="masonry-item"><img src="./img/crop/head/yb017005001.jpg" alt="" class="" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/head/yb017005002.jpg" alt="" class="delay-3" /></li> -->
-          <!-- <li class="masonry-item"><img src="./img/crop/head/yb017005003.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/head/yb017005004.jpg" alt="" class="" /></li>
-          <li class="masonry-item"><img src="./img/crop/head/yb017005005.jpg" alt="" class="delay-3" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/head/yb017005006.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/head/yb017005007.jpg" alt="" class="delay-3" /></li>
-          <li class="masonry-item"><img src="./img/crop/head/yb017005008.jpg" alt="" class="" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/head/yb017005009.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/head/yb017005010.jpg" alt="" class="delay-3" /></li>
-
-          <!-- <li class="masonry-item"><img src="./img/crop/object/yb017004005.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/object/yb017004006.jpg" alt="" class="" /></li>
-          <li class="masonry-item"><img src="./img/crop/object/yb017004012.jpg" alt="" class="" /></li>
-          <!-- <li class="masonry-item"><img src="./img/crop/object/yb017004007.jpg" alt="" class="delay-3" /></li> -->
-          <li class="masonry-item"><img src="./img/crop/object/yb017004008.jpg" alt="" class="delay-3" /></li>
-          <li class="masonry-item"><img src="./img/crop/object/yb017004009.jpg" alt="" class="" /></li>
-          <li class="masonry-item"><img src="./img/crop/object/yb017004010.jpg" alt="" class="" /></li>
-          <li class="masonry-item"><img src="./img/crop/object/yb017004011.jpg" alt="" class="delay-3" /></li>
-
-        </ul>
-      </div>
-    </div>
-  </section>
+  
 
   <section id="NFTvariation" class="section2">
     <div class="Container">
       <div class="textarea grid">
         <h2 data-scroll="toggle(.fromTopIn, .fromTopOut)">
-          Kansong NFT Variation
+          NFT 유형
         </h2>
       </div>
 
@@ -296,15 +245,15 @@
           <h3>Image Crop Types</h3>
           <ul class="grid">
             <li>
-              <img src="img\JUNE_mintingpage\image_crop_square.png" alt="" />
+              <img src="img\AUGUST_mintingpage\fr1_sq.png" alt="" />
               <p>Square</p>
             </li>
             <li>
-              <img src="img\JUNE_mintingpage\image_crop_vertical.png" alt="" />
+              <img src="img\AUGUST_mintingpage\fr2_ve.png" alt="" />
               <p>Vertical</p>
             </li>
             <li>
-              <img src="img\JUNE_mintingpage\image_crop_horizontal.png" alt="" />
+              <img src="img\AUGUST_mintingpage\fr3_ho.png" alt="" />
               <p>Horizontal</p>
             </li>
           </ul>
@@ -314,32 +263,32 @@
           <h3>Image Frames</h3>
           <ul class="grid">
             <li>
-              <img src="img\JUNE_mintingpage\Image_Frames_Rectangle.png" alt="" />
+              <img src="img\AUGUST_mintingpage\crop2_re.png" alt="" />
               <p>Rectangle</p>
             </li>
             <li>
-              <img src="img\JUNE_mintingpage\Image_Frames_Ellipes.png" alt="" />
+              <img src="img\AUGUST_mintingpage\crop1_el.png" alt="" />
               <p>Ellipes</p>
             </li>
           </ul>
         </div>
-
+        <!--
         <div class="Image_Types">
           <h3>Image Types</h3>
-          <div><img src="img\JUNE_mintingpage\imageType.png" alt=""></div>
+          <div><img src="img\AUGUST_mintingpage\img_typ.png" alt=""></div>
         </div>
-
+      -->
         <div class="Background_Colors">
           <h3>Background Colors</h3>
           <div>
-            <img src="img\JUNE_mintingpage\Background_Colors.png" alt="">
+            <img src="img\AUGUST_mintingpage\back.png" alt="">
           </div>
         </div>
 
         <div class="Fonts">
           <h3>Fonts</h3>
           <div>
-            <img src="img\JUNE_mintingpage\Fonts.png" alt="">
+            <img src="img\AUGUST_mintingpage\font.png" alt="">
           </div>
         </div>
 
@@ -405,6 +354,67 @@
     </div>
   </section>
 
+  <section id="cropImg" class="section1">
+    <div class="Container">
+      <div class="imgarea">
+        <ul id="masonry" class="masonry">
+          <div class="grid-sizer"></div>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015002001.jpg" alt="" class="" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015002002.jpg" alt="" class="" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015002003.jpg" alt="" class="" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/body/yb017002004.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015002004.jpg" alt="" class="delay-3" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015002005.jpg" alt="" class="" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/body/yb017002007.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015002006.jpg" alt="" class="" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015002007.jpg" alt="" class="delay-3" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015003001.jpg" alt="" class="delay-3" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015003002.jpg" alt="" class="" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/body/yb017002012.jpg" alt="" class="delay-3" /></li> -->
+
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015003003.jpg" alt="" class="delay-3" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015003004.jpg" alt="" class="" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015003005.jpg" alt="" class="" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/bust/yb017003006.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015003006.jpg" alt="" class="delay-3" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015003007.jpg" alt="" class="" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/bust/yb017003009.jpg" alt="" class="delay-3" /></li> -->
+          <!-- <li class="masonry-item"><img src="./img/crop/bust/yb017003010.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015003008.jpg" alt="" class="delay-3" /></li>
+
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015003009.jpg" alt="" class="delay-3" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015004001.jpg" alt="" class="" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/face/yb017006003.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015004002.jpg" alt="" class="delay-3" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/face/yb017006005.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015004003.jpg" alt="" class="delay-3" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015005001.jpg" alt="" class="delay-3" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/face/yb017006008.jpg" alt="" class="delay-3" /></li> -->
+
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015005002.jpg" alt="" class="" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/head/yb017005002.jpg" alt="" class="delay-3" /></li> -->
+          <!-- <li class="masonry-item"><img src="./img/crop/head/yb017005003.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015005003.jpg" alt="" class="" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015005004.jpg" alt="" class="delay-3" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/head/yb017005006.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015005005.jpg" alt="" class="delay-3" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015005006.jpg" alt="" class="" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/head/yb017005009.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015005007.jpg" alt="" class="delay-3" /></li>
+
+          <!-- <li class="masonry-item"><img src="./img/crop/object/yb017004005.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015005008.jpg" alt="" class="" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015006001.jpg" alt="" class="" /></li>
+          <!-- <li class="masonry-item"><img src="./img/crop/object/yb017004007.jpg" alt="" class="delay-3" /></li> -->
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015006002.jpg" alt="" class="delay-3" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015006003.jpg" alt="" class="" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015006004.jpg" alt="" class="" /></li>
+          <li class="masonry-item"><img src="img\AUGUST_mintingpage\yb015006005.jpg" alt="" class="delay-3" /></li>
+
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <script type="text/javascript">
     $(document).ready(function(){
