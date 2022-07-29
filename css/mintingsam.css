@@ -1,0 +1,1048 @@
+body{
+    font-weight: 400;
+  }
+  .Container {
+    padding-top: 8rem;
+    padding-bottom: 12rem;
+  }
+  h2{
+    text-align: center;
+    /* font-weight: 600; */
+  }
+  h3{
+    text-align: center;
+  }
+  section{
+    min-height: auto;
+  }
+  section .textarea > h2,
+  section .textarea > p,
+  section .textarea > div,
+  section .imgarea > ul,
+  section .imgarea > div{
+    grid-column: 3 / 11;
+  }
+  #wallet_area + section .Container{
+    padding-top: 16rem;
+  }
+  
+  /* 민팅하기 버튼 */
+  #footer-btn{
+   position: fixed;
+   bottom: 0;
+   left:0;
+   right:0;
+   z-index: 110;
+   /* display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center; */
+   padding-bottom:0.8rem;
+   animation: footer-btn 0.7s;
+  }
+  @keyframes footer-btn {
+    0% {
+      bottom: -8rem;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  #footer-btn button{
+    grid-column: 3 / 11;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spinner {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  #minting-loading {
+    display: none;
+    /* width: 100%;
+              height: 100%; */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #minting-loading .spinner {
+    box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    left: 46%;
+    width: 150px;
+    height: 150px;
+    /* margin-top: -32px;
+              margin-left: -32px;             */
+    border-radius: 50%;
+    border: 20px solid transparent;
+    border-top-color: var(--primary-active-color);
+    border-bottom-color: var(--primary-color);
+    animation: spinner 0.8s ease infinite;
+  }
+  
+  #popup-minting{
+    display: none;
+    position: fixed;
+    overflow: hidden !important
+  /*  left:0;
+    top:0;
+    width:100%;
+    height:100%;
+     overflow: auto;
+    z-index: 9999;
+    background: rgba(0,0,0,0.6); */
+  }
+  
+  #popup-minting .popup_minting_inner{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width:70vw;
+    height:86vh;
+    min-width:880px;
+    padding:2.4rem 0;
+    overflow: auto;
+    background: #2E2E2E;
+    color: var(--white);
+  }
+  #popup-minting .popup_minting_inner::-webkit-scrollbar {
+    width: 6px;
+  }
+  #popup-minting .popup_minting_inner::-webkit-scrollbar-thumb {
+    background-color: rgba(180, 67, 50, 0.5);
+  }
+  #popup-minting .popup_minting_inner::-webkit-scrollbar-track {
+    background-color: var(--black);
+  }
+  #popup-minting .popup_minting_inner > div{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    width:100%;
+  }
+  #popup-minting .popup_minting_inner > div,
+  #popup-minting .popup_minting_inner h4{
+    flex: 0;
+  }
+  #popup-minting .popup_minting_inner h4{
+    margin-bottom: 2rem;
+  }
+  #popup-minting .btnArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.6rem;
+    margin-top: 2rem;
+  }
+  #popup-minting .btnArea button{
+    font-size: 2.8rem;
+    font-weight: 500;
+    padding:0.8rem 6rem;
+  }
+  
+  /* before_minting */
+  #before_minting .mint_contents{
+    width: 45%;
+    min-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    column-gap: 0.8rem;
+    /* flex: 1; */
+    align-content: center;
+  }
+  #before_minting .mint_contents > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.8rem;
+  }
+  #before_minting .mint_contents .mint_imgArea{
+    flex: 1;
+    justify-content: center;
+    font-size: 0;
+  }
+  
+  #before_minting .total_supply{
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    font-size: 1 rem;
+    margin-top: 10px;
+  }
+  
+  #before_minting .random_nft{
+    width:43%;
+  }
+  #before_minting p{
+    margin-right: auto;
+  }
+  #before_minting span{
+    text-align: right;
+  }
+  #before_minting .mint_ETH{
+    font-size: var(--font-size-small);
+    margin-top: 0.4rem;
+  }
+  #before_minting select{
+    padding:0.8rem 1.4rem;
+    margin:0.4rem 0;
+  }
+  #before_minting option{
+    line-height: 1.2;
+  }
+  #before_minting .line{
+    display: inherit !important;
+    background: var(--white);
+    margin-top:1rem;
+    margin-bottom:1rem;
+    opacity: 0.4;
+  }
+  #before_minting #total p{
+    font-size: 2.8rem;
+    font-weight: 400;
+  }
+  #before_minting #total .mint_price{
+    font-size: var(--font-size-subtitle);
+    font-weight: 400;
+  }
+  #before_minting #total .mint_ETH{
+    margin-top: 1rem;
+  }
+  
+  #before_minting .terms_of_sale a{
+    text-decoration: underline;
+    margin-top: 4rem;
+    color: white;
+  }
+  #popup-minting #before_minting button.modal_close_btn{
+    position: absolute;
+    right:0;
+    top:0;
+    background: none;
+    color: var(--white);
+    font-size: 4rem;
+  }
+  #popup-minting #before_minting button.modal_close_btn:hover{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+  
+  
+  #after_minting .mint_contents{
+    height: 60vh;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  #after_minting > div{
+    width:100%;
+    padding:0 2.4rem;
+    box-sizing: border-box;
+  }
+  
+  #after_minting img{
+    max-width: 300px;
+  }
+  
+  #after_minting p{
+    margin-top: 20px;
+    white-space: pre-line;
+    font-size: 1.2rem;
+  }
+  
+  
+  
+  
+  
+  
+  /* wallet_area */
+  .section5{
+    position: fixed;
+    right:10px;
+    top:40px;
+    z-index: 9998;
+    width: 50%;
+    float: right;
+  }
+  .section5 > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+    padding-right: 4rem;
+  }
+  .section5 button{
+    padding: 0.8rem 1.6rem;
+    font-size: var(--font-size-small);
+  }
+  .section5 div p{
+    font-weight: 400;
+    font-size: 2rem;
+  }
+  .section5 div a{
+    text-decoration:underline;
+    transition: all 0.3s;
+  }
+  .section5 div a:hover{
+    opacity: 0.7;
+  }
+  
+  .section5 .Container .wallet_switch{
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .section5 .wallet_switch img{
+    width:22px;
+    height:auto;
+  }
+  .section5 .wallet_switch p{
+    margin-top: 2px;
+    color: var(--secondary-color);
+  }
+  
+  
+  
+  /* crop img */
+  .section1 .Container{
+    padding-top: 0rem;
+    padding-bottom: 0;
+  }
+  .section1 .imgarea #masonry {
+    grid-column: 1 / 13;
+    box-sizing: border-box;
+  }
+  .section1 .imgarea #masonry .grid-sizer,
+  .section1 .imgarea #masonry li {
+    width: 10%;
+  }
+  .section1 .imgarea #masonry li {
+    font-size: 0;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .section1 .imgarea #masonry li img {
+    width: 100%;
+    max-width: 250px;
+    animation: masonryImg 1s;
+    opacity: 1;
+  }
+  @keyframes masonryImg {
+    0% {
+      transition: transform 1s ease, opacity 1s ease;
+      transform: scale(0.7, 0.7);
+      opacity: 0;
+    }
+    100% {
+      transition: transform 1s ease, opacity 1s ease;
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  .section1 .imgarea #masonry li img.delay-3 {
+    animation-delay: 0.2s;
+  }
+  
+  
+  
+  /* mintpage_banner */
+  .section8 .Container{
+    padding-bottom: 2rem;
+  }
+  .section8 .grid{position: relative;}
+  .section8 .grid > div{
+    grid-column: 3 / 11;
+    position: relative;
+  }
+  .banner_bg{
+   width:100%;
+   height:100%;
+   position: absolute;
+   left:0;
+   top:0;
+   background: rgba(255,255,255,0.2);
+   font-size: 0;
+  }
+  .section8 .grid > .textarea{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100%;
+    height: 100%;
+  }
+  .section8 .textarea p:nth-child(1){
+    width: 50%;
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 300;
+  
+  }
+  .section8 .textarea p:nth-child(2){
+    width: 55%;
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+  
+  
+  /* NFTinfo */
+  .soldout_img{
+    position: absolute;
+    left:50%;
+    top:3%;
+    font-size: 0;
+    width:140px;
+    transform: translateX(-50%);
+  }
+  .section6 .textarea table{
+    margin: 0 auto;
+    /* width:50%; */
+  }
+  .section6 .textarea table td{
+    padding:0.4rem 1.2rem;
+    font-size: 2.1rem;
+  }
+  .section6 .textarea table td:first-child{
+    font-weight: 600;
+  }
+  .section6 .textarea table tr:last-child td{
+    font-weight: 400;
+    font-size: 1.8rem;
+  }
+  .howMinting td a{
+    display: flex;
+    align-items: center;
+  }
+  
+  .howMinting img{
+    width:30px;
+    margin-left: 0.4rem;
+  }
+  .div-countdown{
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+  }
+  
+  .ui-tooltip {
+    z-index: 100;
+    white-space: pre-line;
+    padding: 20px 30px;
+    width: 30%;
+    color: black;
+    border-radius: 20px;
+    font: 1 rem ;
+    background-image: url(https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/bg-wh.jpg);
+    box-shadow: 0 0 7px black;
+  
+  }
+  
+  .go_mint_guide{
+    margin-top: 20px;
+    text-decoration: underline;
+    color: var(--secondary-active-color);
+    font-size: 25px;
+    text-align: center;
+  
+  }
+  
+  .erc721a_info{
+    border-radius: 20px;
+    background-color: var(--secondary-disabled-color);
+    margin: 30px 20px;
+    padding: 10px 10px;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .presale{
+    border-radius: 20px;
+    background-color: #264a58;
+    padding: 10px 10px;
+    margin-top:20px;
+    color: white;
+  }
+  .presale div {
+    padding: 5px;
+
+  }
+  .presale p{
+    width:90%;
+    margin:0 auto;
+    text-align: center;
+  }
+  
+  .presale a{
+    width:90%;
+    margin:0 auto;
+    text-decoration: underline;
+    color: white;
+    text-align: center;
+  }
+  
+  .nft-address{
+    text-decoration: underline;
+  }
+  
+  /* Progress bar*/
+  .progress_container{
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .div_progress{
+    margin-top: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .div_progress span{
+    font-size: 1.4rem;
+    margin-left: 10px;
+  }
+  
+  .progress {
+    width: 60%;
+    display: flex;
+    overflow: hidden;
+    height: 20px;
+    border-radius: 50px;
+    background-color: var(--secondary-disabled-color);
+  }
+  
+  
+  .progress-bar {
+    overflow: hidden;
+    text-align: center;
+    border-radius:inherit;
+    background: var(--secondary-color);
+    /* background: linear-gradient(to right, var(--secondary-color), var(--secondary-color)); */
+  }
+  .progress-bar-animated {
+  position:relative;
+  }
+  .progress-bar-animated::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    border-radius:inherit;
+    background:linear-gradient(to right,transparent,rgba(255, 255, 255, 0.7));
+    transform:translateX(-100%);
+    animation: progress-bar-shine 2s infinite;
+  }
+  @keyframes progress-bar-shine {
+    to {
+      transform:translateX(0);
+      opacity:0.1;
+    }
+  }
+  
+  /* NFT variation */
+  .section2 .imgarea{
+    row-gap: 10rem;
+  }
+  .section2 h3{
+    margin-bottom: 2.6rem;
+  }
+  .section2 ul p{
+    text-align: center;
+    margin-top: 0.4rem;
+  }
+  .section2 .Image_Crop_Types li{
+    grid-column-end: span 4;
+  }
+  
+  .section2 .Image_Frames li{
+    grid-column-end: span 4;
+  }
+  .section2 .Image_Frames li:first-child{
+    grid-column: 3 / 7;
+  }
+  
+  
+  .section2 .Image_Types{
+    grid-column: 4 / 10;
+  }
+  .section2 .Image_Types table{
+    width:100%;
+    text-align: center;
+  }
+  .section2 .Image_Types th{
+    padding: 1.2rem 0.5rem;
+    font-weight: 600;
+    background: var(--white);
+  }
+  .section2 .Image_Types td{
+    /* padding: 0.5rem; */
+    box-sizing: border-box;
+    background: var(--white);
+  }
+  .section2 .Image_Types .Image_Tytdes_title{
+    width:25%;
+  }
+  .section2 .Image_Types .Image_Types_img{
+    width:34%;
+    font-size: 0;
+  }
+  .section2 .Image_Types .Image_Tytdes_quantity{
+    width:19%;
+  }
+  .section2 .Image_Types .Image_Tytdes_variations{
+    width:22%;
+    background: var(--secondary-color);
+    color:var(--white);
+  }
+  
+  
+  .section2 .Background_Colors div{
+    width:100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section2 .Background_Colors ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .section2 .Background_Colors li{
+    width:20%;
+    max-width: 180px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .section2 .Background_Colors li .Background_Colors_img{
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    width:100%;
+    padding-bottom: 100%;
+    font-size: 0;
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.25));
+  }
+  .section2 .Background_Colors li img{
+    position: absolute;
+    left:0;
+    right:0;
+  }
+  
+  
+  .section2 .Fonts div{
+    width:100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .section2 .Fonts ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .section2 .Fonts li{
+    width:33.33%;
+    max-width: 240px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .section2 .Fonts li > div{
+    font-size: 0;
+  }
+  
+  
+  
+  
+  
+  /* NFT minting */
+  .section3 .imgarea > ul{
+    grid-column: 4 / 10;
+    row-gap: 2.4rem;
+  }
+  .section3 .imgarea > ul > li{
+    grid-column-end: span 4;
+    text-align: center;
+  }
+  .NFTs-typeNum{
+    font-size: var(--font-size-small);
+    font-weight: 400;
+  }
+  .NFTs-typeName{
+   font-size: var(--font-size-content);
+   font-weight: 500;
+  }
+  .NFTs-quantity{
+    font-size:var(--font-size-subtitle);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  .NFTs-quantity span{
+    font-size: var(--font-size-content);
+  }
+  
+  
+  
+  
+  /* My Kansong NFTs */
+  .section4 .imgarea > ul{
+    grid-column: 3 / 11;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .section4 .imgarea > ul > li{
+    width:20%;
+    padding:5px;
+    box-sizing: border-box;
+  }
+  .section4 .imgarea > ul > li img{
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+  }
+  .section4 .imgarea > ul > li a{
+    text-align: center;
+  }
+  .section4 .imgarea > ul > li:hover a{
+    color:var(--secondary-color);
+    opacity: 0.9;
+    transform: scale(1.01);
+  }
+  
+  .nft_termsofsale{
+    padding: 10px;
+    text-align: center;
+  }
+  
+  
+  /* 모바일 */
+  @media screen and (max-width: 900px) {
+    .Container {
+      padding: 4.2rem 0;
+    }
+    /* #footer-btn{
+     padding-bottom:0.4rem;
+     display: inherit;
+     width: calc(100% - 56px);
+     right:inherit;
+    } */
+    #footer-btn button{
+      /* width:100%; */
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.8rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      grid-column: 1 / 7
+    }
+    aside {
+      bottom: 110px;
+    }
+  
+    section .textarea > h2,
+    section .textarea > p,
+    section .textarea > div,
+    section .imgarea > ul,
+    section .imgarea > div{
+      grid-column: 1 / 7;
+    }
+    #wallet_area + section .Container{
+      padding-top: 2rem;
+    }
+  
+  
+    /* wallet_area */
+    .section5 {
+      position: relative;
+      left:inherit;
+      top:inherit;
+      padding-top: 6.4rem;
+    }
+    .section5 > div{
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .section5 button{
+      padding: 0.6rem 1.4rem;
+      font-size: var(--font-size-small-m);
+    }
+    .section5 div p{
+      font-weight: 400;
+      font-size: var(--font-size-small-m);
+    }
+    .section5 div a{
+      text-decoration:underline;
+      transition: all 0.3s;
+    }
+    .section5 div a:hover{
+      opacity: 0.7;
+    }
+  
+    .section5 .Container .wallet_switch{
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .section5 .wallet_switch img{
+      width:22px;
+      height:auto;
+    }
+    .section5 .wallet_switch p{
+      margin-top: 2px;
+      color: var(--secondary-color);
+    }
+  
+  
+    /* crop img */
+    .section1 .Container{
+      /* padding-top: 4rem;
+      padding-bottom: 4rem; */
+    }
+    .section1 .imgarea #masonry {
+      grid-column: 1 / 7;
+    }
+    .section1 .imgarea #masonry .grid-sizer,
+    .section1 .imgarea #masonry li {
+      width: 20%;
+      padding:2px;
+    }
+  
+    .section8 .grid > div{
+      grid-column: 1 / 7;
+    }
+    .section8 .textarea p:nth-child(1){
+      font-size: 1.8rem;
+    }
+    .section8 .textarea p:nth-child(2){
+      font-size: 1.4rem;
+    }
+  
+  
+  
+  
+    /* NFTinfo */
+    .soldout_img{
+      top:1.2%;
+      width:90px;
+    }
+    .section6 .textarea table td{
+      padding:0.2rem 0.4rem;
+      font-size: 1.5rem;
+    }
+    .section6 .textarea table td:first-child{
+      font-weight: 600;
+    }
+    .section6 .textarea table tr:last-child td{
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
+    .howMinting img{
+      width:20px;
+      margin-left: 0.4rem;
+    }
+    .ui-tooltip {
+      z-index: 10;
+      white-space: pre-line;
+      padding: 10px 20px;
+      width: 50%;
+      color: black;
+      border-radius: 20px;
+      font: bold 14px ;
+      background-image: url(https://kansong-image-collection.s3.ap-northeast-2.amazonaws.com/img/bg-wh.jpg);
+      box-shadow: 0 0 7px black;
+  
+    }
+  
+    .erc721a_info{
+      border-radius: 20px;
+      background-color: var(--secondary-disabled-color);
+      padding: 10px 10px;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  
+  
+    /**/
+    .presale p{
+      width:100%;
+      font-weight: 400;
+    }
+  
+    /* Progress bar*/
+    .div_progress span{
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+    .progress {
+      height: 15px;
+    }
+  
+  
+    /* NFT variation */
+    .section2 .imgarea{
+      row-gap: 4.8rem;
+    }
+    .section2 h3{
+      margin-bottom: 1.8rem;
+    }
+    .section2 ul p{
+      margin-top: 0.4rem;
+    }
+    .section2 .Image_Crop_Types li{
+      grid-column-end: span 2;
+    }
+  
+    .section2 .Image_Frames li{
+      grid-column-end: span 3;
+    }
+    .section2 .Image_Frames li:first-child{
+      grid-column: 1 / 4;
+    }
+  
+    .section2 .Image_Types{
+      grid-column: 1 / 7;
+    }
+    .section2 .Image_Types th{
+      padding: 1.2rem 0.5rem;
+    }
+    .section2 .Image_Types .Image_Tytdes_title{
+      width:29%;
+    }
+    .section2 .Image_Types .Image_Types_img{
+      width:36%;
+    }
+    .section2 .Image_Types .Image_Tytdes_quantity{
+      width:15%;
+    }
+    .section2 .Image_Types .Image_Tytdes_variations{
+      width:20%;
+    }
+  
+  
+    .section2 .Background_Colors li{
+      width:33.33%;
+    }
+  
+  
+    /* NFT minting */
+    .section3 .imgarea > ul{
+      grid-column: 1 / 7;
+      row-gap: 2.4rem;
+    }
+    .section3 .imgarea > ul > li{
+      grid-column-end: span 3;
+      text-align: center;
+    }
+    .NFTs-typeNum{
+      font-size: var(--font-size-small-m);
+      font-weight: 400;
+    }
+    .NFTs-typeName{
+     font-size: var(--font-size-content-m);
+     font-weight: 500;
+    }
+    .NFTs-quantity{
+      font-size:var(--font-size-subtitle-m);
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .NFTs-quantity span{
+      font-size: var(--font-size-content-m);
+    }
+  
+  
+    /* My Kansong NFTs */
+    .section4 .imgarea > ul{
+      grid-column: 1 / 7;
+    }
+    .section4 .imgarea > ul > li{
+      width:50%;
+    }
+  
+    /* pop-up */
+    #popup-minting .popup_minting_inner{
+      width:80vw;
+      height:80vh;
+      min-width:300px;
+      min-height:400px;
+      padding:3.2rem 0;
+    }
+    #popup-minting h4{
+      margin-bottom: 2rem;
+    }
+  
+    /* before_minting */
+    #before_minting .mint_contents{
+      width: 100%;
+      min-width: 260px;
+      max-width: 500px;
+      margin: 0 auto;
+      padding:0 1.6rem;
+    }
+    #before_minting .random_nft{
+      width:50%;
+    }
+    #before_minting .mint_ETH{
+      font-size: var(--font-size-small-m);
+      margin-top: 0.1rem;
+    }
+    #before_minting #total p{
+      font-size: 2rem;
+    }
+  
+    #after_minting > div{
+      padding: 0;
+    }
+  
+    #after_minting img{
+      width: 60%;
+    }
+    #after_minting p{
+      text-align: left;
+      padding: 0px 20px;
+      margin-top: 10px;
+      white-space: pre-line;
+      font-size: 0.6rem;
+    }
+  
+    #after_minting .view_in_opensea p{
+      text-align: center;
+  
+    }
+  
+    #popup-minting > div .btnArea button{
+      padding:0.6rem 2.6rem;
+      font-size:1.8rem;
+    }
+  
+  
+  
+  }
+  
