@@ -244,11 +244,18 @@ section .grid > div{
 
 
 .section2 .Submit_result{
+  height: 600px;
+  padding: 10px;
+  margin-top: 30px;
  text-align: center;
 }
 .section2 .Submit_result h4{
   font-weight: 700;
   font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+.section2 .Submit_result p{
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
