@@ -25,10 +25,10 @@ section .grid > div{
   padding:0;
 }
 .section1 .imgarea > .grid > .imgFrame{
-  grid-column: 1 / 6;
+  grid-column: 1 / 7;
 }
 .section1 .imgarea > .grid > .youTubeFrame{
-  grid-column: 6 / 13;
+  grid-column: 7 / 13;
   width: 100%;
   padding-bottom: 56.25%;
   overflow: hidden;
