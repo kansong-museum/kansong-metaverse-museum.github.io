@@ -73,7 +73,7 @@
         <h3>Pre-sale benefits</h3>
         <p>주유청강 컬랙션 화이트 리스트 수요 조사</p>
 
-        <div class="imgarea grid">
+        <div class="imgarea grid" style="display:block">
           <div class="grid">
             <div class='imgFrame'><img src="img\introduction\탑포트갤러리_주유청강.jpg" alt=""></div>
 
@@ -88,7 +88,7 @@
     <section class="section2">
       <div class="Container">
         <div class="textarea grid">
-          <div id="explain" style="text-align: left;">
+          <div id="explain" style="text-align: left; display:block;">
             주유청강, 맑은 강에서 뱃놀이하다.<br><br>
 
             녹음이 우거지고 시원한 강바람이 부는 여름날 지체 높은 집 자제들이 지형으로 보아서는 두물머리로 추정되는 한강에 놀잇배를 띄우고 피서를 즐기고 있습니다. 담뱃대도 물려주는 젊은 연인의 모습, 강물에 손을 담궈 물장난을 하는 어린 기생의 모습을 턱을 괴고 다정하게 바라보는 선비의 모습, 이들의 애정 행각에 아랑곳하지 않고 뒷짐을 지고 생각에 잠긴 중년의 선비의 모습이 그림에 표현되어 있으며, 즐기는 사람 옆에 주어진 일을 하고 있는 노를 젓는 사공의 모습, 악기를 부는 악공 그리고 멀리 뱃머리에 앉아 생황 부는 기생의 모습을 대조적으로 표현하여 같은 공간에서 다양한 마음으로 물놀이를 즐기는 여러 사람의 모습을 혜원 신윤복이 가늘고 섬세한 부드러운 필선과 세련되고 낭만적인 분위기를 효과적으로 나타내는 아름다운 색채를 사용하여 전달하고 있습니다.
@@ -164,8 +164,12 @@
                   </span>
                 </div>
               </form>
+              <div class="Submit_result">
+                <div class="Submit_result_ko" style="display:none;">
+                  <h4>성공적으로 제출되었습니다.</h4>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
         <div id="surveyArr" style="opacity: 0;"></div>
@@ -193,7 +197,7 @@
             if(accounts.length > 0){
               bundle.connect();
             }
-          }catch (error) {
+          } catch (error) {
             console.log(error);
           }
         }

@@ -64,9 +64,13 @@ surveyForm.addEventListener("submit", (event) => {
           korea.style.display = "none";
           $("#connectButton").hide();
           let imgFrame = document.querySelector(".imgFrame");
-          imgFrame.style.display = "block";
+          imgFrame.style.display = "none";
           let youTubeFrame = document.querySelector(".youTubeFrame");
-          youTubeFrame.style.display = "block";
+          youTubeFrame.style.display = "none";
+          let Submit_result_ko = document.querySelector(".Submit_result_ko");
+          Submit_result_ko.style.display = "block";
+          let explain = document.getElementById("explain");
+          explain.style.display = "none";
         } catch (e) {
           console.error("Error adding document: ", e);
         }
