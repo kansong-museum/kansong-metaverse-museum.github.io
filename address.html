@@ -293,15 +293,18 @@ However, if you do not agree, participation in the guerrilla event may be restri
                   
                   * 스냅샷 시점 보유자 기준으로 확인되니 <br>
                   프리세일에 참여했지만 보유하고 있지않으면 영인본은 발송되지않습니다.<br><br></p><br>
-                <p>이름: <span id="modi_name"></span></p>
-                <p>전화번호: <span id="modi_phoneNumber"></span></p>
-                <p>우편번호: <span id="modi_postcode"></span></p>
-                <p>주소: <span id="modi_address"></span></p>
-                <p>상세주소: <span id="modi_detailAddress"></span></p>
-                <!-- <button id="modify">modify</button> -->
+
+                <button class="modiBtn" onclick="funcModify()">주소 수정하기</button>
               </div>
               <div class="modal_content">
+
                 <form name="korea" class="modifyForm" id ="modify" style="display:none;">
+                  <div>이름 <a id="modi_name"></a></div>
+                  <div>전화번호 <a id="modi_phoneNumber"></a></div>
+                  <div>우편번호 <a id="modi_postcode"></a></div>
+                  <div>주소 <a id="modi_address"></a></div>
+                  <div>상세주소 <a id="modi_detailAddress"></a></div>
+                  <div><br></div>
                   <div>
                     <p>받는 분</p>
                     <input type="text" id="m_userName" placeholder="이름" onfocus="this.placeholder=''" onblur="this.placeholder='이름'" value="">
@@ -338,6 +341,7 @@ However, if you do not agree, participation in the guerrilla event may be restri
     
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="./js/postcode.js" type="text/javascript"></script>
+    <script src="./js/postcode2.js" type="text/javascript"></script>
     <script src="./js/countryCode.js" type="text/javascript"></script>
     <script>
       for(let i = 0; i < country.length; i++) {
@@ -368,6 +372,12 @@ However, if you do not agree, participation in the guerrilla event may be restri
         } else {
           document.getElementById('o_agree').value = "true"
         }
+      }
+      function funcModify() {
+        let funcModi = document.querySelector(".modifyForm");
+        funcModi.style.display = "block"
+        let modiBtn = document.querySelector(".modiBtn");
+        modiBtn.style.display = "none"
       }
     </script>
     <!-- <script src="./js/firebase.js"  type="module" type="text/javascript"></script> -->

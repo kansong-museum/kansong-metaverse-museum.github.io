@@ -45,9 +45,15 @@ export async function fire() {
   });
 
   const colRef = collection(db, "address");
-  const userAddress = document.getElementById("userAddress").innerHTML;
+  let userAddress = document.getElementById("userAddress").innerHTML;
   const q = await query(colRef, where("userAddress", "==", userAddress));
   const snapshot = await getDocs(q);
+
+  let modifyID;
+  snapshot.forEach((doc) => {
+    modifyID = localStorage.setItem("modify", doc.id);
+  });
+  let mId = localStorage.getItem("modify");
 
   snapshot.forEach((doc) => {
     let modi_name = document.getElementById("modi_name");
@@ -220,6 +226,62 @@ export async function fire() {
 
   modifyForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    const m_userName = document.getElementById("m_userName").value;
+    const m_phoneNumber = formatPhoneNumber(
+      document.getElementById("m_phoneNumber").value
+    );
+    const m_postcode = document.getElementById("m_postcode").value;
+    const m_address = document.getElementById("m_address").value;
+    const m_detailAddress = document.getElementById("m_detailAddress").value;
+    const nftBalance = document.getElementById("nftBalance").innerHTML;
+    const userAddress = document.getElementById("userAddress").innerHTML;
+    if (
+      m_postcode !== "" &&
+      m_detailAddress !== "" &&
+      m_userName !== "" &&
+      m_phoneNumber !== "" &&
+      m_address !== ""
+    ) {
+      try {
+        let mId = localStorage.getItem("modify");
+
+        const mRef = doc(db, "address", mId);
+        let modiRef = updateDoc(mRef, {
+          userName: m_userName,
+          phoneNumber: m_phoneNumber,
+          postcode: m_postcode,
+          address: m_address,
+          detailAddress: m_detailAddress,
+          nftBalance: nftBalance,
+          userAddress: userAddress,
+        });
+        console.log(modiRef.id);
+        let modifyForm = document.querySelector(".modifyForm");
+        modifyForm.style.display = "none";
+        let myInfo = document.querySelector(".myInfo");
+        myInfo.style.display = "none";
+        let delivery = document.querySelector(".delivery");
+        delivery.style.display = "none";
+        let korea = document.getElementById("korea");
+        korea.style.display = "none";
+        $("#connectButton").hide();
+        let imgFrame = document.querySelector(".imgFrame");
+        imgFrame.style.display = "none";
+        let youTubeFrame = document.querySelector(".youTubeFrame");
+        youTubeFrame.style.display = "none";
+        let tubeFrame = document.querySelector(".tubeFrame");
+        tubeFrame.style.display = "block";
+        let Submit_result_ko = document.querySelector(".Submit_result_ko");
+        Submit_result_ko.style.display = "block";
+        let modiBtn = document.querySelector(".modiBtn");
+        modiBtn.style.display = "block";
+        setTimeout(() => window.location.reload(), 500);
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      alert("Please enter all shipping information");
+    }
   });
 
   const formatPhoneNumber = (input) => {
