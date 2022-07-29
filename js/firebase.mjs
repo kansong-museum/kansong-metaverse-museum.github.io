@@ -216,6 +216,12 @@ export async function fire() {
     }
   });
 
+  const modifyForm = document.querySelector(".modifyForm");
+
+  modifyForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
+
   const formatPhoneNumber = (input) => {
     const cleanInput = input.replaceAll(/[^0-9]/g, "");
     let result = "";
