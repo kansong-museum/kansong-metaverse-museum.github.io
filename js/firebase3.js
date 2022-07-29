@@ -6,6 +6,9 @@ import {
   getDocs,
   addDoc,
   collection,
+  updateDoc,
+  query,
+  where,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -29,13 +32,98 @@ let o_userArr = [];
 const querySnapshot = await getDocs(collection(db, "address"));
 querySnapshot.forEach((doc) => {
   userArr.push(doc.data()["userAddress"]);
-  document.getElementById("userArr").innerHTML = userArr;
+  document.getElementById("userArrProps").innerHTML = userArr;
 });
 
 const o_querySnapshot = await getDocs(collection(db, "o_address"));
 o_querySnapshot.forEach((doc) => {
   o_userArr.push(doc.data()["userAddress"]);
-  document.getElementById("o_userArr").innerHTML = o_userArr;
+  document.getElementById("o_userArrProps").innerHTML = o_userArr;
+});
+
+const colRef = collection(db, "address");
+const userAddress = document.getElementById("userAddress").innerHTML;
+const q = await query(colRef, where("userAddress", "==", userAddress));
+
+const snapshot = await getDocs(q);
+
+snapshot.forEach((doc) => {
+  console.log(doc.id, "->", doc.data()["userName"]);
+
+  let modi_name = document.querySelector(".modi_name");
+  modi_name.innerHTML = doc.data()["userName"];
+  let modi_phoneNumber = document.querySelector(".modi_phoneNumber");
+  modi_phoneNumber.innerHTML = doc.data()["phoneNumber"];
+  let modi_postcode = document.querySelector(".modi_postcode");
+  modi_postcode.innerHTML = doc.data()["postcode"];
+  let modi_address = document.querySelector(".modi_address");
+  modi_address.innerHTML = doc.data()["address"];
+  let modi_detailAddress = document.querySelector(".modi_detailAddress");
+  modi_detailAddress.innerHTML = doc.data()["detailAddress"];
+});
+
+// 데이터 수정하기
+const modi = document.querySelector(".modify");
+modi.addEventListener("click", (event) => {
+  console.log("modi clcked");
+  let modify = document.getElementById("modify");
+  modify.style.display = "block";
+  let Submit_result_ko = document.querySelector(".Submit_result_ko");
+  Submit_result_ko.style.display = "none";
+});
+const modifyForm = document.querySelector(".modifyForm");
+
+modifyForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("modi2222");
+  const m_userName = document.getElementById("m_userName").value;
+  const m_phoneNumber = formatPhoneNumber(
+    document.getElementById("m_phoneNumber").value
+  );
+  const m_postcode = document.getElementById("m_postcode").value;
+  const m_address = document.getElementById("m_address").value;
+  const m_detailAddress = document.getElementById("m_detailAddress").value;
+  const nftBalance = document.getElementById("nftBalance").innerHTML;
+  const userAddress = document.getElementById("userAddress").innerHTML;
+
+  if (
+    m_postcode !== "" &&
+    m_detailAddress !== "" &&
+    m_userName !== "" &&
+    m_phoneNumber !== "" &&
+    m_address !== ""
+  ) {
+    try {
+      const colRef = collection(db, "address");
+      const userAddress = document.getElementById("userAddress").innerHTML;
+      const qu = await query(colRef, where("userAddress", "==", userAddress));
+      const snapshot2 = await getDocs(qu);
+      let modifyID;
+      snapshot2.forEach((doc) => {
+        console.log(doc.id, "->", doc.data()["userName"]);
+        modifyID = doc.id;
+      });
+      console.log(modifyID)
+      try {
+        const mRef = doc(db, "address", modifyID);
+        updateDoc(mRef, {
+          userName: m_postcode,
+          phoneNumber: m_detailAddress,
+          postcode: m_userName,
+          address: m_phoneNumber,
+          detailAddress: m_address,
+          nftBalance: nftBalance,
+          userAddress: userAddress,
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  } else {
+    alert("Please enter all shipping information");
+  }
 });
 
 // 데이터 보내기
@@ -75,7 +163,7 @@ koreaForm.addEventListener("submit", (event) => {
             userAddress: userAddress,
           });
           console.log("Document written with ID: ", docRef.id);
-          alert("Submitted🙂");
+          alert("Submitted");
           let myInfo = document.querySelector(".myInfo");
           myInfo.style.display = "none";
           let delivery = document.querySelector(".delivery");
@@ -156,7 +244,7 @@ overseasForm.addEventListener("submit", (event) => {
               userAddress: userAddress,
             });
             console.log("Document written with ID: ", docRef.id);
-            alert("Submitted🙂");
+            alert("Submitted");
             let myInfo = document.querySelector(".myInfo");
             myInfo.style.display = "none";
             let delivery = document.querySelector(".delivery");
@@ -186,57 +274,6 @@ overseasForm.addEventListener("submit", (event) => {
     } else {
       alert("Please Enter Whole Address");
     }
-  }
-});
-
-const surveyForm = document.querySelector(".surveyForm");
-
-surveyForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  var YesOrNo = $('input[name="delivery"]:checked').val();
-  const amount_needs = document.getElementById("amount_needs").value;
-  const phoneNumber = formatPhoneNumber(
-    document.getElementById("phoneNumber").value
-  );
-  const email = document.getElementById("email").value;
-  const nftBalance = document.getElementById("nftBalance").innerHTML;
-  const userAddress = document.getElementById("userAddress").innerHTML;
-
-  if (amount_needs !== "" && phoneNumber !== "" && email !== "") {
-    if (isEmail(email)) {
-      if (document.getElementById("k_agree").value === "true") {
-        try {
-          let docRef = addDoc(collection(db, "survey"), {
-            YesOrNo: YesOrNo,
-            amount_needs: amount_needs,
-            phoneNumber: phoneNumber,
-            email: email,
-            nftBalance: nftBalance,
-            userAddress: userAddress,
-          });
-          console.log("Document written with ID: ", docRef.id);
-          alert("Submitted");
-          let myInfo = document.querySelector(".myInfo");
-          myInfo.style.display = "none";
-          let korea = document.getElementById("korea");
-          korea.style.display = "none";
-          $("#connectButton").hide();
-          let imgFrame = document.querySelector(".imgFrame");
-          imgFrame.style.display = "none";
-          let youTubeFrame = document.querySelector(".youTubeFrame");
-          youTubeFrame.style.display = "none";
-        } catch (e) {
-          console.error("Error adding document: ", e);
-        }
-      } else {
-        alert("Please agree to the collection and use of personal information");
-      }
-    } else {
-      alert("Please enter the correct email format");
-    }
-  } else {
-    alert("Please enter all information");
   }
 });
 

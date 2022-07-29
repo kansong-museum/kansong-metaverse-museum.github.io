@@ -1,10 +1,10 @@
-const { ethers } = require("ethers");
-let { nftAbi_rinkeby } = require("../contractabi/ntfAbi_rinkeby");
-let { ntfAbi_eth_mainnet } = require("../contractabi/ntfAbi_eth_mainnet");
+// const { ethers } = require("ethers");
+// let { nftAbi_rinkeby } = require("../contractabi/ntfAbi_rinkeby.mjs");
+// let { ntfAbi_eth_mainnet } = require("../contractabi/ntfAbi_eth_mainnet.mjs");
 let rinkebyContractAddress = "0xc89E09e68DEa544aBff8A4d744085De8fFc55e08";
 let contractAddess = "0x82f58182bE996DF3F8B9922dFa0e8F8aCf71f76C";
 
-async function connect() {
+export async function connect(nftAbi_rinkeby, ntfAbi_eth_mainnet) {
   if (typeof window.ethereum !== "undefined") {
     try {
       await ethereum.request({ method: "eth_requestAccounts" });
@@ -13,15 +13,15 @@ async function connect() {
 
       let chainId = await ethereum.request({ method: "eth_chainId" });
 
-      if (chainId !== 1) {
+      if (chainId !== 4) {
         await switchChain();
       }
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const nftInstance = new ethers.Contract(
-        contractAddess,
-        ntfAbi_eth_mainnet,
+        rinkebyContractAddress,
+        nftAbi_rinkeby,
         signer
       );
 
@@ -34,12 +34,12 @@ async function connect() {
         let walletAddress = document.getElementById("userAddress");
         walletAddress.innerHTML = address;
 
-        let userArr = document.getElementById("userArr").innerHTML;
-        let o_userArr = document.getElementById("o_userArr").innerHTML;
-        let spArr = userArr.split(",");
-        let o_spArr = o_userArr.split(",");
+        let userArr = localStorage.getItem("arr1");
+        userArr = JSON.parse(userArr);
+        let o_userArr = localStorage.getItem("arr2");
+        o_userArr = JSON.parse(o_userArr);
 
-        if (spArr.find((item) => item == address)) {
+        if (userArr.find((item) => item == address)) {
           let imgFrame = document.querySelector(".imgFrame");
           imgFrame.style.display = "none";
           let youTubeFrame = document.querySelector(".youTubeFrame");
@@ -50,8 +50,10 @@ async function connect() {
           tubeFrame.style.display = "block";
           let explain = document.getElementById("explain");
           explain.style.display = "none";
+          let korea = document.getElementById("korea");
+          korea.style.display = "none";
           $("#connectButton").hide();
-        } else if (o_spArr.find((item) => item == address)) {
+        } else if (o_userArr.find((item) => item == address)) {
           let imgFrame = document.querySelector(".imgFrame");
           imgFrame.style.display = "none";
           let youTubeFrame = document.querySelector(".youTubeFrame");
@@ -62,6 +64,8 @@ async function connect() {
           tubeFrame.style.display = "block";
           let explain = document.getElementById("explain");
           explain.style.display = "none";
+          let korea = document.getElementById("korea");
+          korea.style.display = "none";
           $("#connectButton").hide();
         } else {
           let myInfo = document.querySelector(".myInfo");
@@ -97,26 +101,26 @@ async function switchChain() {
   try {
     await ethereum.request({
       method: "wallet_switchEthereumChain",
-      params: [{ chainId: "0x" + "1".toString(16) }],
+      params: [{ chainId: "0x" + "4".toString(16) }],
     });
   } catch (e) {
     console.log(e);
   }
 }
 
-function k_del() {
+export function k_del() {
   let korea = document.getElementById("korea");
   korea.style.display = "block";
   overseas.style.display = "none";
 }
-function o_del() {
+export function o_del() {
   let overseas = document.getElementById("overseas");
   korea.style.display = "none";
   overseas.style.display = "block";
 }
 
-module.exports = {
-  connect,
-  k_del,
-  o_del,
-};
+// module.exports = {
+//   connect,
+//   k_del,
+//   o_del,
+// };

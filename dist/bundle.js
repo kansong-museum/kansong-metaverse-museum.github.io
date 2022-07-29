@@ -2198,15 +2198,15 @@ async function connect() {
 
       let chainId = await ethereum.request({ method: "eth_chainId" });
 
-      if (chainId !== 1) {
+      if (chainId !== 4) {
         await switchChain();
       }
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const nftInstance = new ethers.Contract(
-        contractAddess,
-        ntfAbi_eth_mainnet,
+        rinkebyContractAddress,
+        nftAbi_rinkeby,
         signer
       );
 
@@ -2219,12 +2219,12 @@ async function connect() {
         let walletAddress = document.getElementById("userAddress");
         walletAddress.innerHTML = address;
 
-        let userArr = document.getElementById("userArr").innerHTML;
-        let o_userArr = document.getElementById("o_userArr").innerHTML;
-        let spArr = userArr.split(",");
-        let o_spArr = o_userArr.split(",");
+        let userArr = localStorage.getItem("arr1");
+        userArr = JSON.parse(userArr);
+        let o_userArr = localStorage.getItem("arr2");
+        o_userArr = JSON.parse(o_userArr);
 
-        if (spArr.find((item) => item == address)) {
+        if (userArr.find((item) => item == address)) {
           let imgFrame = document.querySelector(".imgFrame");
           imgFrame.style.display = "none";
           let youTubeFrame = document.querySelector(".youTubeFrame");
@@ -2235,8 +2235,10 @@ async function connect() {
           tubeFrame.style.display = "block";
           let explain = document.getElementById("explain");
           explain.style.display = "none";
+          let korea = document.getElementById("korea");
+          korea.style.display = "none";
           $("#connectButton").hide();
-        } else if (o_spArr.find((item) => item == address)) {
+        } else if (o_userArr.find((item) => item == address)) {
           let imgFrame = document.querySelector(".imgFrame");
           imgFrame.style.display = "none";
           let youTubeFrame = document.querySelector(".youTubeFrame");
@@ -2247,6 +2249,8 @@ async function connect() {
           tubeFrame.style.display = "block";
           let explain = document.getElementById("explain");
           explain.style.display = "none";
+          let korea = document.getElementById("korea");
+          korea.style.display = "none";
           $("#connectButton").hide();
         } else {
           let myInfo = document.querySelector(".myInfo");
@@ -2282,7 +2286,7 @@ async function switchChain() {
   try {
     await ethereum.request({
       method: "wallet_switchEthereumChain",
-      params: [{ chainId: "0x" + "1".toString(16) }],
+      params: [{ chainId: "0x" + "4".toString(16) }],
     });
   } catch (e) {
     console.log(e);

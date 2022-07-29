@@ -1,4 +1,4 @@
-let nftAbi_rinkeby = [
+export const ntfAbi_eth_mainnet = [
   {
     inputs: [
       { internalType: "address", name: "receiver", type: "address" },
@@ -732,16 +732,6 @@ let nftAbi_rinkeby = [
   },
   {
     inputs: [
-      { internalType: "address", name: "receiver", type: "address" },
-      { internalType: "uint256", name: "quantity", type: "uint256" },
-    ],
-    name: "safeMint",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
       { internalType: "address", name: "from", type: "address" },
       { internalType: "address", name: "to", type: "address" },
       { internalType: "uint256", name: "tokenId", type: "uint256" },
@@ -801,7 +791,7 @@ let nftAbi_rinkeby = [
     inputs: [
       { internalType: "string", name: "_defaultUnrevealedURI", type: "string" },
     ],
-    name: "setDefaultUnrealedURI",
+    name: "setDefaultUnrevealedURI",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -1089,7 +1079,3 @@ let nftAbi_rinkeby = [
   },
   { stateMutability: "payable", type: "receive" },
 ];
-
-module.exports = {
-  nftAbi_rinkeby,
-};

@@ -19,7 +19,7 @@ export async function fire() {
     storageBucket: "kansong-metaverse-museum.appspot.com",
     messagingSenderId: "516424245894",
     appId: "1:516424245894:web:f4609b8b4917014679e707",
-    measurementId: "G-ELGZEVNNQY"
+    measurementId: "G-ELGZEVNNQY",
   };
 
   // Initialize Firebase
