@@ -243,13 +243,23 @@ section .grid > div{
 }
 
 
-.section2 .Submit_result{
+.section2 .Submit_result .Submit_result_ko,
+.section2 .Submit_result .Submit_result_en{
  text-align: center;
 }
 .section2 .Submit_result h4{
   font-weight: 700;
   font-size: 2.4rem;
   margin-bottom: 1rem;
+}
+.section2 .Submit_result .modiBtn{
+  margin: 0 auto;
+}
+
+.modifyForm div > a{
+  display: inline-block;
+  margin-left: 4px;
+  font-weight: 600;
 }
 
 
