@@ -133,6 +133,11 @@
         htmlcontent = htmlcontent + '<h2 class="eName">' + item.eName + "</h2>";
         htmlcontent = htmlcontent + '<p class="kName subtitle">' + item.kName + "</p>";
         htmlcontent = htmlcontent + '<p class="cName">' + item.cName + "</p>";
+
+        if(item.saleLink != "") {
+          htmlcontent = htmlcontent +  '<a href="'+item.saleLink+'" target="_blank" style="margin : 20px; text-decoration: underline;";>상점페이지 바로가기</a>';
+        }
+
         htmlcontent = htmlcontent + '<div class="imgarea grid">';
         if (item.id < 10) {
           htmlcontent = htmlcontent + '<div class="detail-img"><img src="../img/introduction/00' + item.id + '.jpg" alt="" /></div>';
@@ -152,7 +157,10 @@
 
         card.innerHTML = htmlcontent;
         document.getElementById("info_container").appendChild(card);
+
       }
+
+     
     </script>
   </body>
 </html>
