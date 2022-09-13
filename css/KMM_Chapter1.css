@@ -1,0 +1,52 @@
+#KMM_Chapter1 .Container{
+  padding:0;
+  padding-top: 16rem;
+}
+#KMM_Chapter1 .zone_6 .Container{
+  padding:16rem 0;
+}
+
+
+#KMM_Chapter1 .imgarea{
+  margin-bottom: 8px;
+}
+#KMM_Chapter1 .imgarea > img,
+#KMM_Chapter1 .imgarea > video{
+  grid-column: 3 / 11;
+  margin-bottom: 12px;
+}
+#KMM_Chapter1 h3 {
+  grid-column: 3 / 11;
+  font-weight: 600;
+  text-align: center;
+}
+#KMM_Chapter1 .textarea h4,
+#KMM_Chapter1 .textarea p {
+  grid-column: 3 / 11;
+}
+#KMM_Chapter1 .textarea h4{
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+
+/* 모바일 */
+@media screen and (max-width: 900px) {
+
+  #KMM_Chapter1 .Container{
+    padding:0;
+    padding-top: 8rem;
+  }
+  #KMM_Chapter1 .zone_6 .Container{
+    padding:8rem 0;
+  }
+
+  #KMM_Chapter1 h3,
+  #KMM_Chapter1 .imgarea > img,
+  #KMM_Chapter1 .imgarea > video,
+  #KMM_Chapter1 .textarea h4,
+  #KMM_Chapter1 .textarea p {
+    grid-column: 1 / 7;
+  }
+
+}
