@@ -246,7 +246,7 @@ const img_list = [
     id: 28,
     imgUrl: "../img/intriduction/028.jpg",
     kName: "야금모행",
-    eName: "Venturing our after curfew",
+    eName: "Venturing out after curfew",
     cName: "夜禁冒行",
     youtubeLink: "https://www.youtube.com/embed/UJMjdUafeIo",
     saleLink: "",
