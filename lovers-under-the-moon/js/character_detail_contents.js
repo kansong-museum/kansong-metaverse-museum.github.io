@@ -26,7 +26,7 @@ function start() {
   var item = characterList.find((item) => item.id === parsedurl.id);
   // console.log("item=>", item);
 
-  document.title = '월하정인 X ' + item.kName;
+  document.title = '달아래 정인 X ' + item.kName;
   let htmlcontent = "";
   let card = document.createElement("div");
   htmlcontent = htmlcontent + '<div class="img_area">';
