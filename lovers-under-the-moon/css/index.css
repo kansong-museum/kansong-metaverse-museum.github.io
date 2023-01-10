@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'SimKyungha';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SimKyungha.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+    background-color: black;
+}
+
+#bg_video{
+    font-size: 0;
+    width:100%;
+    /* height: calc(100vh - 207px); */
+    height: 100%;
+    overflow: hidden;
+}
+#bg_video video{
+    width:100vw;
+    height: calc(100vh - 182px);
+    object-fit: cover;
+}
+
+.text_area{
+    position:absolute;
+    left:10%;
+    top:50%;
+    color:var(--white);
+    font-family: 'SimKyungha';
+}
+
+
+
+
+/* mobile */
+@media screen and (max-width: 900px) {
+    #bg_video video{
+        height: calc(100vh - 197px);
+    }
+
+
+}

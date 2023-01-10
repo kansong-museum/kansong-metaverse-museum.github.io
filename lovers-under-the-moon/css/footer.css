@@ -1,0 +1,62 @@
+#footer{
+    float: left;
+    width:100%;
+    border-top:1px solid rgba(0,0,0,0.2);
+  }
+  #footer > div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    max-width:2540px;
+    padding-top:58px;
+    padding-bottom: 58px;
+  }
+  #footer #sns_btn li{
+    float: left;
+    padding:0 4px;
+  }
+  #footer svg{
+    width: 32px;
+    height: 32px;
+    fill: rgba(0,0,0,0.7);
+    transition: all ease-in-out .3s;
+  }
+  #footer svg:hover{
+    fill: rgba(0,0,0,0.9);
+  }
+  #footer .copyright{
+    color:rgba(0,0,0,0.4);
+    text-align: center;
+  }
+  
+  
+  #footer.white{
+    background-color: black;
+    border-top:1px solid rgba(255,255,255,0.1);
+  }
+  #footer.white svg{
+    fill: rgba(255,255,255,0.7);
+  }
+  #footer.white svg:hover{
+    fill: rgba(255,255,255,0.9);
+  }
+  #footer.white .copyright{
+    color:rgba(255,255,255,0.4);
+  }
+
+  .main,
+  .subPage{
+    min-height : calc(100% -  182px);
+  }
+
+
+/* mobile */
+@media screen and (max-width: 900px) {
+  .main,
+  .subPage{
+    min-height : calc(100% -  197px);
+  }
+}

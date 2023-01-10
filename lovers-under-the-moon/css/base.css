@@ -1,0 +1,193 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('reset.css');
+@import url('grid.css');
+@import url('header.css');
+@import url('footer.css');
+
+
+:root {
+  --black: #000000;
+  --white: #FFFFFF;
+  --disabled-color: ;
+  --primary-color: #FFCC48;
+  --primary-active-color: ;
+  --primary-disabled-color: ;
+  --secondary-color: ;
+  --secondary-active-color: ;
+  --secondary-disabled-color: ;
+  --tertiary-color: ;
+  --tertiary-active-color: ;
+  --tertiary-disabled-color: ;
+  --font-size-title: 4.4rem;
+  --font-size-title-m: 4;
+  --font-size-subTitle: 3.2rem;
+  --font-size-subTitle-m: 2.8rem;
+  --font-size-subTitle2: 2.8rem;
+  --font-size-subTitle2-m: 2.2rem;
+  --font-size-contents: 1.8rem;
+  --font-size-contents-m: 1.6rem;
+  --font-size-caption: 1.4rem;
+  --font-size-button: 2rem;
+}
+
+
+
+
+html {
+  text-align: left;
+  color: var(--black);
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 160%;
+  /* letter-spacing: -0.5px; */
+}
+body {
+  position: relative;
+  font-size: var(--font-size-contents);
+}
+a {
+  color: var(--black);
+}
+
+.text_title, h3{
+  font-weight: 700;
+  font-size: var(--font-size-title);
+}
+.text_subTitle, h4{
+  font-weight: 600;
+  font-size: var(--font-size-subTitle);
+}
+.text_subTitle2, h5{
+  font-weight: 700;
+  font-size: var(--font-size-subTitle2);
+}
+.text_contents, figcaption{
+  font-weight: 400;
+  font-size: var(--font-size-contents);
+}
+.text_caption{
+  font-weight: 400;
+  font-size: var(--font-size-caption);
+}
+
+
+button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+button[name="button"] {
+  border: 2px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  font-weight: 600;
+  transition: all 0.4s;
+}
+button[name="button"]:active,
+button[name="button"]:hover {
+  background: var(--black);
+  color: var(--white);
+}
+button[name="button"]:disabled,
+button[disabled] {
+  background-color: var(--disabled-color);
+  color: var(--disabled-color);
+}
+.small_link{
+  padding:4px 0;
+  color:rgba(0,0,0,0.5);
+  transition: all ease-in-out .3s;
+}
+.small_link:hover{
+  color:rgba(0,0,0,1);
+}
+
+
+
+section {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.container {
+  position: relative;
+  width: 100%;
+}
+.grid > div{
+  /* grid-column: 3 / 11; */
+}
+
+.global_padding{ padding-left: 4rem; padding-right:4rem; }
+.center{margin-left: auto; margin-right: auto;}
+.textCenter{text-align: center;}
+.margin_t_160{margin-top: 16rem;}
+.margin_t_80{margin-top: 8rem;}
+.margin_t_40{margin-top: 4rem;}
+.margin_b_32{margin-bottom: 3.2rem;}
+.margin_b_24{margin-bottom: 2.4rem;}
+.margin_b_16{margin-bottom: 1.6rem;}
+.margin_b_12{margin-bottom: 1.2rem;}
+.margin_b_8{margin-bottom: 0.8rem;}
+.margin_b_4{margin-bottom: 0.4rem;}
+
+
+/* sub page */
+.subPage{
+  padding-top:16rem;
+  padding-bottom:16rem;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+/* mobile */
+@media screen and (max-width: 900px) {
+  body {
+    font-size: var(--font-size-contents-m);
+  }
+  .grid > div{
+    /* grid-column: 1 / 5; */
+  }
+  .grid > ul{
+    /* grid-column: 1 / 5; */
+  }
+
+  .text_title, h3{
+    font-size: var(--font-size-title-m);
+  }
+  .text_subTitle, h4{
+    font-size: var(--font-size-subTitle-m);
+  }
+  .text_subTitle2, h5{
+    font-size: var(--font-size-subTitle2-m);
+  }
+  .text_contents, figcaption{
+    font-size: var(--font-size-contents-m);
+  }
+
+  .margin_t_160{margin-top: 8rem;}
+  .margin_t_80{margin-top: 4rem;}
+  .margin_t_40{margin-top: 2rem;}
+  .margin_b_32{margin-bottom: 2.4rem;}
+  .margin_b_24{margin-bottom: 1.2rem;}
+  .margin_b_16{margin-bottom: 0.8rem;}
+  .margin_b_12{margin-bottom: 0.6rem;}
+  .margin_b_8{margin-bottom: 0.4rem;}
+  .margin_b_4{margin-bottom: 0rem;}
+
+  .global_padding{ 
+    padding-left: 1.6rem; 
+    padding-right:1.6rem; 
+  }
+  .subPage{ 
+    padding-top:8rem; 
+    padding-bottom:8rem;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달아래 정인 | Background</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/background.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+          $("#header").load("./page/header.html");
+          $("#background-slick").load("./page/background-slick.html");
+          $("#footer").load("./page/footer.html");
+        });
+      </script>
+    
+</head>
+<body>
+    <header id="header"></header>
+
+   <div class="subPage">
+        <section class="section1">
+          <h3 class="textCenter margin_b_32">어디든지 당신과 함께라면</h3>
+          <div id="background-slick"></div>
+        </section>
+
+        <section class="section2 margin_t_160 global_padding">
+          <h4 class="textCenter margin_b_32">사용된 낙관</h4>
+          <ul>
+            <li><img src="./img/background/stamp/stamp1.png" alt=""></li>
+            <li><img src="./img/background/stamp/stamp3.png" alt=""></li>
+            <li><img src="./img/background/stamp/stamp2.png" alt=""></li>
+            <li><img src="./img/background/stamp/stamp4.png" alt=""></li>
+            <li><img src="./img/background/stamp/stamp5.png" alt=""></li>
+            <li><img src="./img/background/stamp/stamp6.png" alt=""></li>
+            <li><img src="./img/background/stamp/stamp7.png" alt=""></li>
+          </ul>
+        </section>
+   </div>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    <footer id="footer"></footer>
+   
+</body>
+</html>
