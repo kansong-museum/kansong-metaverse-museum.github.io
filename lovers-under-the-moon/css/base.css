@@ -71,7 +71,10 @@ a {
   font-weight: 400;
   font-size: var(--font-size-caption);
 }
-
+.caption_area{
+  width:100%;
+  max-width: 800px;
+}
 
 button{
   display: flex;
