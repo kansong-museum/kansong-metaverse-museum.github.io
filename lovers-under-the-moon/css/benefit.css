@@ -1,3 +1,7 @@
+.caption_area{
+    width:100%;
+    max-width: 800px;
+}
 .text_area{
     width:100%;
     max-width: 800px;
