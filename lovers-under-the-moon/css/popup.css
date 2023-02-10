@@ -1,0 +1,32 @@
+#popup{
+    position: absolute;
+    left:100px;
+    top:120px;
+    width:400px;
+    height:auto;
+    z-index: 9999;
+  }
+  #popup a{
+    font-size: 0;
+  }
+  #popup.close {
+    display: none;
+  }
+  #popup .popup_close{
+    position: absolute;
+    right:0;
+    top:0;
+  }
+
+  #popup .popup_button_first {
+    position: absolute;
+    left:1.5rem;
+    bottom:3rem;
+  }
+
+  #popup .popup_close div{
+    background:none;
+    padding:0 1.2rem;
+    cursor:pointer;
+    font-size:3.2rem;
+  }

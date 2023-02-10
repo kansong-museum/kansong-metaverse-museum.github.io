@@ -2,7 +2,7 @@
   position: absolute;
   right:100px;
   top:120px;
-  width:360px;
+  width:400px;
   height:auto;
   z-index: 9999;
 }
@@ -17,6 +17,19 @@
   right:0;
   top:0;
 }
+
+#popup .popup_button_first {
+  position: absolute;
+  left:1.5rem;
+  bottom:7.5rem;
+}
+
+#popup .popup_button_second {
+  position: absolute;
+  left:1.5rem;
+  bottom:3rem;
+}
+
 #popup .popup_close div{
   background:none;
   padding:0 1.2rem;
