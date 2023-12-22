@@ -70,8 +70,6 @@
   font-size: 3.2rem;
 }
 
-
-
 /* snb 왼쪽메뉴 */
 nav {
   position: fixed;
@@ -606,6 +604,11 @@ nav ol li a {
   flex-wrap: wrap;
 }
 
+/* 이프랜드 사이즈만 유독 커보여서 넣은 css */
+#Partner-ifland {
+  width: 17%;
+}
+
 .section11 .imgarea>ul>li {
   width: 20%;
   display: flex;
@@ -617,6 +620,10 @@ nav ol li a {
 
 .section11 .imgarea>ul>li img {
   max-width: 300px;
+}
+
+.firstRow {
+  margin-bottom: 30px;
 }
 
 
